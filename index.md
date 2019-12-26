@@ -1,4 +1,15 @@
-## Keiba-Predictor
+### 目次
+- [ ] **競馬予測の進捗（2019/11作成）**
+- [ ] **競馬予測レポート（2019/10～; 毎週作成)**
+- [ ] **競馬アドホック分析**
+- [ ] **有馬記念分析：**
+- [ ] **血統の見える化：**
+- [ ] **その他のGithubPages**
+<br> 
+ 
+--- 
+
+
 ### **競馬予測の進捗（2019/11作成）：**
 - [【Keiba Predict Diaries (pdf)】](https://ryutoro-galois.github.io/keiba-predictor/KeibaPredictDiaries_v1_201911.pdf)
 
@@ -7,7 +18,7 @@
   - 毎週末のJRA重賞レース(GⅠ,GⅡ,GⅢ)の予測を実施
   - オッズ情報は変わる為、hourlyで最新のオッズに更新
     - 予想オッズ ☞ (馬券発売開始) ☞ 中間オッズ ☞ 最終オッズ
-  - [【トリセツ (pdf)】](https://ryutoro-galois.github.io/keiba-predictor/keiba-predictor-tool(KPT)_r2.pdf) 
+  - [【競馬予測レポートのトリセツ (pdf)】](https://ryutoro-galois.github.io/keiba-predictor/keiba-predictor-tool(KPT)_r2.pdf) 
   <br>
   
 ### 毎週のレポート：
