@@ -1,10 +1,10 @@
 ### 目次
-- [ ] **競馬予測の進捗（2019/11作成）**
-- [ ] **競馬予測レポート（2019/10～; 毎週作成)**
-- [ ] **競馬アドホック分析**
-- [ ] **有馬記念分析：**
-- [ ] **血統の見える化：**
-- [ ] **その他のGithubPages**
+- [x]  **競馬予測の進捗（2019/11作成）**
+- [x]  **競馬予測レポート（2019/10～; 毎週作成)**
+- [x]  **競馬アドホック分析**
+- [x]  **有馬記念分析：**
+- [x]  **血統の見える化：**
+- [x]  **その他のGithubPages**
 <br> 
  
 --- 
@@ -54,7 +54,7 @@
 
 ---
 
-### その他のGithubPages
+### その他のGithubPagesへのリンク
 - [【sumo-predictor】](https://ryutoro-galois.github.io/sumo-predictor/)
 - [【toy-sample】](https://ryutoro-galois.github.io/toy-sample/)
 
