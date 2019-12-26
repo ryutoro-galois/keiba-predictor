@@ -15,6 +15,9 @@
     - [【PredResult_2019y_raceDate_20191026_20191027.html】](https://ryutoro-galois.github.io/keiba-predictor/PredResult_2019y_raceDate_20191026_20191027.html)
     - [【トリセツ (pdf)】](https://ryutoro-galois.github.io/keiba-predictor/keiba-predictor-tool(KPT)_r2.pdf)
 
+- **競馬アドホック分析：**
+    - [【アドホック分析（2000-2019y）】](https://ryutoro-galois.github.io/keiba-predictor/AdHocAnalysis_keiba_04_2000y_2019y_G1_20191113.html)
+
 - **有馬記念分析：**
     - [【基礎分析レポート (1990~2018y)】](https://ryutoro-galois.github.io/keiba-predictor/sankeyDiagram_keiba_Arimakinen_1990y_2018y.html)
     - [【2019年の結果】](https://ryutoro-galois.github.io/keiba-predictor/sankeyDiagram_keiba_Arimakinen_2019y.html)
