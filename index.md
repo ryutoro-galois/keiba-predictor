@@ -65,7 +65,7 @@
 
 ### その他のGithubPagesへのリンク
 - [【sumo-predictor】](https://ryutoro-galois.github.io/sumo-predictor/)
-- [【toy-sample】](https://ryutoro-galois.github.io/toy-sample/)
+- [【toy-samples】](https://ryutoro-galois.github.io/toy-samples/)
 
 
 QED.
