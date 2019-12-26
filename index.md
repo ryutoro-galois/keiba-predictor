@@ -40,4 +40,12 @@
 ### **血統の見える化：**
 - [【血統の見える化(html)】](https://ryutoro-galois.github.io/keiba-predictor/sankeyDiagram_horse_pedigree.html)
 
+
+---
+
+### その他のGithubPages
+- [【sumo-predictor】](https://ryutoro-galois.github.io/sumo-predictor/)
+- [【toy-sample】](https://ryutoro-galois.github.io/toy-sample/)
+
+
 QED.
