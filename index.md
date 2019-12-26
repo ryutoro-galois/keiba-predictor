@@ -1,4 +1,4 @@
-## 【GithuPages:keiba-Predictor】
+## 【GithubPages:keiba-Predictor】
 
 ### 目次
 - [x]  **競馬予測の進捗（2019/11作成）**
