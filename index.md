@@ -1,10 +1,8 @@
-## MLLab.Space
-
-### keiba-predictor
-- **Keiba Predict Diaries（2019/11作成）：**
+### Keiba-Predictor
+- **競馬予測の進捗（2019/11作成）：**
     - [【Keiba Predict Diaries (pdf)】](https://ryutoro-galois.github.io/keiba-predictor/KeibaPredictDiaries_v1_201911.pdf)
 
-- **競馬予測レポート（2019/10～;   毎週作成）：**
+- **競馬予測レポート（2019/10～;  毎週作成）：**
     - [【PredResult_2019y_raceDate_20191221_20191222.html】](https://ryutoro-galois.github.io/keiba-predictor/PredResult_2019y_raceDate_20191221_20191222.html)
     - [【PredResult_2019y_raceDate_20191214_20191215.html】](https://ryutoro-galois.github.io/keiba-predictor/PredResult_2019y_raceDate_20191214_20191215.html)
     - [【PredResult_2019y_raceDate_20191207_20191208.html】](https://ryutoro-galois.github.io/keiba-predictor/PredResult_2019y_raceDate_20191207_20191208.html)
@@ -25,3 +23,4 @@
 - **血統の見える化：**
     - [【血統の見える化】](https://ryutoro-galois.github.io/keiba-predictor/sankeyDiagram_horse_pedigree.html)
 
+QED.
