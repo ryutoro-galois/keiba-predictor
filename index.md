@@ -26,7 +26,7 @@
 - **毎週の予測レポート：**
   - **2020年：**
     - [【PredResult_2020y_raceDate_20200105_20200105.html】](https://ryutoro-galois.github.io/keiba-predictor/PredResult_2020y_raceDate_20200105_20200105.html)
-      - { ホープフルＳ(GⅠ) }
+      - { 中山金杯(GⅢ), 京都金杯(GⅢ)}
     <br>
   
   - **2019年：**
