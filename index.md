@@ -25,7 +25,8 @@
   
 - **毎週の予測レポート：**
   - **2020年：**
-    - TBA
+    - [【PredResult_2020y_raceDate_20200105_20200105.html】](https://ryutoro-galois.github.io/keiba-predictor/PredResult_2020y_raceDate_20200105_20200105.html)
+      - { ホープフルＳ(GⅠ) }
     <br>
   
   - **2019年：**
