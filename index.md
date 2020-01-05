@@ -60,7 +60,7 @@
 
 ### **血統の見える化：**
 - [【血統の見える化(1)(html)】](https://ryutoro-galois.github.io/keiba-predictor/sankeyDiagram_horse_pedigree.html){:target="_blank"}
-- [【2019年有馬記念出走馬(html)】](https://ryutoro-galois.github.io/keiba-predictor/sankeyDiagram_horse_pedigree_num_horses_14.html){:target="_blank"}
+- [【2019年有馬記念出走馬(16頭)(html)】](https://ryutoro-galois.github.io/keiba-predictor/sankeyDiagram_horse_pedigree_num_horses_16.html){:target="_blank"}
 
 ---
 
