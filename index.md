@@ -25,7 +25,7 @@
   
 - **毎週の予測レポート：**
   - **2020年：**
-    - [【PredResult_2020y_raceDate_20200105_20200105.html】](https://ryutoro-galois.github.io/keiba-predictor/PredResult_2020y_raceDate_20200105_20200105.html){target='_blank'}
+    - [【PredResult_2020y_raceDate_20200105_20200105.html】](https://ryutoro-galois.github.io/keiba-predictor/PredResult_2020y_raceDate_20200105_20200105.html){:target="_blank"}
       - { 中山金杯(GⅢ), 京都金杯(GⅢ)}
     <br>
   
