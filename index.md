@@ -59,8 +59,11 @@
 - [【2019年有馬記念の結果の見える化(html)】](https://ryutoro-galois.github.io/keiba-predictor/sankeyDiagram_keiba_Arimakinen_2019y.html){:target="_blank"}
 
 ### **血統の見える化：**
-- [【血統の見える化(1)(html)】](https://ryutoro-galois.github.io/keiba-predictor/sankeyDiagram_horse_pedigree.html){:target="_blank"}
-- [【2019年有馬記念出走馬(16頭)(html)】](https://ryutoro-galois.github.io/keiba-predictor/sankeyDiagram_horse_pedigree_num_horses_16.html){:target="_blank"}
+- 【2019年有馬記念出走馬(16頭)】
+  - [2世代(html)](https://ryutoro-galois.github.io/keiba-predictor/sankeyDiagram_horse_pedigree_num_horses_16_generation_2.html){:target="_blank"}
+  - [3世代(html)](https://ryutoro-galois.github.io/keiba-predictor/sankeyDiagram_horse_pedigree_num_horses_16_generation_3.html){:target="_blank"}
+  - [4世代(html)](https://ryutoro-galois.github.io/keiba-predictor/sankeyDiagram_horse_pedigree_num_horses_16_generation_4.html){:target="_blank"}
+  - [5世代(html)](https://ryutoro-galois.github.io/keiba-predictor/sankeyDiagram_horse_pedigree_num_horses_16_generation_5.html){:target="_blank"}
 
 ---
 
