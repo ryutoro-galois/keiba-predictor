@@ -27,10 +27,13 @@
   - **2020年：**
     - [【PredResult_2020y_raceDate_20200126_20200126.html】](https://ryutoro-galois.github.io/keiba-predictor/PredResult_2020y_raceDate_20200126_20200126.html)
       - { アメリカジョッキーC(GⅡ), 東海ステークス(GⅡ) }
+
     - [【PredResult_2020y_raceDate_20200118_20200119.html】](https://ryutoro-galois.github.io/keiba-predictor/PredResult_2020y_raceDate_20200118_20200119.html)
       - { 愛知杯(GⅢ), 京成杯(GⅢ), 日経新春杯(GⅡ) }
+
     - [【PredResult_2020y_raceDate_20200112_20200113.html】](https://ryutoro-galois.github.io/keiba-predictor/PredResult_2020y_raceDate_20200112_20200113.html)
       - { シンザン記念(GⅢ), フェアリーＳ(GⅢ)}
+
     - [【PredResult_2020y_raceDate_20200105_20200105.html】](https://ryutoro-galois.github.io/keiba-predictor/PredResult_2020y_raceDate_20200105_20200105.html)
       - { 中山金杯(GⅢ), 京都金杯(GⅢ)}
     <br>
