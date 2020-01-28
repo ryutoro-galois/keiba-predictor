@@ -75,11 +75,11 @@
         - { 富士Ｓ(GⅢ), 菊花賞(GⅠ) }
 
 ### **3. 競馬アドホック分析**
-- [【アドホック分析（2000-2019yの20年間）(html)】](https://ryutoro-galois.github.io/keiba-predictor/AdHocAnalysis_keiba_04_2000y_2019y_G1_20191113.html)
+- [【アドホック分析（2000-2019yの20年間）(html)】](https://ryutoro-galois.github.io/keiba-predictor/AdHocAnalysis_keiba_04_2000y_2019y_G1_20191113.html)<br><br>
 
 ### **4. 有馬記念分析**
 - [【有馬記念基礎分析レポート (1990~2018y)(html)】](https://ryutoro-galois.github.io/keiba-predictor/sankeyDiagram_keiba_Arimakinen_1990y_2018y.html)
-- [【2019年有馬記念の結果の見える化(html)】](https://ryutoro-galois.github.io/keiba-predictor/sankeyDiagram_keiba_Arimakinen_2019y.html)
+- [【2019年有馬記念の結果の見える化(html)】](https://ryutoro-galois.github.io/keiba-predictor/sankeyDiagram_keiba_Arimakinen_2019y.html)<br><br>
 
 ### **5. 血統の見える化**
 - 【2019年有馬記念出走馬(16頭)】
@@ -100,13 +100,14 @@
   - [【2世代(html)】](https://ryutoro-galois.github.io/keiba-predictor/sankeyDiagram_horse_pedigree_num_horses_795_generation_2_2018y_2019y_G123_num_795.html)
   - [【3世代(html)】](https://ryutoro-galois.github.io/keiba-predictor/sankeyDiagram_horse_pedigree_num_horses_795_generation_3_2018y_2019y_G123_num_795.html)
   - [【4世代(html)】](https://ryutoro-galois.github.io/keiba-predictor/sankeyDiagram_horse_pedigree_num_horses_795_generation_4_2018y_2019y_G123_num_795.html)
-  - [【5世代(html)】](https://ryutoro-galois.github.io/keiba-predictor/sankeyDiagram_horse_pedigree_num_horses_795_generation_5_2018y_2019y_G123_num_795.html)  
+  - [【5世代(html)】](https://ryutoro-galois.github.io/keiba-predictor/sankeyDiagram_horse_pedigree_num_horses_795_generation_5_2018y_2019y_G123_num_795.html)  <br><br>
   
 ---
 
 ### 6. その他のGithubPages
 - [【sumo-predictor】](https://ryutoro-galois.github.io/sumo-predictor/)
 - [【toy-samples】](https://ryutoro-galois.github.io/toy-samples/)
+<br><br>
 
 
 QED.
