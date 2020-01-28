@@ -25,6 +25,10 @@
   
 - **毎週の予測レポート：**
   - **2020年：**
+  
+    - [【PredResult_2020y_raceDate_20200202_20200202.html】](https://ryutoro-galois.github.io/keiba-predictor/PredResult_2020y_raceDate_20200202_20200202.html)
+      - { 根岸ステークス(GⅢ), シルクロードステークス(GⅢ) }
+
     - [【PredResult_2020y_raceDate_20200126_20200126.html】](https://ryutoro-galois.github.io/keiba-predictor/PredResult_2020y_raceDate_20200126_20200126.html)
       - { アメリカジョッキーC(GⅡ), 東海ステークス(GⅡ) }
 
