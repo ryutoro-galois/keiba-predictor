@@ -13,7 +13,7 @@
 
 
 ### **1. 競馬予測の進捗**
-- [【Keiba Predict Diaries (2019/11作成; pdf)】](https://ryutoro-galois.github.io/keiba-predictor/KeibaPredictDiaries_v1_201911.pdf)
+- [【Keiba Predict Diaries (2019/11作成, pdf)】](https://ryutoro-galois.github.io/keiba-predictor/KeibaPredictDiaries_v1_201911.pdf)
 <br><br>
 
 ### **2. 競馬予測レポート**
