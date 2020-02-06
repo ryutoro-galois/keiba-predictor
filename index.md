@@ -28,7 +28,10 @@
   - **2020年：**
   
     -  **2月**：
-      - [【PredResult_2020y_raceDate_20200209_20200209.html】](https://ryutoro-galois.github.io/keiba-predictor/PredResult_2020y_raceDate_20200209_20200209.html) (TBA)
+      - [【PredResult_2020y_raceDate_20200215_20200216.html】](https://ryutoro-galois.github.io/keiba-predictor/PredResult_2020y_raceDate_20200215_202002016.html)
+        - { 共同通信杯(GⅢ), 京都記念(GⅡ), クイーンC(GⅢ) } (TBA)
+        
+      - [【PredResult_2020y_raceDate_20200209_20200209.html】](https://ryutoro-galois.github.io/keiba-predictor/PredResult_2020y_raceDate_20200209_20200209.html)
         - { 東京新聞杯(GⅢ), きさらぎ賞(GⅢ) }
     
       - [【PredResult_2020y_raceDate_20200202_20200202.html】](https://ryutoro-galois.github.io/keiba-predictor/PredResult_2020y_raceDate_20200202_20200202.html)
