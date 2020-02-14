@@ -32,7 +32,7 @@
         - { 京都牝馬S(GⅢ), フェブラリーS(GⅠ), 小倉大賞典(GⅢ) } (TBA)
         
       - [【PredResult_2020y_raceDate_20200215_20200216.html】](https://ryutoro-galois.github.io/keiba-predictor/PredResult_2020y_raceDate_20200215_202002016.html)
-        - { 共同通信杯(GⅢ), 京都記念(GⅡ), クイーンC(GⅢ) } (TBA)
+        - { 共同通信杯(GⅢ), 京都記念(GⅡ), クイーンカップ(GⅢ) } 
         
       - [【PredResult_2020y_raceDate_20200209_20200209.html】](https://ryutoro-galois.github.io/keiba-predictor/PredResult_2020y_raceDate_20200209_20200209.html)
         - { 東京新聞杯(GⅢ), きさらぎ賞(GⅢ) }
