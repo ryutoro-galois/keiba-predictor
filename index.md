@@ -43,6 +43,7 @@
         - { 中山記念(GⅡ), 阪急杯(GⅢ) } (TBA)  
   
     -  **2月**：
+      - <font color="Tomato">**【OnTime!!】**</font>
       - [【PredResult_2020y_raceDate_2020022_20200223.html】](https://ryutoro-galois.github.io/keiba-predictor/PredResult_2020y_raceDate_20200222_20200223.html)
         - { ダイヤモンド(GⅢ), 京都牝馬S(GⅢ), <br>フェブラリーS(GⅠ), 小倉大賞典(GⅢ) } 
       
