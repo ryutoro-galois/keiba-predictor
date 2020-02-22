@@ -45,7 +45,7 @@
     -  **2月**：
       - <font color="Tomato">**【OnTime!!】**</font>
       - [【PredResult_2020y_raceDate_2020022_20200223.html】](https://ryutoro-galois.github.io/keiba-predictor/PredResult_2020y_raceDate_20200222_20200223.html)
-        - { ダイヤモンド(GⅢ), 京都牝馬S(GⅢ), <br>フェブラリーS(GⅠ), 小倉大賞典(GⅢ) } 
+        - { ダイヤモンドS(GⅢ), 京都牝馬S(GⅢ), <br>フェブラリーS(GⅠ), 小倉大賞典(GⅢ) } 
       
       - [【PredResult_2020y_raceDate_20200215_20200216.html】](https://ryutoro-galois.github.io/keiba-predictor/PredResult_2020y_raceDate_20200215_20200216.html)
         - { 共同通信杯(GⅢ), 京都記念(GⅡ), クイーンカップ(GⅢ) } 
