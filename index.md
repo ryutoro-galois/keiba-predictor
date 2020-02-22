@@ -26,6 +26,21 @@
   
 - **毎週の予測レポート：**
   - **2020年：**
+    -  **3月**：
+      - [【PredResult_2020y_raceDate_20200328_20200329.html】](https://ryutoro-galois.github.io/keiba-predictor/PredResult_2020y_raceDate_20200328_20200329.html)
+        - { 日経賞(GⅡ), 毎日杯(GⅢ), 高松宮記念(GⅠ), マーチS(GⅢ) } (TBA)
+
+      - [【PredResult_2020y_raceDate_20200320_20200322.html】](https://ryutoro-galois.github.io/keiba-predictor/PredResult_2020y_raceDate_20200320_20200322.html)
+        - { フラワーカップ(GⅢ), 阪神大賞典(GⅡ), スプリングS(GⅡ) } (TBA)
+
+      - [【PredResult_2020y_raceDate_20200314_20200315.html】](https://ryutoro-galois.github.io/keiba-predictor/PredResult_2020y_raceDate_20200314_20200315.html)
+        - { 阪神スプリングJ(J.GⅡ), 中山牝馬S(GⅢ), <br>ファルコンS(GⅢ), フィリーズレビュー(GⅡ), <br>金鯱賞(GⅡ) } (TBA)
+ 
+      - [【PredResult_2020y_raceDate_20200307_20200308.html】](https://ryutoro-galois.github.io/keiba-predictor/PredResult_2020y_raceDate_20200307_20200308.html)
+        - { チューリップ賞(GⅡ), オーシャンS(GⅢ), 弥生賞(GⅡ) } (TBA)
+  
+      - [【PredResult_2020y_raceDate_20200301_20200301.html】](https://ryutoro-galois.github.io/keiba-predictor/PredResult_2020y_raceDate_20200301_20200301.html)
+        - { 中山記念(GⅡ), 阪急杯(GⅢ) } (TBA)  
   
     -  **2月**：
       - [【PredResult_2020y_raceDate_2020022_20200223.html】](https://ryutoro-galois.github.io/keiba-predictor/PredResult_2020y_raceDate_20200222_20200223.html)
