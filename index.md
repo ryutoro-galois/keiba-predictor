@@ -53,7 +53,7 @@
         - { 東京新聞杯(GⅢ), きさらぎ賞(GⅢ) }
     
       - [【PredResult_2020y_raceDate_20200202_20200202.html】](https://ryutoro-galois.github.io/keiba-predictor/PredResult_2020y_raceDate_20200202_20200202.html)
-        - { 根岸ステークス(GⅢ), シルクロードステークス(GⅢ) }
+        - { 根岸S(GⅢ), シルクロードS(GⅢ) }
 
 
     -  **1月**：
