@@ -39,11 +39,11 @@
       - [【PredResult_2020y_raceDate_20200307_20200308.html】](https://ryutoro-galois.github.io/keiba-predictor/PredResult_2020y_raceDate_20200307_20200308.html)
         - { チューリップ賞(GⅡ), オーシャンS(GⅢ), 弥生賞(GⅡ) } (TBA)
   
+      - <font color="Tomato"><b>【This Week】</b></font>
       - [【PredResult_2020y_raceDate_20200301_20200301.html】](https://ryutoro-galois.github.io/keiba-predictor/PredResult_2020y_raceDate_20200301_20200301.html)
-        - { 中山記念(GⅡ), 阪急杯(GⅢ) } (TBA)  
+        - { 中山記念(GⅡ), 阪急杯(GⅢ) } 
   
     -  **2月**：
-      - <font color="Tomato"><b>【This Week】</b></font>
       - [【PredResult_2020y_raceDate_2020022_20200223.html】](https://ryutoro-galois.github.io/keiba-predictor/PredResult_2020y_raceDate_20200222_20200223.html)
         - { ダイヤモンドS(GⅢ)(16-3-2)<font color="Tomato"><b>【万馬券!!】</b></font>, <br>京都牝馬S(GⅢ)(1-6-13), <br>フェブラリーS(GⅠ), 小倉大賞典(GⅢ) } 
 
