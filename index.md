@@ -41,7 +41,7 @@
   
       - <font color="Tomato"><b>【This Week】</b></font>
       - [【PredResult_2020y_raceDate_20200301_20200301.html】](https://ryutoro-galois.github.io/keiba-predictor/PredResult_2020y_raceDate_20200301_20200301.html)
-        - { 中山記念(GⅡ), 阪急杯(GⅢ) } 
+        - { 中山記念(GⅡ), 阪急杯(GⅢ) } <font color="Tomato"><b>【コロナ影響により無観客】</b></font>
   
     -  **2月**：
       - [【PredResult_2020y_raceDate_2020022_20200223.html】](https://ryutoro-galois.github.io/keiba-predictor/PredResult_2020y_raceDate_20200222_20200223.html)
