@@ -36,10 +36,10 @@
       - [【PredResult_2020y_raceDate_20200314_20200315.html】](https://ryutoro-galois.github.io/keiba-predictor/PredResult_2020y_raceDate_20200314_20200315.html)
         - { 阪神スプリングJ(J.GⅡ), 中山牝馬S(GⅢ), <br>ファルコンS(GⅢ), フィリーズレビュー(GⅡ), <br>金鯱賞(GⅡ) } (TBA)
  
-      - [【PredResult_2020y_raceDate_20200307_20200308.html】](https://ryutoro-galois.github.io/keiba-predictor/PredResult_2020y_raceDate_20200307_20200308.html)
-        - { チューリップ賞(GⅡ), オーシャンS(GⅢ), 弥生賞(GⅡ) } (TBA)
-  
       - <font color="Tomato"><b>【This Week】</b></font>
+      - [【PredResult_2020y_raceDate_20200307_20200308.html】](https://ryutoro-galois.github.io/keiba-predictor/PredResult_2020y_raceDate_20200307_20200308.html)
+        - { チューリップ賞(GⅡ), オーシャンS(GⅢ), 弥生賞(GⅡ) } <font color="Tomato"><b>【無観客】</b></font>
+  
       - [【PredResult_2020y_raceDate_20200301_20200301.html】](https://ryutoro-galois.github.io/keiba-predictor/PredResult_2020y_raceDate_20200301_20200301.html)
         - { 中山記念(GⅡ), 阪急杯(GⅢ) } <font color="Tomato"><b>【コロナ影響により無観客】</b></font>
   
