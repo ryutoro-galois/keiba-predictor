@@ -125,8 +125,13 @@
   - [【2世代(html)】](https://ryutoro-galois.github.io/keiba-predictor/sankeyDiagram_horse_pedigree_num_horses_795_generation_2_2018y_2019y_G123_num_795.html)
   - [【3世代(html)】](https://ryutoro-galois.github.io/keiba-predictor/sankeyDiagram_horse_pedigree_num_horses_795_generation_3_2018y_2019y_G123_num_795.html)
   - [【4世代(html)】](https://ryutoro-galois.github.io/keiba-predictor/sankeyDiagram_horse_pedigree_num_horses_795_generation_4_2018y_2019y_G123_num_795.html)
-  - [【5世代(html)】](https://ryutoro-galois.github.io/keiba-predictor/sankeyDiagram_horse_pedigree_num_horses_795_generation_5_2018y_2019y_G123_num_795.html)  <br><br>
+  - [【5世代(html)】](https://ryutoro-galois.github.io/keiba-predictor/sankeyDiagram_horse_pedigree_num_horses_795_generation_5_2018y_2019y_G123_num_795.html)  
   
+  
+- 【個別馬】
+  - [【サトノフラッグ(5世代)】](https://ryutoro-galois.github.io/keiba-predictor/sankeyDiagram_horse_pedigree_num_horses_1_generation_5_サトノフラッグ.html)  <br><br>
+
+
 ---
 
 ### 6. その他のGithubPages
