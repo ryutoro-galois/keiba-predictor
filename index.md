@@ -32,7 +32,7 @@
 
       - <font color="Tomato"><b>【This Week】</b></font>
       - [【PredResult_2020y_raceDate_20200320_20200322.html】](https://ryutoro-galois.github.io/keiba-predictor/PredResult_2020y_raceDate_20200320_20200322.html)
-        - { フラワーカップ(GⅢ), 阪神大賞典(GⅡ), スプリングS(GⅡ) } <font color="Tomato"><b>【無観客】</b></font>
+        - { フラワーC(GⅢ), 阪神大賞典(GⅡ), スプリングS(GⅡ) } <font color="Tomato"><b>【無観客】</b></font>
 
       - [【PredResult_2020y_raceDate_20200314_20200315.html】](https://ryutoro-galois.github.io/keiba-predictor/PredResult_2020y_raceDate_20200314_20200315.html)
         - { 阪神スプリングJ(J.GⅡ), 中山牝馬S(GⅢ), <br>ファルコンS(GⅢ), フィリーズレビュー(GⅡ), <br>金鯱賞(GⅡ) } <font color="Tomato"><b>【無観客】</b></font>
