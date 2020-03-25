@@ -5,4 +5,4 @@
 
     - [【Keiba Predict Diaries (pdf)】](https://ryutoro-galois.github.io/keiba-predictor/manual/KeibaPredictDiaries_v1_201911.pdf)<br>
     - [【競馬予測レポートのトリセツ (pdf)】](https://ryutoro-galois.github.io/keiba-predictor/manual/keiba-predictor-tool(KPT)_r2.pdf)<br>
-    - [【競馬予測レポートサンプル (2019年有馬記念; html)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2019y_raceDate_20191214_20191215.html)<br>
+    - [【競馬予測レポートサンプル (2019年有馬記念; html)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2019y_raceDate_20191221_20191222.html)<br>
