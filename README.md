@@ -1,7 +1,7 @@
 ## 【GithubPages:keiba-Predictor】
 
 - 毎週末の競馬予測レポート(中央競馬・重賞レースのみ)を自動生成しています(2019/10~)
-  - [【GithubPages】](https://ryutoro-galois.github.io/keiba-predictor/)
+  - ☞[【GithubPages】](https://ryutoro-galois.github.io/keiba-predictor/)
 
     - [【Keiba Predict Diaries (pdf)】](https://ryutoro-galois.github.io/keiba-predictor/manual/KeibaPredictDiaries_v1_201911.pdf)<br>
     - [【競馬予測レポートのトリセツ (pdf)】](https://ryutoro-galois.github.io/keiba-predictor/manual/keiba-predictor-tool(KPT)_r2.pdf)<br>
