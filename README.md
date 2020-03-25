@@ -10,4 +10,4 @@
     - [【SankyDiagramによる血統の見える化サンプル (html)】](https://ryutoro-galois.github.io/keiba-predictor/sankeyDiagram/sankeyDiagram_horse_pedigree_num_horses_16_generation_5.html)<br>
     
 
-<img src="https://user-images.githubusercontent.com/41958365/77542116-08a9c300-6ee9-11ea-8d5a-8da1d0c197d0.png" width="400">
+    <img src="https://user-images.githubusercontent.com/41958365/77542116-08a9c300-6ee9-11ea-8d5a-8da1d0c197d0.png" width="400">
