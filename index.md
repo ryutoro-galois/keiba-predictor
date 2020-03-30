@@ -29,8 +29,7 @@
     -  **3月**：
       - <font color="Tomato"><b>【This Week】</b></font>
       - [【PredResult_2020y_raceDate_20200328_20200329.html】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200328_20200329.html)
-        - { 日経賞(GⅡ), 毎日杯(GⅢ), <br>高松宮記念(GⅠ), マーチS(GⅢ) } <font color="Tomato"><b>【無観客】</b></font><br>
-<font color="Tomato"><b>※マーチSは降雪の為中止</b><font>
+        - { 日経賞(GⅡ), 毎日杯(GⅢ), <br>高松宮記念(GⅠ), マーチS(GⅢ) } <font color="Tomato"><b>【無観客】</b></font><br><font color="Tomato"><b>※マーチSは降雪の為中止</b><f/ont>
 
       - [【PredResult_2020y_raceDate_20200320_20200322.html】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200320_20200322.html)
         - { フラワーC(GⅢ), 阪神大賞典(GⅡ), スプリングS(GⅡ) } <font color="Tomato"><b>【無観客】</b></font>
