@@ -26,8 +26,12 @@
   
 - **毎週の予測レポート：**
   - **2020年：**
-    -  **3月**：
+    -  **4月**：
       - <font color="Tomato"><b>【This Week】</b></font>
+      - [【PredResult_2020y_raceDate_20200404_20200405.html】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200404_20200405.html)
+      - { ダービー卿チャレンジ(G3), 大阪杯(G1) } <font color="Tomato"><b>【無観客】</b></font> (TBA)
+      
+    -  **3月**：
       - [【PredResult_2020y_raceDate_20200328_20200329.html】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200328_20200329.html)
         - { 日経賞(GⅡ), 毎日杯(GⅢ), <br>高松宮記念(GⅠ), マーチS(GⅢ) } <font color="Tomato"><b>【無観客】</b></font><br><font color="Tomato"><b>※マーチSは降雪の為中止</b></font>
 
