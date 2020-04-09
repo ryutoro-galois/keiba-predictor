@@ -35,7 +35,7 @@
 
       - <font color="limegreen"><b>【This Weekend】</b></font>    
       - [【PredResult_2020y_raceDate_20200411_20200412.html】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200411_20200412.html)
-        - { 阪神牝馬ステークス(G2), <br>ニュージーランドT(G2), 桜花賞(G1) } <font color="Tomato"><b>【無観客】</b></font> (TBA)
+        - { 阪神牝馬ステークス(G2), <br>ニュージーランドT(G2), 桜花賞(G1) } <font color="Tomato"><b>【無観客】</b></font>
 
       - [【PredResult_2020y_raceDate_20200404_20200405.html】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200404_20200405.html)
         - { ダービー卿チャレンジ(G3), 大阪杯(G1) } <font color="Tomato"><b>【無観客】</b></font>
