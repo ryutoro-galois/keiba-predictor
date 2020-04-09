@@ -141,6 +141,10 @@
   - [【5世代(html)】](https://ryutoro-galois.github.io/keiba-predictor/sankeyDiagram/sankeyDiagram_horse_pedigree_num_horses_795_generation_5_2018y_2019y_G123_num_795.html)  
   
   
+- 【個別レース(18頭)】  
+  - [【2020年桜花賞(5世代)】](https://ryutoro-galois.github.io/keiba-predictor/sankeyDiagram/sankeyDiagram_horse_pedigree_num_horses_18_generation_5_2020y_桜花賞_num_18.html)  
+  
+  
 - 【個別馬】
   - [【サトノフラッグ(5世代)】](https://ryutoro-galois.github.io/keiba-predictor/sankeyDiagram/sankeyDiagram_horse_pedigree_num_horses_1_generation_5_サトノフラッグ.html)  <br><br>
 
