@@ -30,10 +30,10 @@
       - [【PredResult_2020y_raceDate_20200425_20200426.html】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200425_20200426.html)
         - { 福島牝馬ステークス(G3), フローラステークス(G2), <br>マイラーズカップ(G2) } <font color="Tomato"><b>【無観客】</b></font> (TBA)
 
+      - <font color="limegreen"><b>【This Weekend】</b></font>
       - [【PredResult_2020y_raceDate_20200418_20200419.html】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200418_20200419.html)
         - { 中山グランドジャンプ(J.G1), アーリントンカップ(G3), <br>皐月賞(G1), アンタレスステークス(G3) } <font color="Tomato"><b>【無観客】</b></font> (TBA)
 
-      - <font color="limegreen"><b>【This Weekend】</b></font>    
       - [【PredResult_2020y_raceDate_20200411_20200412.html】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200411_20200412.html)
         - { 阪神牝馬ステークス(G2), <br>ニュージーランドT(G2), 桜花賞(G1) } <font color="Tomato"><b>【無観客】</b></font>
 
