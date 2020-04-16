@@ -166,7 +166,7 @@
     - [【2020年皐月賞(18頭)(5世代)】](https://ryutoro-galois.github.io/keiba-predictor/sankeyDiagram/sankeyDiagram_horse_pedigree_num_horses_18_generation_5_2020y_皐月賞_num_18.html)
     - [【2020年中山グランドジャンプ(11頭)(5世代)】](https://ryutoro-galois.github.io/keiba-predictor/sankeyDiagram/sankeyDiagram_horse_pedigree_num_horses_11_generation_5_2020y_中山グランドジャンプ_num_11.html)
     - [【2020年アーリントンカップ(12頭)(5世代)】](https://ryutoro-galois.github.io/keiba-predictor/sankeyDiagram/sankeyDiagram_horse_pedigree_num_horses_12_generation_5_2020y_アーリントンカップ_num_12.html)
-    - [【2020年アンタレスステークス(16頭)(5世代)】](https://ryutoro-galois.github.io/keiba-predictor/sankeyDiagram/sankeyDiagram_horse_pedigree_num_horses_1_generation_5_2020y_アンタレスステークス_num_16.html)
+    - [【2020年アンタレスステークス(16頭)(5世代)】](https://ryutoro-galois.github.io/keiba-predictor/sankeyDiagram/sankeyDiagram_horse_pedigree_num_horses_16_generation_5_2020y_アンタレスステークス_num_16.html)
   
 - 【個別馬】
   - [【サトノフラッグ(5世代)】](https://ryutoro-galois.github.io/keiba-predictor/sankeyDiagram/sankeyDiagram_horse_pedigree_num_horses_1_generation_5_サトノフラッグ.html)  <br><br>
