@@ -100,13 +100,24 @@
         - { 中山金杯(GⅢ), 京都金杯(GⅢ)}
       <br><br>
 
-<details>
-<summary>click to open</summary>
 
-- a
-- b
 
-</details>
+    <details>
+    <summary>【xx】(Click to Open)</summary>
+
+    ```
+    - 【xx】：
+       - s
+       
+    - 【xx】
+       - s
+       
+    - 【xx】
+       - s
+    ```
+
+    </details>
+    <br>
 
   
   - **2019年：**
