@@ -99,13 +99,21 @@
       - [【PredResult_2020y_raceDate_20200105_20200105.html】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200105_20200105.html)
         - { 中山金杯(GⅢ), 京都金杯(GⅢ)}
       <br><br>
+
+<details>
+<summary>click to open</summary>
+
+- a
+- b
+
+</details>
+
   
   - **2019年：**
     -  **12月**：
     
 <details>
 <summary>click to open</summary>
-
 
 - [【PredResult_2019y_raceDate_20191228_20191228.html】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2019y_raceDate_20191228_20191228.html)
   - { ホープフルＳ(GⅠ) }
@@ -118,8 +126,7 @@
   
 - [【PredResult_2019y_raceDate_20191207_20191208.html】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2019y_raceDate_20191207_20191208.html)
   - { 中日新聞杯(GⅢ), カペラＳ(GⅢ), 阪神ＪＦ(GⅠ) }
-    
-    
+  
 </details>
     
     -  **11月**：    
