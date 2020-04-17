@@ -102,8 +102,10 @@
   
   - **2019年：**
     -  **12月**：
-      <details>
-      <summary>click to open</summary>
+    
+    <details>
+    <summary>click to open</summary>
+
 
       - [【PredResult_2019y_raceDate_20191228_20191228.html】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2019y_raceDate_20191228_20191228.html)
         - { ホープフルＳ(GⅠ) }
@@ -114,7 +116,7 @@
       - [【PredResult_2019y_raceDate_20191207_20191208.html】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2019y_raceDate_20191207_20191208.html)
         - { 中日新聞杯(GⅢ), カペラＳ(GⅢ), 阪神ＪＦ(GⅠ) }
         
-      </details>
+    </details>
     
     -  **11月**：    
       - [【PredResult_2019y_raceDate_20191123_20191124.html】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2019y_raceDate_20191123_20191124.html)
