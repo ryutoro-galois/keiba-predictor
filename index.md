@@ -102,7 +102,8 @@
   
   - **2019年：**
     -  **12月**：
-      <details><summary>click to open</summary>
+      <details>
+      <summary>click to open</summary>
 
       - [【PredResult_2019y_raceDate_20191228_20191228.html】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2019y_raceDate_20191228_20191228.html)
         - { ホープフルＳ(GⅠ) }
