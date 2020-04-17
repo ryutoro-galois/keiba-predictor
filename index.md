@@ -102,9 +102,7 @@
 
 
 
-    <details>
-    <summary>
-    【z3】(Click to Open)
+    <details><summary>【z4】(Click to Open)
     </summary>
 
     - 【xx】：
@@ -123,9 +121,7 @@
   - **2019年：**
     -  **12月**：
     
-    <details>
-    <summary>
-    【click to open】
+    <details><summary>【click to open】
     </summary>
   
     - [【PredResult_2019y_raceDate_20191228_20191228.html】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2019y_raceDate_20191228_20191228.html)
