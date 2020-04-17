@@ -1,1 +1,4 @@
 theme: jekyll-theme-leap-day
+markdown: kramdown
+kramdown:
+  parse_block_html: true
