@@ -123,8 +123,7 @@
   - **2019年：**
   
   <details>
-    <summary>
-    【12月 (Click to Open)】
+    <summary>【12月 (Click to Open)】
     </summary>
 
   - [【PredResult_2019y_raceDate_20191228_20191228.html】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2019y_raceDate_20191228_20191228.html)
