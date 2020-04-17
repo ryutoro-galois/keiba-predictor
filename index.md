@@ -101,7 +101,6 @@
       <br><br>
   
   - **2019年：**
-
     -  **12月**：
       <details><summary>click to open</summary>
 
