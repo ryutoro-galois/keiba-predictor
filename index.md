@@ -102,7 +102,7 @@
 
 
 
-    <details><summary, markdown="span">【z5】(Click to Open)
+    <details><summary, markdown="span">【z6】(Click to Open)
     </summary>
 
     - 【xx】：
@@ -121,8 +121,7 @@
   - **2019年：**
     -  **12月**：
     
-    <details><summary>【click to open】
-    </summary>
+    <details><summary, markdown="span">【Click to Open】</summary>
   
     - [【PredResult_2019y_raceDate_20191228_20191228.html】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2019y_raceDate_20191228_20191228.html)
       - { ホープフルＳ(GⅠ) }
