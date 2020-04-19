@@ -27,107 +27,107 @@
 - **毎週の予測レポート：**
   - **2020年：**
     -  **5月**：
-      - [【5月第5週(5/31)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200531_20200531.html)
+      - [【第5週(5/31)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200531_20200531.html)
         - { 東京優駿(日本ダービー)(G1), 目黒記念(G2) } <font color="Tomato"><b>【無観客】</b></font> (TBA)
    
-      - [【5月第4週(5/23~24)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200523_20200524.html)
+      - [【第4週(5/23~24)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200523_20200524.html)
         - { 平安ステークス(G3), 優駿牝馬(オークス)(G1) } <font color="Tomato"><b>【無観客】</b></font> (TBA)
 
-      - [【5月第3週(5/16~17)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200516_20200517.html)
+      - [【第3週(5/16~17)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200516_20200517.html)
         - { 京王杯スプリングC(G2), 京都ハイジャンプ(J.G2), <br>ヴィクトリアマイル(G1) } <font color="Tomato"><b>【無観客】</b></font> (TBA)
 
-      - [【5月第2週(5/9~10)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200509_20200510.html)
+      - [【第2週(5/9~10)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200509_20200510.html)
         - { 京都新聞杯(G2), NHKマイルカップ(G1), 新潟大賞典(G3) } <br><font color="Tomato"><b>【無観客】</b></font> (TBA)
 
-      - [【5月第1週(5/2~3)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200502_20200503.html)
+      - [【第1週(5/2~3)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200502_20200503.html)
         - { 青葉賞(G2), 天皇賞(春)(G1) } <font color="Tomato"><b>【無観客】</b></font> (TBA)
 
     -  **4月**：
       - <font color="limegreen"><b>【This Weekend】</b></font>
-      - [【4月第4週(4/25~26)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200425_20200426.html)
+      - [【第4週(4/25~26)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200425_20200426.html)
         - { 福島牝馬ステークス(G3), フローラステークス(G2), <br>マイラーズカップ(G2) } <font color="Tomato"><b>【無観客】</b></font> (TBA)
 
-      - [【4月第3週(4/18~19)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200418_20200419.html)
+      - [【第3週(4/18~19)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200418_20200419.html)
         - { 中山グランドジャンプ(J.G1), アーリントンカップ(G3), <br>皐月賞(G1), アンタレスステークス(G3) } <font color="Tomato"><b>【無観客】</b></font>
 
-      - [【4月第2週(4/11~12)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200411_20200412.html)
+      - [【第2週(4/11~12)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200411_20200412.html)
         - { 阪神牝馬ステークス(G2), <br>ニュージーランドT(G2), 桜花賞(G1) } <font color="Tomato"><b>【無観客】</b></font>
 
-      - [【4月第1週(4/4~5)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200404_20200405.html)
+      - [【第1週(4/4~5)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200404_20200405.html)
         - { ダービー卿チャレンジ(G3), 大阪杯(G1) } <font color="Tomato"><b>【無観客】</b></font>
       
     -  **3月**：
-      - [【3月第5週(3/28~29)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200328_20200329.html)
+      - [【第5週(3/28~29)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200328_20200329.html)
         - { 日経賞(GⅡ), 毎日杯(GⅢ), <br>高松宮記念(GⅠ), マーチS(GⅢ) } <font color="Tomato"><b>【無観客】</b></font><br><font color="Tomato"><b>※マーチSは降雪の為,3/31(火)に順延</b></font>        
 
-      - [【3月第4週(3/20~22)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200320_20200322.html)
+      - [【第4週(3/20~22)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200320_20200322.html)
         - { フラワーC(GⅢ), 阪神大賞典(GⅡ), スプリングS(GⅡ) } <font color="Tomato"><b>【無観客】</b></font>
 
-      - [【3月第3週(3/14~15)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200314_20200315.html)
+      - [【第3週(3/14~15)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200314_20200315.html)
         - { 阪神スプリングJ(J.GⅡ), 中山牝馬S(GⅢ), <br>ファルコンS(GⅢ), フィリーズレビュー(GⅡ), <br>金鯱賞(GⅡ) } <font color="Tomato"><b>【無観客】</b></font>
        
-      - [【3月第2週(3/7~8)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200307_20200308.html)
+      - [【第2週(3/7~8)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200307_20200308.html)
         - { チューリップ賞(GⅡ), オーシャンS(GⅢ), 弥生賞(GⅡ) } <font color="Tomato"><b>【無観客】</b></font>
   
-      - [【3月第1週(3/1)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200301_20200301.html)
+      - [【第1週(3/1)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200301_20200301.html)
         - { 中山記念(GⅡ), 阪急杯(GⅢ) } <font color="Tomato"><b>【無観客】</b></font>
   
     -  **2月**：
-      - [【2月第4週(2/22~23)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200222_20200223.html)
+      - [【第4週(2/22~23)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200222_20200223.html)
         - { ダイヤモンドS(GⅢ)(16-3-2)<font color="Tomato"><b>【万馬券!!】</b></font>, <br>京都牝馬S(GⅢ)(1-6-13), <br>フェブラリーS(GⅠ), 小倉大賞典(GⅢ) } 
 
-      - [【2月第3週(2/15~16)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200215_20200216.html)
+      - [【第3週(2/15~16)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200215_20200216.html)
         - { 共同通信杯(GⅢ), 京都記念(GⅡ), クイーンカップ(GⅢ) } 
         
-      - [【2月第2週(2/9)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200209_20200209.html)
+      - [【第2週(2/9)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200209_20200209.html)
         - { 東京新聞杯(GⅢ), きさらぎ賞(GⅢ) }
     
-      - [【2月第1週(2/2)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200202_20200202.html)
+      - [【第1週(2/2)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200202_20200202.html)
         - { 根岸S(GⅢ), シルクロードS(GⅢ) }
 
 
     -  **1月**：
-      - [【1月第4週(1/26)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200126_20200126.html)
+      - [【第4週(1/26)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200126_20200126.html)
         - { アメリカジョッキーC(GⅡ), 東海S(GⅡ) }
   
-      - [【1月第3週(1/18~19)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200118_20200119.html)
+      - [【第3週(1/18~19)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200118_20200119.html)
         - { 愛知杯(GⅢ), 京成杯(GⅢ), 日経新春杯(GⅡ) }
   
-      - [【1月第2週(1/12~13)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200112_20200113.html)
+      - [【第2週(1/12~13)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200112_20200113.html)
         - { シンザン記念(GⅢ), フェアリーS(GⅢ)}   
   
-      - [【1月第1週(1/5)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200105_20200105.html)
+      - [【第1週(1/5)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200105_20200105.html)
         - { 中山金杯(GⅢ), 京都金杯(GⅢ)}
       <br><br>
 
   - **2019年：**
     -  **12月**：  
-      - [【12月第4週(12/28)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2019y_raceDate_20191228_20191228.html)
+      - [【第4週(12/28)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2019y_raceDate_20191228_20191228.html)
         - { ホープフルＳ(GⅠ) }
         
-      - [【12月第3週(12/21~22)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2019y_raceDate_20191221_20191222.html)
+      - [【第3週(12/21~22)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2019y_raceDate_20191221_20191222.html)
         - { 中山大障害(GⅠ), 阪神Ｃ(GⅡ), 有馬記念(GⅠ) }
         
-      - [【12月第2週(12/14~15)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2019y_raceDate_20191214_20191215.html)
+      - [【第2週(12/14~15)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2019y_raceDate_20191214_20191215.html)
         - { ターコイズS(GⅢ), 朝日フューチュリティ(GⅠ) }
         
-      - [【12月第1週(12/7~8)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2019y_raceDate_20191207_20191208.html)
+      - [【第1週(12/7~8)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2019y_raceDate_20191207_20191208.html)
         - { 中日新聞杯(GⅢ), カペラＳ(GⅢ), 阪神ＪＦ(GⅠ) }
     
     -  **11月**：    
-      - [【11月第4週(11/23~24)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2019y_raceDate_20191123_20191124.html)
+      - [【第4週(11/23~24)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2019y_raceDate_20191123_20191124.html)
         - { ステイヤーズＳ(GⅡ), チャレンジC(GⅢ), チャンピオンズC(GⅠ) }
-      - [【11月第3週(11/16~17)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2019y_raceDate_20191116_20191117.html)
+      - [【第3週(11/16~17)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2019y_raceDate_20191116_20191117.html)
         - { 東スポ杯２歳Ｓ(GⅢ), マイルＣＳ(GⅠ) }
-      - [【11月第2週(11/9~10)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2019y_raceDate_20191109_20191110.html)
+      - [【第2週(11/9~10)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2019y_raceDate_20191109_20191110.html)
         - { 武蔵野Ｓ(GⅢ), 京都ＪＳ(GⅢ), <br>デイリー杯２歳Ｓ(GⅡ), エリザベス女王杯(GⅠ), 福島記念(GⅢ) }
-      - [【11月第1週(11/2~3)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2019y_raceDate_20191102_20191103.html)
+      - [【第1週(11/2~3)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2019y_raceDate_20191102_20191103.html)
         - { 京王杯２歳Ｓ(GⅡ), ファンタジーＳ(GⅢ), <br>アルゼンチン共和国杯(GⅡ), みやこＳ(GⅢ) }
 
     -  **10月**：
-      - [【10月第4週(10/26~27)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2019y_raceDate_20191026_20191027.html)
+      - [【第4週(10/26~27)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2019y_raceDate_20191026_20191027.html)
         - { アルテミスS(GⅢ), スワンＳ(GⅡ), 天皇賞（秋）(GⅠ) }
-      - [【10月第3週(10/19~20)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2019y_raceDate_20191019_20191020.html)
+      - [【第3週(10/19~20)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2019y_raceDate_20191019_20191020.html)
         - { 富士Ｓ(GⅢ), 菊花賞(GⅠ) }
 
 ### **3. 競馬アドホック分析**
