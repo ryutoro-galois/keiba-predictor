@@ -73,16 +73,16 @@
         - { 中山記念(GⅡ), 阪急杯(GⅢ) } <font color="Tomato"><b>【無観客】</b></font>
   
     -  **2月**：
-      - [【PredResult_2020y_raceDate_2020022_20200223.html】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200222_20200223.html)
+      - [【2月第4週(2/22~23)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200222_20200223.html)
         - { ダイヤモンドS(GⅢ)(16-3-2)<font color="Tomato"><b>【万馬券!!】</b></font>, <br>京都牝馬S(GⅢ)(1-6-13), <br>フェブラリーS(GⅠ), 小倉大賞典(GⅢ) } 
 
-      - [【PredResult_2020y_raceDate_20200215_20200216.html】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200215_20200216.html)
+      - [【2月第3週(2/15~16)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200215_20200216.html)
         - { 共同通信杯(GⅢ), 京都記念(GⅡ), クイーンカップ(GⅢ) } 
         
-      - [【PredResult_2020y_raceDate_20200209_20200209.html】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200209_20200209.html)
+      - [【2月第2週(2/9)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200209_20200209.html)
         - { 東京新聞杯(GⅢ), きさらぎ賞(GⅢ) }
     
-      - [【PredResult_2020y_raceDate_20200202_20200202.html】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200202_20200202.html)
+      - [【2月第1週(2/2)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200202_20200202.html)
         - { 根岸S(GⅢ), シルクロードS(GⅢ) }
 
 
