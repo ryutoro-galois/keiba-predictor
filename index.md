@@ -170,6 +170,11 @@
     - [【2020年アーリントンカップ(12頭)(5世代)】](https://ryutoro-galois.github.io/keiba-predictor/sankeyDiagram/sankeyDiagram_horse_pedigree_num_horses_12_generation_5_2020y_アーリントンカップ_num_12.html)
     - [【2020年アンタレスステークス(16頭)(5世代)】](https://ryutoro-galois.github.io/keiba-predictor/sankeyDiagram/sankeyDiagram_horse_pedigree_num_horses_16_generation_5_2020y_アンタレスステークス_num_16.html)
   
+  - 2020/4/25-26:
+    - [【2020年福島牝馬ステークス(16頭)(5世代)】](https://ryutoro-galois.github.io/keiba-predictor/sankeyDiagram/sankeyDiagram_horse_pedigree_num_horses_16_generation_5_2020y_福島牝馬ステークス_num_16.html.html)
+    - [【2020年フローラステークス(17頭)(5世代)】](https://ryutoro-galois.github.io/keiba-predictor/sankeyDiagram/sankeyDiagram_horse_pedigree_num_horses_17_generation_5_2020y_フローラステークス_num_17.html)
+    - [【2020年マイラーズカップ(12頭)(5世代)】](https://ryutoro-galois.github.io/keiba-predictor/sankeyDiagram/sankeyDiagram_horse_pedigree_num_horses_12_generation_5_2020y_マイラーズカップ_num_12.html)
+  
 - 【個別馬】
   - [【サトノフラッグ(5世代)】](https://ryutoro-galois.github.io/keiba-predictor/sankeyDiagram/sankeyDiagram_horse_pedigree_num_horses_1_generation_5_サトノフラッグ.html)  <br><br>
 
