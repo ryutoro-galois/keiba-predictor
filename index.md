@@ -39,11 +39,11 @@
       - [【第2週(5/9~10)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200509_20200510.html)
         - { 京都新聞杯(G2), NHKマイルカップ(G1), 新潟大賞典(G3) } <br><font color="Tomato"><b>【無観客】</b></font> (TBA)
 
+      - <font color="limegreen"><b>【This Weekend】</b></font>
       - [【第1週(5/2~3)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200502_20200503.html)
         - { 青葉賞(G2), 天皇賞(春)(G1) } <font color="Tomato"><b>【無観客】</b></font> (TBA)
 
     -  **4月**：
-      - <font color="limegreen"><b>【This Weekend】</b></font>
       - [【第4週(4/25~26)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200425_20200426.html)
         - { 福島牝馬ステークス(G3), フローラステークス(G2), <br>マイラーズカップ(G2) } <font color="Tomato"><b>【無観客】</b></font>
 
