@@ -41,7 +41,7 @@
 
       - <font color="limegreen"><b>【This Weekend】</b></font>
       - [【第1週(5/2~3)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200502_20200503.html)
-        - { 青葉賞(G2), 天皇賞(春)(G1) } <font color="Tomato"><b>【無観客】</b></font> (TBA)
+        - { 青葉賞(G2), 天皇賞(春)(G1) } <font color="Tomato"><b>【無観客】</b></font>
 
     -  **4月**：
       - [【第4週(4/25~26)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200425_20200426.html)
