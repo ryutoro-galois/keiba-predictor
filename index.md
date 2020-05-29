@@ -29,7 +29,7 @@
     -  **5月**：
       - <font color="limegreen"><b>【This Weekend】</b></font>
       - [【第5週(5/31)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200531_20200531.html)
-        - { 東京優駿(日本ダービー)(G1), 目黒記念(G2) } <font color="Tomato"><b>【無観客】</b></font> (TBA)
+        - { 東京優駿(日本ダービー)(G1), 目黒記念(G2) } <font color="Tomato"><b>【無観客】</b></font>
    
       - [【第4週(5/23~24)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200523_20200524.html)
         - { 平安ステークス(G3), 優駿牝馬(オークス)(G1) } <font color="Tomato"><b>【無観客】</b></font>
