@@ -26,8 +26,21 @@
   
 - **毎週の予測レポート：**
   - **2020年：**
-    -  **5月**：
+    -  **6月**：
+      - [【第4週(6/)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200628_20200628.html)
+        - { 宝塚記念(G1) } <font color="Tomato"><b>【無観客】</b></font>  
+    
+      - [【第3週(6/)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200621_20200621.html)
+        - { 函館スプリントS(G3), ユニコーンS(G3), 東京JS(J.G3) } <font color="Tomato"><b>【無観客】</b></font>  
+    
+      - [【第2週(6/)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200614_20200614.html)
+        - { エプソムカップ(G3), マーメイドステークス(G3) } <font color="Tomato"><b>【無観客】</b></font>  
+    
       - <font color="limegreen"><b>【This Weekend】</b></font>
+      - [【第1週(6/)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200606_20200607.html)
+        - { 鳴尾記念(G3), 安田記念(G1) } <font color="Tomato"><b>【無観客】</b></font>  
+  
+    -  **5月**：
       - [【第5週(5/31)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200531_20200531.html)
         - { 東京優駿(日本ダービー)(G1), 目黒記念(G2) } <font color="Tomato"><b>【無観客】</b></font>
    
