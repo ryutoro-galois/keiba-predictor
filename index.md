@@ -38,7 +38,7 @@
     
       - <font color="limegreen"><b>【This Weekend】</b></font>
       - [【第1週(6/6~7)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200606_20200607.html)
-        - { 鳴尾記念(G3), 安田記念(G1) } <font color="Tomato"><b>【無観客】</b></font>  (TBA) 
+        - { 鳴尾記念(G3), 安田記念(G1) } <font color="Tomato"><b>【無観客】</b></font> 
   
     -  **5月**：
       - [【第5週(5/31)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200531_20200531.html)
