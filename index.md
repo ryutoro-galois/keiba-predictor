@@ -11,6 +11,10 @@
  
 --- 
 
+### **References**
+- [【JRA】](http://www.jra.go.jp/)
+- [【netkeiba.com (race info)】](https://race.netkeiba.com/top/?rf=navi)<br><br>
+
 
 ### **1. 競馬予測の進捗**
 - [【Keiba Predict Diaries (2019/11作成, pdf)】](https://ryutoro-galois.github.io/keiba-predictor/manual/KeibaPredictDiaries_v1_201911.pdf)
