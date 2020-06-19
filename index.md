@@ -36,7 +36,7 @@
     
       - <font color="limegreen"><b>【This Weekend】</b></font>
       - [【第3週(6/21)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200621_20200621.html)
-        - { 函館スプリントS(G3), ユニコーンS(G3), 東京JS(J.G3) } <font color="Tomato"><b>【無観客】</b></font>  (TBA)  
+        - { 函館スプリントS(G3), ユニコーンS(G3), 東京JS(J.G3) } <font color="Tomato"><b>【無観客】</b></font> 
     
       - [【第2週(6/14)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200614_20200614.html)
         - { エプソムカップ(G3), マーメイドステークス(G3) } <font color="Tomato"><b>【無観客】</b></font>
