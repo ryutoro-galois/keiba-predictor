@@ -35,13 +35,13 @@
         - { 小倉サマージャンプ(J.G3), アイビスサマーD(G3) } <font color="Tomato"><b>【無観客】</b></font>  (TBA) 
     
       - [【第3週(7/18~19)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200718_20200719.html)
-        - { 函館2歳S(G3), 函館記念(G3), 中京記念(G3) } <font color="Tomato"><b>【無観客】</b></font> 
+        - { 函館2歳S(G3), 函館記念(G3), 中京記念(G3) } <font color="Tomato"><b>【無観客】</b></font> (TBA) 
     
       - [【第2週(7/12)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200712_20200712.html)
-        - { 七夕賞(G3), プロキオンS(G3) } <font color="Tomato"><b>【無観客】</b></font>
+        - { 七夕賞(G3), プロキオンS(G3) } <font color="Tomato"><b>【無観客】</b></font> (TBA) 
     
       - [【第1週(7/5)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200705_20200705.html)
-        - { ラジオNIKKEI賞(G3), CBC賞(G3) } <font color="Tomato"><b>【無観客】</b></font> 
+        - { ラジオNIKKEI賞(G3), CBC賞(G3) } <font color="Tomato"><b>【無観客】</b></font> (TBA) 
   
     -  **6月**：
       - <font color="limegreen"><b>【This Weekend】</b></font>
