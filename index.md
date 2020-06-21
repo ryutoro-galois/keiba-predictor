@@ -31,10 +31,10 @@
 - **毎週の予測レポート：**
   - **2020年：**
     -  **6月**：
+      - <font color="limegreen"><b>【This Weekend】</b></font>
       - [【第4週(6/27~28)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200627_20200628.html)
         - { 東京ジャンプS(J.G3), 宝塚記念(G1) } <font color="Tomato"><b>【無観客】</b></font>  (TBA) 
     
-      - <font color="limegreen"><b>【This Weekend】</b></font>
       - [【第3週(6/21)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200621_20200621.html)
         - { 函館スプリントS(G3), ユニコーンS(G3) } <font color="Tomato"><b>【無観客】</b></font> 
     
