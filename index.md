@@ -40,11 +40,11 @@
       - [【第2週(7/12)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200712_20200712.html)
         - { 七夕賞(G3), プロキオンS(G3) } <font color="Tomato"><b>【無観客】</b></font> (TBA) 
     
+      - <font color="limegreen"><b>【This Weekend】</b></font>
       - [【第1週(7/5)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200705_20200705.html)
         - { ラジオNIKKEI賞(G3), CBC賞(G3) } <font color="Tomato"><b>【無観客】</b></font> (TBA) 
   
     -  **6月**：
-      - <font color="limegreen"><b>【This Weekend】</b></font>
       - [【第4週(6/27~28)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200627_20200628.html)
         - { 東京ジャンプS(J.G3), 宝塚記念(G1) } <font color="Tomato"><b>【無観客】</b></font>
     
