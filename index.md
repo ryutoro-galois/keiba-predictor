@@ -42,7 +42,7 @@
     
       - <font color="limegreen"><b>【This Weekend】</b></font>
       - [【第1週(7/5)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200705_20200705.html)
-        - { ラジオNIKKEI賞(G3), CBC賞(G3) } <font color="Tomato"><b>【無観客】</b></font> (TBA) 
+        - { ラジオNIKKEI賞(G3), CBC賞(G3) } <font color="Tomato"><b>【無観客】</b></font>
   
     -  **6月**：
       - [【第4週(6/27~28)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200627_20200628.html)
