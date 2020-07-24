@@ -45,7 +45,7 @@
     -  **7月**：
       - <font color="limegreen"><b>【This Weekend】</b></font>
       - [【第4週(7/26)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200726_20200726.html)
-        - { アイビスサマーD(G3) } <font color="Tomato"><b>【無観客】</b></font> (TBA)
+        - { アイビスサマーD(G3) } <font color="Tomato"><b>【無観客】</b></font>
     
       - [【第3週(7/18~19)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200718_20200719.html)
         - { 函館2歳S(G3), 函館記念(G3), 中京記念(G3) } <font color="Tomato"><b>【無観客】</b></font>
