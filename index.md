@@ -39,11 +39,11 @@
       - [【第2週(8/9)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200809_20200809.html)
         - { レパードステークス(G3), エルムステークス(G3) } <font color="Tomato"><b>【無観客】</b></font> (TBA)
   
+      - <font color="limegreen"><b>【This Weekend】</b></font>
       - [【第1週(8/2)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200802_20200802.html)
         - { クイーンステークス(G3) } <font color="Tomato"><b>【無観客】</b></font> (TBA)
   
     -  **7月**：
-      - <font color="limegreen"><b>【This Weekend】</b></font>
       - [【第4週(7/26)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200726_20200726.html)
         - { アイビスサマーD(G3) } <font color="Tomato"><b>【無観客】</b></font>
     
