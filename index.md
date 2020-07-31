@@ -41,7 +41,7 @@
   
       - <font color="limegreen"><b>【This Weekend】</b></font>
       - [【第1週(8/2)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200802_20200802.html)
-        - { クイーンステークス(G3) } <font color="Tomato"><b>【無観客】</b></font> (TBA)
+        - { クイーンステークス(G3) } <font color="Tomato"><b>【無観客】</b></font>
   
     -  **7月**：
       - [【第4週(7/26)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200726_20200726.html)
