@@ -36,7 +36,7 @@
         - { オールカマー(GⅡ), 神戸新聞杯(GⅡ) } <font color="Tomato"><b>【無観客】</b></font> (TBA)
 
       - [【第3週(9/19~21)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200802_20200802.html)
-        - { 阪神ジャンプステークス(J.G3), ローズステークス(GⅡ),<br>セントライト記念(GⅡ) } <font color="Tomato"><b>【無観客】</b></font> (TBA)
+        - { 阪神ジャンプステークス(J.GⅢ), ローズステークス(GⅡ),<br>セントライト記念(GⅡ) } <font color="Tomato"><b>【無観客】</b></font> (TBA)
 
       - [【第2週(9/12~13)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200802_20200802.html)
         - { 紫苑ステークス(GⅢ), セントウルステークス(GⅡ),<br>京成杯オータムハンデ(GⅢ) } <font color="Tomato"><b>【無観客】</b></font> (TBA)
@@ -46,7 +46,7 @@
   
     -  **8月**：
       - [【第5週(8/29~30)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200829_20200830.html)
-        - { 小倉サマージャンプ(J.G3), 新潟ジャンプステークス(J.G3), <br>キーンランドカップ(GⅢ), 新潟2歳ステークス(GⅢ) } <font color="Tomato"><b>【無観客】</b></font> (TBA)
+        - { 小倉サマージャンプ(J.GⅢ), 新潟ジャンプステークス(J.GⅢ), <br>キーンランドカップ(GⅢ), 新潟2歳ステークス(GⅢ) } <font color="Tomato"><b>【無観客】</b></font> (TBA)
         
       - <font color="limegreen"><b>【This Weekend】</b></font>  
       - [【第4週(8/23)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200823_20200823.html)
@@ -76,7 +76,7 @@
   
     -  **6月**：
       - [【第4週(6/27~28)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200627_20200628.html)
-        - { 東京ジャンプS(J.G3), 宝塚記念(GⅠ) } <font color="Tomato"><b>【無観客】</b></font>
+        - { 東京ジャンプS(J.GⅢ), 宝塚記念(GⅠ) } <font color="Tomato"><b>【無観客】</b></font>
     
       - [【第3週(6/21)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200621_20200621.html)
         - { 函館スプリントS(GⅢ), ユニコーンS(GⅢ) } <font color="Tomato"><b>【無観客】</b></font> 
@@ -95,7 +95,7 @@
         - { 平安ステークス(GⅢ), 優駿牝馬(オークス)(GⅠ) } <font color="Tomato"><b>【無観客】</b></font>
 
       - [【第3週(5/16~17)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200516_20200517.html)
-        - { 京王杯スプリングC(GⅡ), 京都ハイジャンプ(J.G2), <br>ヴィクトリアマイル(GⅠ) } <font color="Tomato"><b>【無観客】</b></font>
+        - { 京王杯スプリングC(GⅡ), 京都ハイジャンプ(J.GⅡ), <br>ヴィクトリアマイル(GⅠ) } <font color="Tomato"><b>【無観客】</b></font>
 
       - [【第2週(5/9~10)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200509_20200510.html)
         - { 京都新聞杯(GⅡ), NHKマイルカップ(GⅠ), 新潟大賞典(GⅢ) } <br><font color="Tomato"><b>【無観客】</b></font>
@@ -108,7 +108,7 @@
         - { 福島牝馬ステークス(GⅢ), フローラステークス(GⅡ), <br>マイラーズカップ(GⅡ) } <font color="Tomato"><b>【無観客】</b></font>
 
       - [【第3週(4/18~19)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200418_20200419.html)
-        - { 中山グランドジャンプ(J.G1), アーリントンカップ(GⅢ), <br>皐月賞(GⅠ), アンタレスステークス(GⅢ) } <font color="Tomato"><b>【無観客】</b></font>
+        - { 中山グランドジャンプ(J.GⅠ), アーリントンカップ(GⅢ), <br>皐月賞(GⅠ), アンタレスステークス(GⅢ) } <font color="Tomato"><b>【無観客】</b></font>
 
       - [【第2週(4/11~12)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200411_20200412.html)
         - { 阪神牝馬ステークス(GⅡ), <br>ニュージーランドT(GⅡ), 桜花賞(GⅠ) } <font color="Tomato"><b>【無観客】</b></font>
