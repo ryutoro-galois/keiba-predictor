@@ -33,88 +33,88 @@
   
     -  **9月**：
       - [【第4週(9/27)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200802_20200802.html)
-        - { オールカマー(G2), 神戸新聞杯(G2) } <font color="Tomato"><b>【無観客】</b></font> (TBA)
+        - { オールカマー(GⅡ), 神戸新聞杯(GⅡ) } <font color="Tomato"><b>【無観客】</b></font> (TBA)
 
       - [【第3週(9/19~21)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200802_20200802.html)
-        - { 阪神ジャンプステークス(J.G3), ローズステークス(G2),<br>セントライト記念(G2) } <font color="Tomato"><b>【無観客】</b></font> (TBA)
+        - { 阪神ジャンプステークス(J.G3), ローズステークス(GⅡ),<br>セントライト記念(GⅡ) } <font color="Tomato"><b>【無観客】</b></font> (TBA)
 
       - [【第2週(9/12~13)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200802_20200802.html)
-        - { 紫苑ステークス(G3), セントウルステークス(G2),<br>京成杯オータムハンデ(G3) } <font color="Tomato"><b>【無観客】</b></font> (TBA)
+        - { 紫苑ステークス(GⅢ), セントウルステークス(GⅡ),<br>京成杯オータムハンデ(GⅢ) } <font color="Tomato"><b>【無観客】</b></font> (TBA)
 
       - [【第1週(9/5~6)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200905_20200906.html)
-        - { 札幌2歳ステークス(G3), 新潟記念(G3), <br>小倉2歳ステークス(G3) } <font color="Tomato"><b>【無観客】</b></font> (TBA)  
+        - { 札幌2歳ステークス(GⅢ), 新潟記念(GⅢ), <br>小倉2歳ステークス(GⅢ) } <font color="Tomato"><b>【無観客】</b></font> (TBA)  
   
     -  **8月**：
       - [【第5週(8/29~30)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200829_20200830.html)
-        - { 小倉サマージャンプ(J.G3), 新潟ジャンプステークス(J.G3), <br>キーンランドカップ(G3), 新潟2歳ステークス(G3) } <font color="Tomato"><b>【無観客】</b></font> (TBA)
+        - { 小倉サマージャンプ(J.G3), 新潟ジャンプステークス(J.G3), <br>キーンランドカップ(GⅢ), 新潟2歳ステークス(GⅢ) } <font color="Tomato"><b>【無観客】</b></font> (TBA)
         
       - <font color="limegreen"><b>【This Weekend】</b></font>  
       - [【第4週(8/23)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200823_20200823.html)
-        - { 札幌記念(G2), 北九州記念(G3) } <font color="Tomato"><b>【無観客】</b></font> (TBA)
+        - { 札幌記念(GⅡ), 北九州記念(GⅢ) } <font color="Tomato"><b>【無観客】</b></font> (TBA)
       
       - [【第3週(8/16)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200816_20200816.html)
-        - { 小倉記念(G3), 関屋記念(G3) } <font color="Tomato"><b>【無観客】</b></font>
+        - { 小倉記念(GⅢ), 関屋記念(GⅢ) } <font color="Tomato"><b>【無観客】</b></font>
   
       - [【第2週(8/9)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200809_20200809.html)
-        - { レパードステークス(G3), エルムステークス(G3) } <font color="Tomato"><b>【無観客】</b></font>
+        - { レパードステークス(GⅢ), エルムステークス(GⅢ) } <font color="Tomato"><b>【無観客】</b></font>
   
       - [【第1週(8/2)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200802_20200802.html)
-        - { クイーンステークス(G3) } <font color="Tomato"><b>【無観客】</b></font>
+        - { クイーンステークス(GⅢ) } <font color="Tomato"><b>【無観客】</b></font>
   
     -  **7月**：
       - [【第4週(7/26)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200726_20200726.html)
-        - { アイビスサマーD(G3) } <font color="Tomato"><b>【無観客】</b></font>
+        - { アイビスサマーD(GⅢ) } <font color="Tomato"><b>【無観客】</b></font>
     
       - [【第3週(7/18~19)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200718_20200719.html)
-        - { 函館2歳S(G3), 函館記念(G3), 中京記念(G3) } <font color="Tomato"><b>【無観客】</b></font>
+        - { 函館2歳S(GⅢ), 函館記念(GⅢ), 中京記念(GⅢ) } <font color="Tomato"><b>【無観客】</b></font>
     
       - [【第2週(7/12)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200712_20200712.html)
-        - { 七夕賞(G3), プロキオンS(G3) } <font color="Tomato"><b>【無観客】</b></font>
+        - { 七夕賞(GⅢ), プロキオンS(GⅢ) } <font color="Tomato"><b>【無観客】</b></font>
     
       - [【第1週(7/5)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200705_20200705.html)
-        - { ラジオNIKKEI賞(G3), CBC賞(G3) } <font color="Tomato"><b>【無観客】</b></font>
+        - { ラジオNIKKEI賞(GⅢ), CBC賞(GⅢ) } <font color="Tomato"><b>【無観客】</b></font>
   
     -  **6月**：
       - [【第4週(6/27~28)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200627_20200628.html)
-        - { 東京ジャンプS(J.G3), 宝塚記念(G1) } <font color="Tomato"><b>【無観客】</b></font>
+        - { 東京ジャンプS(J.G3), 宝塚記念(GⅠ) } <font color="Tomato"><b>【無観客】</b></font>
     
       - [【第3週(6/21)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200621_20200621.html)
-        - { 函館スプリントS(G3), ユニコーンS(G3) } <font color="Tomato"><b>【無観客】</b></font> 
+        - { 函館スプリントS(GⅢ), ユニコーンS(GⅢ) } <font color="Tomato"><b>【無観客】</b></font> 
     
       - [【第2週(6/14)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200614_20200614.html)
-        - { エプソムカップ(G3), マーメイドステークス(G3) } <font color="Tomato"><b>【無観客】</b></font>
+        - { エプソムカップ(GⅢ), マーメイドステークス(GⅢ) } <font color="Tomato"><b>【無観客】</b></font>
     
       - [【第1週(6/6~7)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200606_20200607.html)
-        - { 鳴尾記念(G3), 安田記念(G1) } <font color="Tomato"><b>【無観客】</b></font> 
+        - { 鳴尾記念(GⅢ), 安田記念(GⅠ) } <font color="Tomato"><b>【無観客】</b></font> 
   
     -  **5月**：
       - [【第5週(5/31)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200531_20200531.html)
-        - { 東京優駿(日本ダービー)(G1), 目黒記念(G2) } <font color="Tomato"><b>【無観客】</b></font>
+        - { 東京優駿(日本ダービー)(GⅠ), 目黒記念(GⅡ) } <font color="Tomato"><b>【無観客】</b></font>
    
       - [【第4週(5/23~24)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200523_20200524.html)
-        - { 平安ステークス(G3), 優駿牝馬(オークス)(G1) } <font color="Tomato"><b>【無観客】</b></font>
+        - { 平安ステークス(GⅢ), 優駿牝馬(オークス)(GⅠ) } <font color="Tomato"><b>【無観客】</b></font>
 
       - [【第3週(5/16~17)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200516_20200517.html)
-        - { 京王杯スプリングC(G2), 京都ハイジャンプ(J.G2), <br>ヴィクトリアマイル(G1) } <font color="Tomato"><b>【無観客】</b></font>
+        - { 京王杯スプリングC(GⅡ), 京都ハイジャンプ(J.G2), <br>ヴィクトリアマイル(GⅠ) } <font color="Tomato"><b>【無観客】</b></font>
 
       - [【第2週(5/9~10)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200509_20200510.html)
-        - { 京都新聞杯(G2), NHKマイルカップ(G1), 新潟大賞典(G3) } <br><font color="Tomato"><b>【無観客】</b></font>
+        - { 京都新聞杯(GⅡ), NHKマイルカップ(GⅠ), 新潟大賞典(GⅢ) } <br><font color="Tomato"><b>【無観客】</b></font>
 
       - [【第1週(5/2~3)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200502_20200503.html)
-        - { 青葉賞(G2), 天皇賞(春)(G1) } <font color="Tomato"><b>【無観客】</b></font>
+        - { 青葉賞(GⅡ), 天皇賞(春)(GⅠ) } <font color="Tomato"><b>【無観客】</b></font>
 
     -  **4月**：
       - [【第4週(4/25~26)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200425_20200426.html)
-        - { 福島牝馬ステークス(G3), フローラステークス(G2), <br>マイラーズカップ(G2) } <font color="Tomato"><b>【無観客】</b></font>
+        - { 福島牝馬ステークス(GⅢ), フローラステークス(GⅡ), <br>マイラーズカップ(GⅡ) } <font color="Tomato"><b>【無観客】</b></font>
 
       - [【第3週(4/18~19)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200418_20200419.html)
-        - { 中山グランドジャンプ(J.G1), アーリントンカップ(G3), <br>皐月賞(G1), アンタレスステークス(G3) } <font color="Tomato"><b>【無観客】</b></font>
+        - { 中山グランドジャンプ(J.G1), アーリントンカップ(GⅢ), <br>皐月賞(GⅠ), アンタレスステークス(GⅢ) } <font color="Tomato"><b>【無観客】</b></font>
 
       - [【第2週(4/11~12)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200411_20200412.html)
-        - { 阪神牝馬ステークス(G2), <br>ニュージーランドT(G2), 桜花賞(G1) } <font color="Tomato"><b>【無観客】</b></font>
+        - { 阪神牝馬ステークス(GⅡ), <br>ニュージーランドT(GⅡ), 桜花賞(GⅠ) } <font color="Tomato"><b>【無観客】</b></font>
 
       - [【第1週(4/4~5)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200404_20200405.html)
-        - { ダービー卿チャレンジ(G3), 大阪杯(G1) } <font color="Tomato"><b>【無観客】</b></font>
+        - { ダービー卿チャレンジ(GⅢ), 大阪杯(GⅠ) } <font color="Tomato"><b>【無観客】</b></font>
       
     -  **3月**：
       - [【第5週(3/28~29)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200328_20200329.html)
