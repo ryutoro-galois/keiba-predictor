@@ -30,11 +30,15 @@
   
 - **毎週の予測レポート (<font color="red"><b>毎週金曜の11時頃から配信されます (hourly更新)</b></font>)**
   - **2020年：**
+  
     -  **8月**：
-      - <font color="limegreen"><b>【This Weekend】</b></font>
-      - [【第4週(8/29~30)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200829_20200830.html)
+      - [【第5週(8/29~30)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200829_20200830.html)
         - { 小倉サマージャンプ(J.G3), 新潟ジャンプステークス(J.G3), <br>キーンランドカップ(G3), 新潟2歳ステークス(G3) } <font color="Tomato"><b>【無観客】</b></font> (TBA)
         
+      - <font color="limegreen"><b>【This Weekend】</b></font>  
+      - [【第4週(8/23)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200823_20200823.html)
+        - { 札幌記念(G2), 北九州記念(G3) } <font color="Tomato"><b>【無観客】</b></font> (TBA)
+      
       - [【第3週(8/16)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200816_20200816.html)
         - { 小倉記念(G3), 関屋記念(G3) } <font color="Tomato"><b>【無観客】</b></font>
   
