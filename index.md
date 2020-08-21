@@ -50,7 +50,7 @@
         
       - <font color="limegreen"><b>【This Weekend】</b></font>  
       - [【第4週(8/23)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200823_20200823.html)
-        - { 札幌記念(GⅡ), 北九州記念(GⅢ) } <font color="Tomato"><b>【無観客】</b></font> (TBA)
+        - { 札幌記念(GⅡ), 北九州記念(GⅢ) } <font color="Tomato"><b>【無観客】</b></font> 
       
       - [【第3週(8/16)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200816_20200816.html)
         - { 小倉記念(GⅢ), 関屋記念(GⅢ) } <font color="Tomato"><b>【無観客】</b></font>
