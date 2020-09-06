@@ -38,10 +38,10 @@
       - [【第3週(9/19~21)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200802_20200802.html)
         - { 阪神ジャンプステークス(J.GⅢ), ローズステークス(GⅡ),<br>セントライト記念(GⅡ) } <font color="Tomato"><b>【無観客】</b></font> (TBA)
 
+      - <font color="limegreen"><b>【This Weekend】</b></font> 
       - [【第2週(9/12~13)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200802_20200802.html)
         - { 紫苑ステークス(GⅢ), セントウルステークス(GⅡ),<br>京成杯オータムハンデ(GⅢ) } <font color="Tomato"><b>【無観客】</b></font> (TBA)
 
-      - <font color="limegreen"><b>【This Weekend】</b></font>  
       - [【第1週(9/5~6)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200905_20200906.html)
         - { 札幌2歳ステークス(GⅢ), 新潟記念(GⅢ), <br>小倉2歳ステークス(GⅢ) } <font color="Tomato"><b>【無観客】</b></font>
   
