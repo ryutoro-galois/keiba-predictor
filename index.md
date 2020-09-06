@@ -43,7 +43,7 @@
 
       - <font color="limegreen"><b>【This Weekend】</b></font>  
       - [【第1週(9/5~6)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200905_20200906.html)
-        - { 札幌2歳ステークス(GⅢ), 新潟記念(GⅢ), <br>小倉2歳ステークス(GⅢ) } <font color="Tomato"><b>【無観客】</b></font> (TBA)  
+        - { 札幌2歳ステークス(GⅢ), 新潟記念(GⅢ), <br>小倉2歳ステークス(GⅢ) } <font color="Tomato"><b>【無観客】</b></font>
   
     -  **8月**：
       - [【第5週(8/29~30)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200829_20200830.html)
