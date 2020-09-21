@@ -32,10 +32,10 @@
   - **2020年：**
   
     -  **9月**：
+      - <font color="limegreen"><b>【This Weekend】</b></font> 
       - [【第4週(9/27)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200927_20200927.html)
         - { オールカマー(GⅡ), 神戸新聞杯(GⅡ) } <font color="Tomato"><b>【無観客】</b></font> (TBA)
 
-      - <font color="limegreen"><b>【This Weekend】</b></font> 
       - [【第3週(9/19~21)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20200919_20200921.html)
         - { 阪神ジャンプステークス(J.GⅢ), ローズステークス(GⅡ),<br>セントライト記念(GⅡ) } <font color="Tomato"><b>【無観客】</b></font>
 
