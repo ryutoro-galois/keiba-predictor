@@ -39,12 +39,12 @@
         - { 富士ステークス(GⅢ), 菊花賞(GⅠ) } <font color="Tomato"><b>【無観客】</b></font>
       
       - [【第3週(10/17~18)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20201017_20201018.html)
-      
         - { 府中牝馬S(GⅡ), 秋華賞(GⅠ), 東京ハイジャンプ(J.GⅡ) } <font color="Tomato"><b>【無観客】</b></font>
+        
+      - <font color="limegreen"><b>【This Weekend】</b></font>    
       - [【第2週(10/10~11)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20201010_20201011.html)
         - { サウジアラビアロイヤルカップ(GⅢ), <br>毎日王冠(GⅡ), 京都大賞典(GⅡ) } <font color="Tomato"><b>【無観客】</b></font>
       
-      - <font color="limegreen"><b>【This Weekend】</b></font>   
       - [【第1週(10/3~4)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20201003_20201004.html)
         - { シリウスS(GⅢ), スプリンターズS(GⅠ) } <font color="Tomato"><b>【無観客】</b></font>
       
