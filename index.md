@@ -31,11 +31,11 @@
 - **毎週の予測レポート (<font color="red"><b>毎週金曜の11時頃から配信されます (hourly更新)</b></font>)**
   - **2020年：**
     -  **11月**：
+      - <font color="limegreen"><b>【This Weekend】</b></font> 
       - [【第1週(10/31~11/1)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20201031_20201101.html)
         - { スワンS(GⅡ), アルテミスS(GⅢ), 天皇賞(秋)(GⅠ) } <font color="Tomato"><b>【有観客】</b></font>
   
     -  **10月**：
-      - <font color="limegreen"><b>【This Weekend】</b></font>  
       - [【第4週(10/24~25)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20201024_20201025.html)
         - { 富士ステークス(GⅢ), 菊花賞(GⅠ) } <font color="Tomato"><b>【有観客】</b></font>
       
