@@ -38,7 +38,7 @@
         - { マイルチャンピオンシップ(GⅠ), 東京スポーツ杯2歳ステークス(GⅢ) } <font color="Tomato"><b>【有観客】</b></font> (TBA)
 
       - [【第3週(11/14~15)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20201114_20201115.html)
-        - { デイリー杯2歳S(GⅡ), 武蔵野S(GⅢ), 京都JS(J.GⅢ), エリザベス女王杯(G1),<br>福島記念(GⅢ) } <font color="Tomato"><b>【有観客】</b></font> (TBA)
+        - { デイリー杯2歳S(GⅡ), 武蔵野S(GⅢ), 京都JS(J.GⅢ), <br>エリザベス女王杯(G1),福島記念(GⅢ) } <font color="Tomato"><b>【有観客】</b></font> (TBA)
 
       - [【第2週(11/7~8)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20201107_20201108.html)
         - { 京王杯2歳S(GⅡ), ファンタジーS(GⅢ),<br>アルゼンチン共和国杯(GⅡ), みやこS(GⅢ) } <font color="Tomato"><b>【有観客】</b></font> (TBA)
