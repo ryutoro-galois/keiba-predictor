@@ -31,6 +31,21 @@
 - **毎週の予測レポート (<font color="red"><b>毎週金曜の11時頃から配信されます (hourly更新)</b></font>)**
   - **2020年：**
     -  **11月**：
+      - [【第5週(11/28~29)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20201128_20201129.html)
+        - { ラジオN杯京都2歳S(GⅢ), ジャパンカップ(GⅠ), 京阪杯(GⅢ) } <font color="Tomato"><b>【有観客】</b></font> (TBA)
+
+      - [【第4週(11/22~23)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20201122_20201123.html)
+        - { マイルチャンピオンシップ(GⅠ), 東京スポーツ杯2歳ステークス(GⅢ) } <font color="Tomato"><b>【有観客】</b></font> (TBA)
+
+      - [【第3週(11/14~15)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20201114_20201115.html)
+        - { デイリー杯2歳S(GⅡ), 武蔵野S(GⅢ), 京都JS(J.GⅢ), エリザベス女王杯(G1),<br>福島記念(GⅢ) } <font color="Tomato"><b>【有観客】</b></font> (TBA)
+
+      - [【第2週(11/7~8)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20201107_20201108.html)
+        - { 京王杯2歳S(GⅡ), ファンタジーS(GⅢ),<br>アルゼンチン共和国杯(GⅡ), みやこS(GⅢ) } <font color="Tomato"><b>【有観客】</b></font> (TBA)
+
+      - [【第1週(11/4)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20201104_20201104.html)
+        - { JBCスプリント(GⅠ), JBCクラシック(GⅠ), BCレディスクラシ(GⅠ) } <font color="Tomato"><b>【有観客】</b></font> (TBA)
+
       - <font color="limegreen"><b>【This Weekend】</b></font> 
       - [【第1週(10/31~11/1)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20201031_20201101.html)
         - { スワンS(GⅡ), アルテミスS(GⅢ), 天皇賞(秋)(GⅠ) } <font color="Tomato"><b>【有観客】</b></font>
