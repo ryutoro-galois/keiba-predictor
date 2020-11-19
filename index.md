@@ -34,10 +34,10 @@
       - [【第5週(11/28~29)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20201128_20201129.html)
         - { ラジオN杯京都2歳S(GⅢ), ジャパンカップ(GⅠ), <br>京阪杯(GⅢ) } <font color="Tomato"><b>【有観客】</b></font> (TBA)
 
-      - [【第4週(11/22~23)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20201122_20201123.html)
-        - { マイルチャンピオンシップ(GⅠ), 東京スポーツ杯2歳ステークス(GⅢ) } <font color="Tomato"><b>【有観客】</b></font> (TBA)
-
       - <font color="limegreen"><b>【This Weekend】</b></font> 
+      - [【第4週(11/22~23)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20201122_20201123.html)
+        - { マイルチャンピオンシップ(GⅠ), 東京スポーツ杯2歳ステークス(GⅢ) } <font color="Tomato"><b>【有観客】</b></font>
+
       - [【第3週(11/14~15)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20201114_20201115.html)
         - { [デイリー杯2歳S(GⅡ)](https://race.netkeiba.com/race/shutuba.html?race_id=202009050311&rf=race_list), [武蔵野S(GⅢ)](https://race.netkeiba.com/race/shutuba.html?race_id=202005050311&rf=race_list), [京都JS(J.GⅢ)](https://race.netkeiba.com/race/shutuba.html?race_id=202009050308&rf=race_list), <br>[エリザベス女王杯(GⅠ)](https://race.netkeiba.com/race/shutuba.html?race_id=202009050411&rf=race_list),[福島記念(GⅢ)](https://race.netkeiba.com/race/shutuba.html?race_id=202003030611&rf=race_list) } <font color="Tomato"><b>【有観客】</b></font>
 
