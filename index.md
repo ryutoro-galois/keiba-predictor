@@ -248,6 +248,9 @@
   
   
 - 【個別レース】  
+  - 2020/11/29:
+    - [【2020年ジャパンカップ(17頭)(5世代)】](https://ryutoro-galois.github.io/keiba-predictor/sankeyDiagram/sankeyDiagram_horse_pedigree_num_horses_17_generation_5_2020y_ジャパンカップ_num_17.html)
+
   - 2020/4/11-12:
     - [【2020年桜花賞(18頭)(5世代)】](https://ryutoro-galois.github.io/keiba-predictor/sankeyDiagram/sankeyDiagram_horse_pedigree_num_horses_18_generation_5_2020y_桜花賞_num_18.html)
     - [【2020年ニュージーランドT(16頭)(5世代)】](https://ryutoro-galois.github.io/keiba-predictor/sankeyDiagram/sankeyDiagram_horse_pedigree_num_horses_16_generation_5_2020y_ニュージーランドT_num_16.html)
