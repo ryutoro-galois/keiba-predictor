@@ -32,7 +32,7 @@
   - **2020年：**
     -  **11月**：
       - [【第5週(11/28~29)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20201128_20201129.html)
-        - { ラジオN杯京都2歳S(GⅢ), ジャパンカップ(GⅠ), <br>京阪杯(GⅢ) } <font color="Tomato"><b>【有観客】</b></font> (TBA)
+        - { ラジオN杯京都2歳S(GⅢ), [ジャパンカップ(GⅠ)](https://race.netkeiba.com/race/shutuba.html?race_id=202005050912&rf=race_list), <br>京阪杯(GⅢ) } <font color="Tomato"><b>【有観客】</b></font> (TBA)
 
       - <font color="limegreen"><b>【This Weekend】</b></font> 
       - [【第4週(11/22~23)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20201122_20201123.html)
