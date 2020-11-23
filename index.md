@@ -38,10 +38,10 @@
         - { ターコイズS(GⅢ), 朝日杯FS(GⅠ), 中山大障害(J.GⅠ) } <font color="Tomato"><b>【有観客】</b></font> (TBA)
 
       - [【第2週(12/12~13)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20201212_20201213.html)
-        - { 中日新聞杯(GⅢ), 阪神ジュベナイルF(GⅠ), カペラS(GⅢ) } <font color="Tomato"><b>【有観客】</b></font> (TBA)
+        - { 中日新聞杯(GⅢ), 阪神ジュベナイルF(GⅠ), カペラS(GⅢ) }<br> <font color="Tomato"><b>【有観客】</b></font> (TBA)
   
       - [【第1週(12/5~6)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20201205_20201206.html)
-        - { ステイヤーズS(GⅡ), チャレンジカップ(GⅢ), チャンピオンズカップ(GⅠ) } <font color="Tomato"><b>【有観客】</b></font> (TBA)
+        - { ステイヤーズS(GⅡ), チャレンジカップ(GⅢ), <br>チャンピオンズカップ(GⅠ) } <font color="Tomato"><b>【有観客】</b></font> (TBA)
 
     -  **11月**：
       - <font color="limegreen"><b>【This Weekend】</b></font> 
