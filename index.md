@@ -30,6 +30,19 @@
   
 - **毎週の予測レポート (<font color="red"><b>毎週金曜の11時頃から配信されます (hourly更新)</b></font>)**
   - **2020年：**
+    -  **12月**：
+      - [【第4週(12/26~27)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20201226_20201227.html)
+        - { ホープフルS(GⅠ), 阪神カップ(GⅡ), 有馬記念(GⅠ) } <font color="Tomato"><b>【有観客】</b></font> (TBA)
+  
+      - [【第3週(12/19~20)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20201219_20201220.html)
+        - { ターコイズS(GⅢ), 朝日杯FS(GⅠ), 中山大障害(J.GⅠ) } <font color="Tomato"><b>【有観客】</b></font> (TBA)
+
+      - [【第2週(12/12~13)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20201212_20201213.html)
+        - { 中日新聞杯(GⅢ), 阪神ジュベナイルF(GⅠ), カペラS(GⅢ) } <font color="Tomato"><b>【有観客】</b></font> (TBA)
+  
+      - [【第1週(12/5~6)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20201205_20201206.html)
+        - { ステイヤーズS(GⅡ), チャレンジカップ(GⅢ), チャンピオンズカップ(GⅠ) } <font color="Tomato"><b>【有観客】</b></font> (TBA)
+
     -  **11月**：
       - <font color="limegreen"><b>【This Weekend】</b></font> 
       - [【第5週(11/28~29)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20201128_20201129.html)
