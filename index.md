@@ -33,7 +33,7 @@
     -  **11月**：
       - <font color="limegreen"><b>【This Weekend】</b></font> 
       - [【第5週(11/28~29)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20201128_20201129.html)
-        - { ラジオN杯京都2歳S(GⅢ), [ジャパンカップ(GⅠ)](https://race.netkeiba.com/race/shutuba.html?race_id=202005050912&rf=race_list), <br>京阪杯(GⅢ) } <font color="Tomato"><b>【有観客】</b></font> (TBA)
+        - { [ラジオN杯京都2歳S(GⅢ)](https://race.netkeiba.com/race/shutuba.html?race_id=202009050811&rf=race_list), [ジャパンカップ(GⅠ)](https://race.netkeiba.com/race/shutuba.html?race_id=202005050912&rf=race_list), <br>[京阪杯(GⅢ)](https://race.netkeiba.com/race/shutuba.html?race_id=202009050912&rf=race_list) } <font color="Tomato"><b>【有観客】</b></font> (TBA)
 
       - [【第4週(11/22~23)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20201122_20201123.html)
         - { [マイルチャンピオンシップ(GⅠ)](https://race.netkeiba.com/race/shutuba.html?race_id=202009050611&rf=race_list), [東京スポーツ杯2歳ステークス(GⅢ)](https://race.netkeiba.com/race/shutuba.html?race_id=202005050711&rf=race_list) } <font color="Tomato"><b>【有観客】</b></font>
