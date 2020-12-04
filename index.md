@@ -42,7 +42,7 @@
   
       - <font color="limegreen"><b>【This Weekend】</b></font>
       - [【第1週(12/5~6)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20201205_20201206.html)
-        - { ステイヤーズS(GⅡ), チャレンジカップ(GⅢ), <br>チャンピオンズカップ(GⅠ) } <font color="Tomato"><b>【有観客】</b></font> (TBA)
+        - { ステイヤーズS(GⅡ), チャレンジカップ(GⅢ), <br>チャンピオンズカップ(GⅠ) } <font color="Tomato"><b>【有観客】</b></font>
 
     -  **11月**：
       - [【第5週(11/28~29)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20201128_20201129.html)
