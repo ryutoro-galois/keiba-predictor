@@ -36,7 +36,7 @@
   
       - <font color="limegreen"><b>【This Weekend】</b></font>
       - [【第3週(12/19~20)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20201219_20201220.html)
-        - { [ターコイズS(GⅢ)](https://race.netkeiba.com/race/shutuba.html?race_id=202006050511&rf=race_list), [朝日杯FS(GⅠ)](https://race.netkeiba.com/race/shutuba.html?race_id=202009060611&rf=race_list) } <font color="Tomato"><b>【有観客】</b></font> (TBA)
+        - { [ターコイズS(GⅢ)](https://race.netkeiba.com/race/shutuba.html?race_id=202006050511&rf=race_list), [朝日杯FS(GⅠ)](https://race.netkeiba.com/race/shutuba.html?race_id=202009060611&rf=race_list) } <font color="Tomato"><b>【有観客】</b></font>
 
       - [【第2週(12/12~13)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20201212_20201213.html)
         - { [中日新聞杯(GⅢ)](https://race.netkeiba.com/race/shutuba.html?race_id=202007030311&rf=race_list), [阪神ジュベナイルF(GⅠ)](https://race.netkeiba.com/race/shutuba.html?race_id=202009060411&rf=race_list), [カペラS(GⅢ)](https://race.netkeiba.com/race/shutuba.html?race_id=202006050411&rf=race_list) }<br> <font color="Tomato"><b>【有観客】</b></font>
