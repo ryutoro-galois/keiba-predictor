@@ -31,10 +31,10 @@
 - **毎週の予測レポート (<font color="red"><b>毎週金曜の11時頃から配信されます (hourly更新)</b></font>)**
   - **2020年：**
     -  **12月**：
-      - [【第4週(12/26~27)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20201226_20201227.html)
-        - { [ホープフルS(GⅠ)](https://race.netkeiba.com/race/shutuba.html?race_id=202006050711&rf=race_list), 阪神カップ(GⅡ), 中山大障害(J.GⅠ), [有馬記念(GⅠ)](https://race.netkeiba.com/race/shutuba.html?race_id=202006050811&rf=race_list) } <font color="Tomato"><b>【有観客】</b></font> (TBA)
-  
       - <font color="limegreen"><b>【This Weekend】</b></font>
+      - [【第4週(12/26~27)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20201226_20201227.html)
+        - { [ホープフルS(GⅠ)](https://race.netkeiba.com/race/shutuba.html?race_id=202006050711&rf=race_list), 阪神カップ(GⅡ), 中山大障害(J.GⅠ), [有馬記念(GⅠ)](https://race.netkeiba.com/race/shutuba.html?race_id=202006050811&rf=race_list) } <font color="Tomato"><b>【有観客】</b></font>
+  
       - [【第3週(12/19~20)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20201219_20201220.html)
         - { [ターコイズS(GⅢ)](https://race.netkeiba.com/race/shutuba.html?race_id=202006050511&rf=race_list), [朝日杯FS(GⅠ)](https://race.netkeiba.com/race/shutuba.html?race_id=202009060611&rf=race_list) } <font color="Tomato"><b>【有観客】</b></font>
 
