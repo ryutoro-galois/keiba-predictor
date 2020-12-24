@@ -261,6 +261,12 @@
   
   
 - 【個別レース】  
+  - 2020/12/26-27:
+    - [【2020年有馬記念(16頭)(5世代)】](https://ryutoro-galois.github.io/keiba-predictor/sankeyDiagram/sankeyDiagram_horse_pedigree_num_horses_16_generation_5_2020y_有馬記念_num_16.html)
+    - [【2020年ホープフルステークス(15頭)(5世代)】](https://ryutoro-galois.github.io/keiba-predictor/sankeyDiagram/sankeyDiagram_horse_pedigree_num_horses_15_generation_5_2020y_ホープフルステークス_num_15.html)
+    - [【2020年中山大障害(16頭)(5世代)】](https://ryutoro-galois.github.io/keiba-predictor/sankeyDiagram/sankeyDiagram_horse_pedigree_num_horses_16_generation_5_2020y_中山大障害_num_16.html)
+    - [【2020年阪神カップ(16頭)(5世代)】](https://ryutoro-galois.github.io/keiba-predictor/sankeyDiagram/sankeyDiagram_horse_pedigree_num_horses_16_generation_5_2020y_阪神カップ_num_16.html)
+
   - 2020/11/29:
     - [【2020年ジャパンカップ(17頭)(5世代)】](https://ryutoro-galois.github.io/keiba-predictor/sankeyDiagram/sankeyDiagram_horse_pedigree_num_horses_17_generation_5_2020y_ジャパンカップ_num_17.html)
 
