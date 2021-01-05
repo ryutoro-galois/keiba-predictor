@@ -29,9 +29,14 @@
   <br>
   
 - **毎週の予測レポート (<font color="red"><b>毎週金曜の11時頃から配信されます (hourly更新)</b></font>)**
+  - **2021年：**
+    -  **1月**：
+      - <font color="limegreen"><b>【This Weekend】</b></font>
+      - [【第1週(1/5)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2021y_raceDate_20210105_20210105.html)
+        - { [京都金杯(GⅢ)](https://race.netkeiba.com/race/shutuba.html?race_id=202107010111&rf=race_list), [中山金杯(GⅢ)](https://race.netkeiba.com/race/shutuba.html?race_id=202106010111&rf=race_list) }
+
   - **2020年：**
     -  **12月**：
-      - <font color="limegreen"><b>【This Weekend】</b></font>
       - [【第4週(12/26~27)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2020y_raceDate_20201226_20201227.html)
         - { [ホープフルS(GⅠ)](https://race.netkeiba.com/race/shutuba.html?race_id=202006050711&rf=race_list), [阪神カップ(GⅡ)](https://race.netkeiba.com/race/shutuba.html?race_id=202009060711&rf=race_list), [中山大障害(J.GⅠ)](https://race.netkeiba.com/race/shutuba.html?race_id=202006050710&rf=race_list), [有馬記念(GⅠ)](https://race.netkeiba.com/race/shutuba.html?race_id=202006050811&rf=race_list) } <font color="Tomato"><b>【有観客】</b></font>
   
