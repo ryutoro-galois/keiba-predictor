@@ -30,7 +30,19 @@
   
 - **毎週の予測レポート (<font color="red"><b>毎週金曜の11時頃から配信されます (hourly更新)</b></font>)**
   - **2021年：**
+     -  **2月**：
+      - [【第3週(2/20~21)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2021y_raceDate_20210220_20210221.html)
+      
+     
+      - [【第2週(2/13~14)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2021y_raceDate_20210213_20210214.html)
+        - { [クイーンカップ(GⅢ)](), [京都記念(GⅡ)](), [共同通信杯(GⅢ)]() } (TBA)
+     
+      - [【第1週(2/7)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2021y_raceDate_20210207_20210207.html)
+        - { [東京新聞杯(GⅢ)](), [きさらぎ賞(GⅢ)]() } (TBA)
+  
     -  **1月**：
+      - [【第5週(1/31)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2021y_raceDate_20210131_20210131.html)
+        - { [根岸ステークス(GⅢ)](), [シルクロードステークス(GⅢ)]() } (TBA)
     
       - <font color="limegreen"><b>【This Weekend】</b></font>
       - [【第4週(1/24)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2021y_raceDate_20210124_20210124.html)
