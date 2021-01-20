@@ -32,9 +32,9 @@
   - **2021年：**
     -  **1月**：
     
-    - <font color="limegreen"><b>【This Weekend】</b></font>
-    - [【第4週(1/24)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2021y_raceDate_20210124_20210124.html)
-      - { [アメリカジョッキーC(GⅡ)](https://race.netkeiba.com/race/shutuba.html?race_id=202106010811&rf=race_list), [東海ステークス(GⅡ)](https://race.netkeiba.com/race/shutuba.html?race_id=202107010811&rf=race_list) } (TBA)
+      - <font color="limegreen"><b>【This Weekend】</b></font>
+      - [【第4週(1/24)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2021y_raceDate_20210124_20210124.html)
+        - { [アメリカジョッキーC(GⅡ)](https://race.netkeiba.com/race/shutuba.html?race_id=202106010811&rf=race_list), [東海ステークス(GⅡ)](https://race.netkeiba.com/race/shutuba.html?race_id=202107010811&rf=race_list) } (TBA)
       
       - [【第3週(1/16-17)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2021y_raceDate_20210116_20210117.html)
         - { [愛知杯(GⅢ)](https://race.netkeiba.com/race/shutuba.html?race_id=202107010511&rf=race_list), [京成杯(GⅢ)](https://race.netkeiba.com/race/shutuba.html?race_id=202106010611&rf=race_list), [日経新春杯(GⅡ)](https://race.netkeiba.com/race/shutuba.html?race_id=202107010611&rf=race_list) } 
