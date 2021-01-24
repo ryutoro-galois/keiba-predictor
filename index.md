@@ -44,10 +44,10 @@
         - { [東京新聞杯(GⅢ)](), [きさらぎ賞(GⅢ)]() } (TBA)
   
     -  **1月**：
+      - <font color="limegreen"><b>【This Weekend】</b></font>
       - [【第5週(1/31)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2021y_raceDate_20210131_20210131.html)
         - { [根岸ステークス(GⅢ)](), [シルクロードステークス(GⅢ)]() } (TBA)
     
-      - <font color="limegreen"><b>【This Weekend】</b></font>
       - [【第4週(1/24)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2021y_raceDate_20210124_20210124.html)
         - { [アメリカジョッキーC(GⅡ)](https://race.netkeiba.com/race/shutuba.html?race_id=202106010811&rf=race_list), [東海ステークス(GⅡ)](https://race.netkeiba.com/race/shutuba.html?race_id=202107010811&rf=race_list) } 
       
