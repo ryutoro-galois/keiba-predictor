@@ -42,7 +42,7 @@
      
       - <font color="limegreen"><b>【This Weekend】</b></font>
       - [【第1週(2/7)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2021y_raceDate_20210207_20210207.html)
-        - { [東京新聞杯(GⅢ)](), [きさらぎ賞(GⅢ)]() } (TBA)
+        - { [東京新聞杯(GⅢ)](https://race.netkeiba.com/race/shutuba.html?race_id=202105010411&rf=race_list), [きさらぎ賞(GⅢ)](https://race.netkeiba.com/race/shutuba.html?race_id=202107011211&rf=race_list) } (TBA)
   
     -  **1月**：
       - [【第5週(1/31)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2021y_raceDate_20210131_20210131.html)
