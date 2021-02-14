@@ -34,10 +34,10 @@
       - [【第4週(2/28)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2021y_raceDate_20210228_20210228.html)
         - { [中山記念(GⅡ)](), [阪急杯(GⅢ)]() } (TBA)
         
+      - <font color="limegreen"><b>【This Weekend】</b></font>  
       - [【第3週(2/20~21)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2021y_raceDate_20210220_20210221.html)
-        - { [ダイヤモンドステークス(GⅢ)](https://race.netkeiba.com/race/shutuba.html?race_id=202105010711&rf=race_list), [京都牝馬ステークス(GⅢ)](https://race.netkeiba.com/race/shutuba.html?race_id=202109010311&rf=race_list), [フェブラリーステークス(GⅠ)](https://race.netkeiba.com/race/shutuba.html?race_id=202105010811&rf=race_list), [小倉大賞典(GⅢ)](https://race.netkeiba.com/race/shutuba.html?race_id=202110020411&rf=race_list) } (TBA)
+        - { [ダイヤモンドステークス(GⅢ)](https://race.netkeiba.com/race/shutuba.html?race_id=202105010711&rf=race_list), [京都牝馬ステークス(GⅢ)](https://race.netkeiba.com/race/shutuba.html?race_id=202109010311&rf=race_list), [フェブラリーステークス(GⅠ)](https://race.netkeiba.com/race/shutuba.html?race_id=202105010811&rf=race_list), [小倉大賞典(GⅢ)](https://race.netkeiba.com/race/shutuba.html?race_id=202110020411&rf=race_list) }
       
-      - <font color="limegreen"><b>【This Weekend】</b></font>
       - [【第2週(2/13~14)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2021y_raceDate_20210213_20210214.html)
         - { [クイーンカップ(GⅢ)](https://race.netkeiba.com/race/shutuba.html?race_id=202105010511&rf=race_list), [京都記念(GⅡ)](https://race.netkeiba.com/race/shutuba.html?race_id=202109010211&rf=race_list), [共同通信杯(GⅢ)](https://race.netkeiba.com/race/shutuba.html?race_id=202105010611&rf=race_list) }
      
