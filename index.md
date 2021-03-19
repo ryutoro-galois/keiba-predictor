@@ -36,7 +36,7 @@
      
       - <font color="limegreen"><b>【This Weekend】</b></font> 
       - [【第3週(3/20-21)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2021y_raceDate_20210320_20210321.html)
-        - { [フラワーカップ(GⅢ)](https://race.netkeiba.com/race/shutuba.html?race_id=202106020711&rf=race_list), [ファルコンステークス(GⅢ)](https://race.netkeiba.com/race/shutuba.html?race_id=202107020311&rf=race_list), <br>[スプリングステークス(GⅡ)](https://race.netkeiba.com/race/shutuba.html?race_id=202106020811&rf=race_list), [阪神大賞典(GⅡ)](https://race.netkeiba.com/race/shutuba.html?race_id=202109011211&rf=race_list) } (TBA)
+        - { [フラワーカップ(GⅢ)](https://race.netkeiba.com/race/shutuba.html?race_id=202106020711&rf=race_list), [ファルコンステークス(GⅢ)](https://race.netkeiba.com/race/shutuba.html?race_id=202107020311&rf=race_list), <br>[スプリングステークス(GⅡ)](https://race.netkeiba.com/race/shutuba.html?race_id=202106020811&rf=race_list), [阪神大賞典(GⅡ)](https://race.netkeiba.com/race/shutuba.html?race_id=202109011211&rf=race_list) }
       
       - [【第2週(3/13-14)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2021y_raceDate_20210313_20210314.html)
         - { [中山牝馬ステークス(GⅢ)](https://race.netkeiba.com/race/shutuba.html?race_id=202106020511&rf=race_list), [阪神スプリングジャンプ(JGⅡ)](https://race.netkeiba.com/race/shutuba.html?race_id=202109010908&rf=race_list),<br> [報知杯フィリーズレビュー(GⅡ)](https://race.netkeiba.com/race/shutuba.html?race_id=202109011011&rf=race_list), [金鯱賞(GⅡ)](https://race.netkeiba.com/race/shutuba.html?race_id=202107020211&rf=race_list) }
