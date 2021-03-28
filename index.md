@@ -30,8 +30,11 @@
   
 - **毎週の予測レポート (<font color="red"><b>毎週金曜の11時頃から配信されます (hourly更新)</b></font>)**
   - **2021年：**
-     -  **3月**：
+     -  **4月**：
      - <font color="limegreen"><b>【This Weekend】</b></font> 
+     - [【第1週(4/3-4)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2021y_raceDate_20210403_20210404.html) (TBA)
+     
+     -  **3月**：
      - [【第4週(3/27-28)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2021y_raceDate_20210327_20210328.html)
         - { [日経賞(GⅡ)](https://race.netkeiba.com/race/shutuba.html?race_id=202106030111&rf=race_list), [毎日杯(GⅢ)](https://race.netkeiba.com/race/shutuba.html?race_id=202109020111&rf=race_list), <br>[高松宮記念(GⅠ)](https://race.netkeiba.com/race/shutuba.html?race_id=202107020611&rf=race_list), [マーチステークス(GⅢ)](https://race.netkeiba.com/race/shutuba.html?race_id=202106030211&rf=race_list) }
      
