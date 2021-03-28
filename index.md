@@ -33,6 +33,7 @@
      -  **4月**：
      - <font color="limegreen"><b>【This Weekend】</b></font> 
      - [【第1週(4/3-4)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2021y_raceDate_20210403_20210404.html) (TBA)
+      - { [ダービー卿CT(GⅢ)](https://race.netkeiba.com/race/shutuba.html?race_id=202106030311&rf=race_list), [大阪杯(GⅠ)](https://race.netkeiba.com/race/shutuba.html?race_id=202109020411&rf=race_list) }
      
      -  **3月**：
      - [【第4週(3/27-28)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2021y_raceDate_20210327_20210328.html)
