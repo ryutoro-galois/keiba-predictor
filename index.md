@@ -32,7 +32,9 @@
   - **2021年：**
      -  **4月**：
      - <font color="limegreen"><b>【This Weekend】</b></font> 
-    - [【第3週(4/17-18)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2021y_raceDate_20210417_20210418.html)
+     - [【第4週(4/24-25)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2021y_raceDate_20210424_20210425.html)     
+     
+     - [【第3週(4/17-18)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2021y_raceDate_20210417_20210418.html)
       - { [中山グランドJ(JGⅠ)](https://race.netkeiba.com/race/shutuba.html?race_id=202106030711&rf=race_list), [アーリントンC(GⅢ)](https://race.netkeiba.com/race/shutuba.html?race_id=202109020711&rf=race_list), <br>[アンタレスS(GⅢ)](https://race.netkeiba.com/race/shutuba.html?race_id=202109020811&rf=race_list), [皐月賞(GⅠ)](https://race.netkeiba.com/race/shutuba.html?race_id=202106030811&rf=race_list) }
     
      - [【第2週(4/10-11)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2021y_raceDate_20210410_20210411.html)
