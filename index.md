@@ -13,7 +13,8 @@
 
 ### **References**
 - [【JRA】](http://www.jra.go.jp/)
-- [【netkeiba.com (race info)】](https://race.netkeiba.com/top/?rf=navi)<br><br>
+- [【netkeiba.com (race info)】](https://race.netkeiba.com/top/?rf=navi)
+- [【keibalab (race info)】](https://www.keibalab.jp/db/race/)<br><br>
 
 
 ### **1. 競馬予測の進捗**
