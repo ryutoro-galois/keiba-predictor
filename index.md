@@ -33,7 +33,7 @@
   - **2021年：**
      -  **5月**：
      - <font color="limegreen"><b>【This Weekend】</b></font> 
-     - [【第1週(5/1-2)】]((https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2021y_raceDate_20210501_20210502.html)
+     - [【第1週(5/1-2)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2021y_raceDate_20210501_20210502.html)
         - { [青葉賞(GⅡ)](), [天皇賞(春)(GⅠ)](https://race.netkeiba.com/race/shutuba.html?race_id=202109021211&rf=race_list) }
   
      -  **4月**：
