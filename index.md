@@ -36,7 +36,7 @@
         - { [宝塚記念(GⅠ)](https://race.netkeiba.com/race/shutuba.html?race_id=202109030411&rf=race_list) }
      
      - <font color="limegreen"><b>【This Weekend】</b></font> 
-     - [【第3週(6/20)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2021y_raceDate_20210620_20210620.html)
+     - [【第3週(6/20)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2021y_raceDate_20210620_20210620.html) (TBA)
         - { [マーメイドS(GⅢ)](https://race.netkeiba.com/race/shutuba.html?race_id=202109030211&rf=race_list), [ユニコーンS(GⅢ)](https://race.netkeiba.com/race/shutuba.html?race_id=202105030611&rf=race_list) }
      
      - [【第2週(6/13)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2021y_raceDate_20210613_20210613.html)
