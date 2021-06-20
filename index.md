@@ -32,10 +32,10 @@
 - **毎週の予測レポート (<font color="red"><b>毎週金曜の11時頃から配信されます (hourly更新)</b></font>)**
   - **2021年：**
      -  **6月**：
-     - [【第4週(6/27)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2021y_raceDate_20210627_20210627.html) (TBA)
+     - <font color="limegreen"><b>【This Weekend】</b></font> 
+     - [【第4週(6/27)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2021y_raceDate_20210627_20210627.html)
         - { [宝塚記念(GⅠ)](https://race.netkeiba.com/race/shutuba.html?race_id=202109030411&rf=race_list) }
      
-     - <font color="limegreen"><b>【This Weekend】</b></font> 
      - [【第3週(6/20)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2021y_raceDate_20210620_20210620.html)
         - { [マーメイドS(GⅢ)](https://race.netkeiba.com/race/shutuba.html?race_id=202109030211&rf=race_list), [ユニコーンS(GⅢ)](https://race.netkeiba.com/race/shutuba.html?race_id=202105030611&rf=race_list) }
      
