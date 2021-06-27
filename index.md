@@ -31,8 +31,11 @@
   
 - **毎週の予測レポート (<font color="red"><b>毎週金曜の11時頃から配信されます (hourly更新)</b></font>)**
   - **2021年：**
-     -  **6月**：
+     -  **7月**：
      - <font color="limegreen"><b>【This Weekend】</b></font> 
+     - [【第1週(7/x-x)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2021y_raceDate_20210626_20210627.html)
+  
+     -  **6月**：
      - [【第4週(6/26-27)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2021y_raceDate_20210626_20210627.html)
         - { [東京ジャンプS(J.GⅢ)](https://race.netkeiba.com/race/shutuba.html?race_id=202105030708&rf=race_list), [宝塚記念(GⅠ)](https://race.netkeiba.com/race/shutuba.html?race_id=202109030411&rf=race_list) }
      
