@@ -34,7 +34,7 @@
      -  **7月**：
      - <font color="limegreen"><b>【This Weekend】</b></font> 
      - [【第1週(7/4)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2021y_raceDate_20210704_20210704.html)
-        - { [CBC賞(GⅢ)](https://race.netkeiba.com/race/shutuba.html?race_id=202110030211&rf=race_list), [ラジオNIKKEI賞(GⅢ)](https://race.netkeiba.com/race/shutuba.html?race_id=202103010211&rf=race_list) }
+        - { [ラジオNIKKEI賞(GⅢ)](https://race.netkeiba.com/race/shutuba.html?race_id=202103010211&rf=race_list), [CBC賞(GⅢ)](https://race.netkeiba.com/race/shutuba.html?race_id=202110030211&rf=race_list) }
   
      -  **6月**：
      - [【第4週(6/26-27)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2021y_raceDate_20210626_20210627.html)
