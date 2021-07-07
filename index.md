@@ -34,7 +34,7 @@
      -  **7月**：
      - <font color="limegreen"><b>【This Weekend】</b></font> 
      - [【第2週(7/11)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2021y_raceDate_20210711_20210711.html)
-        - { [プロキオンステークス(GⅢ)](), [七夕賞(GⅢ)](), [函館2歳ステークス(GⅢ)]() }
+        - { [七夕賞(GⅢ)](https://race.netkeiba.com/race/shutuba.html?race_id=202103010411&rf=race_list), [プロキオンステークス(GⅢ)](https://race.netkeiba.com/race/shutuba.html?race_id=202110030411&rf=race_list) }
      
      - [【第1週(7/4)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2021y_raceDate_20210704_20210704.html)
         - { [ラジオNIKKEI賞(GⅢ)](https://race.netkeiba.com/race/shutuba.html?race_id=202103010211&rf=race_list), [CBC賞(GⅢ)](https://race.netkeiba.com/race/shutuba.html?race_id=202110030211&rf=race_list) }
