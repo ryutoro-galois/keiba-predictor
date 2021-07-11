@@ -32,7 +32,10 @@
 - **毎週の予測レポート (<font color="red"><b>毎週金曜の11時頃から配信されます (hourly更新)</b></font>)**
   - **2021年：**
      -  **7月**：
-     - <font color="limegreen"><b>【This Weekend】</b></font> 
+     - <font color="limegreen"><b>【This Weekend】</b></font>
+     - [【第3週(7/18-19)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2021y_raceDate_20210718_20210719.html)
+        - { [函館2歳ステークス(GⅢ)](), [中京記念(GⅢ)](), [函館記念(GⅢ)]() } (TBA)
+     
      - [【第2週(7/11)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2021y_raceDate_20210711_20210711.html)
         - { [七夕賞(GⅢ)](https://race.netkeiba.com/race/shutuba.html?race_id=202103010411&rf=race_list), [プロキオンステークス(GⅢ)](https://race.netkeiba.com/race/shutuba.html?race_id=202110030411&rf=race_list) }
      
