@@ -34,7 +34,7 @@
      -  **7月**：
      - <font color="limegreen"><b>【This Weekend】</b></font>
      - [【第4週(7/25)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2021y_raceDate_20210725_20210725.html)
-        - { [アイビスサマーD(GⅢ)](https://race.netkeiba.com/race/shutuba.html?race_id=202104030211&rf=race_list) }
+        - { [アイビスサマーダッシュ(GⅢ)](https://race.netkeiba.com/race/shutuba.html?race_id=202104030211&rf=race_list) }
      
      - [【第3週(7/17-18)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2021y_raceDate_20210717_20210718.html)
         - { [函館2歳ステークス(GⅢ)](https://race.netkeiba.com/race/shutuba.html?race_id=202102010511&rf=race_list), [中京記念(GⅢ)](https://race.netkeiba.com/race/shutuba.html?race_id=202110030611&rf=race_list), [函館記念(GⅢ)](https://race.netkeiba.com/race/shutuba.html?race_id=202102010611&rf=race_list) }
