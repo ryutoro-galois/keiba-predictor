@@ -31,8 +31,11 @@
   
 - **毎週の予測レポート (<font color="red"><b>毎週金曜の11時頃から配信されます (hourly更新)</b></font>)**
   - **2021年：**
-     -  **7月**：
+     -  **8月**：
      - <font color="limegreen"><b>【This Weekend】</b></font>
+     - [【第1週(7/31-8/1)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2021y_raceDate_20210731_20210801.html)
+  
+     -  **7月**：
      - [【第4週(7/25)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2021y_raceDate_20210725_20210725.html)
         - { [アイビスサマーダッシュ(GⅢ)](https://race.netkeiba.com/race/shutuba.html?race_id=202104030211&rf=race_list) }
      
