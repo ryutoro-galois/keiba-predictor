@@ -34,7 +34,7 @@
      -  **8月**：
      - <font color="limegreen"><b>【This Weekend】</b></font>
      - [【第3週(8/15)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2021y_raceDate_20210815_20210815.html)
-        - { [](), []() }
+        - { [関屋記念(GⅢ)](), [小倉記念(GⅢ)]() }
      
      - [【第2週(8/8)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2021y_raceDate_20210808_20210808.html)     
         - { [レパードステークス(GⅢ))](https://race.netkeiba.com/race/shutuba.html?race_id=202104030611&rf=race_list), [エルムステークス(GⅢ)](https://race.netkeiba.com/race/shutuba.html?race_id=202102011211&rf=race_list) }
