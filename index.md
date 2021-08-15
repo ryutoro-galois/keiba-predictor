@@ -34,7 +34,7 @@
      -  **8月**：
      - <font color="limegreen"><b>【This Weekend】</b></font>
      - [【第4週(8/22)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2021y_raceDate_20210822_20210822.html)
-        - { [札幌記念(GⅢ)], [北九州記念(GⅢ)] }
+        - { [札幌記念(GⅡ)], [北九州記念(GⅢ)] }
      
      - [【第3週(8/15)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2021y_raceDate_20210815_20210815.html)
         - { [関屋記念(GⅢ)](https://race.netkeiba.com/race/shutuba.html?race_id=202104040211&rf=race_list), [小倉記念(GⅢ)](https://race.netkeiba.com/race/shutuba.html?race_id=202110040211&rf=race_list) }
