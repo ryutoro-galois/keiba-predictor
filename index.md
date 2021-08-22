@@ -34,7 +34,7 @@
      -  **8月**：
      - <font color="limegreen"><b>【This Weekend】</b></font>
      - [【第5週(8/28-29)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2021y_raceDate_20210828_20210829.html)
-        - { [小倉サマージャンプ(JGⅢ)](), [新潟2歳ステークス(GⅢ)](), [キーンランドカップ(GⅢ)]() }
+        - { [小倉サマージャンプ(JGⅢ)](), [新潟2歳ステークス(GⅢ)](),<br> [キーンランドカップ(GⅢ)]() }
      
      - [【第4週(8/22)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2021y_raceDate_20210822_20210822.html)
         - { [札幌記念(GⅡ)](https://race.netkeiba.com/race/shutuba.html?race_id=202101020411&rf=race_list), [北九州記念(GⅢ)](https://race.netkeiba.com/race/shutuba.html?race_id=202110040411&rf=race_list) }
