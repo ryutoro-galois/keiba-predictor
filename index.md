@@ -31,8 +31,11 @@
   
 - **毎週の予測レポート (<font color="red"><b>毎週金曜の11時頃から配信されます (hourly更新)</b></font>)**
   - **2021年：**
-     -  **8月**：
+     -  **9月**：
      - <font color="limegreen"><b>【This Weekend】</b></font>
+     - [【第1週(9/4-5)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2021y_raceDate_20210904_20210905.html)
+  
+     -  **8月**：
      - [【第5週(8/28-29)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2021y_raceDate_20210828_20210829.html)
         - { [小倉サマージャンプ(JGⅢ)](https://race.netkeiba.com/race/shutuba.html?race_id=202110040508&rf=race_list), [新潟2歳ステークス(GⅢ)](https://race.netkeiba.com/race/shutuba.html?race_id=202104040611&rf=race_list),<br> [キーンランドカップ(GⅢ)](https://race.netkeiba.com/race/shutuba.html?race_id=202101020611&rf=race_list) }
      
