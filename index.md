@@ -34,7 +34,7 @@
      -  **9月**：
      - <font color="limegreen"><b>【This Weekend】</b></font>
      - [【第1週(9/4-5)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2021y_raceDate_20210904_20210905.html)
-        - { [札幌2歳ステークス(GⅢ)](), [新潟記念(GⅢ)](),<br> [小倉2歳ステークス(GⅢ)]() }
+        - { [札幌2歳ステークス(GⅢ)](https://race.netkeiba.com/race/shutuba.html?race_id=202101020711&rf=race_list), [新潟記念(GⅢ)](https://race.netkeiba.com/race/shutuba.html?race_id=202104040811&rf=race_list),<br> [小倉2歳ステークス(GⅢ)](https://race.netkeiba.com/race/shutuba.html?race_id=202110040811&rf=race_list) }
      
      -  **8月**：
      - [【第5週(8/28-29)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2021y_raceDate_20210828_20210829.html)
