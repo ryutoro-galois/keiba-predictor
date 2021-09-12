@@ -33,6 +33,9 @@
   - **2021年：**
      -  **9月**：
      - <font color="limegreen"><b>【This Weekend】</b></font>
+     - [【第3週(9/18-19)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2021y_raceDate_20210918_20210919.html)
+        - { [阪神JS(JGⅢ)](), [ローズS(GⅡ)](), [セントライト記念(GⅡ)]() }
+        
      - [【第2週(9/11-12)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2021y_raceDate_20210911_20210912.html)
         - { [紫苑ステークス(GⅢ)](https://race.netkeiba.com/race/shutuba.html?race_id=202106040111&rf=race_list), [セントウルステークス(GⅡ)](https://race.netkeiba.com/race/shutuba.html?race_id=202107050211&rf=race_list),<br> [京成杯オータムハンデキャップ(GⅢ)](https://race.netkeiba.com/race/shutuba.html?race_id=202106040211&rf=race_list) }
      
