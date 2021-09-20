@@ -34,7 +34,7 @@
      -  **9月**：
      - <font color="limegreen"><b>【This Weekend】</b></font>
      - [【第4週(9/26)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2021y_raceDate_20210926_20210926.html)
-        - { [オールカマー(GⅡ)](), [神戸新聞杯(GⅡ)]() } (TBA)
+        - { [オールカマー(GⅡ)](), [神戸新聞杯(GⅡ)]() }
      
      - [【第3週(9/18-20)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2021y_raceDate_20210918_20210920.html)
         - { [阪神JS(JGⅢ)](https://race.netkeiba.com/race/shutuba.html?race_id=202107050308&rf=race_list), [ローズS(GⅡ)](https://race.netkeiba.com/race/shutuba.html?race_id=202107050411&rf=race_list), [セントライト記念(GⅡ)](https://race.netkeiba.com/race/shutuba.html?race_id=202106040511&rf=race_list) }
