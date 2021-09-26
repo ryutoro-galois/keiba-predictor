@@ -31,8 +31,12 @@
   
 - **毎週の予測レポート (<font color="red"><b>毎週金曜の11時頃から配信されます (hourly更新)</b></font>)**
   - **2021年：**
-     -  **9月**：
+     -  **10月**：
      - <font color="limegreen"><b>【This Weekend】</b></font>
+     - [【第1週(10/2-3)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2021y_raceDate_20211002_20211003.html)
+        - { [](), []() }
+     
+     -  **9月**：     
      - [【第4週(9/26)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2021y_raceDate_20210926_20210926.html)
         - { [オールカマー(GⅡ)](https://race.netkeiba.com/race/shutuba.html?race_id=202106040711&rf=race_list), [神戸新聞杯(GⅡ)](https://race.netkeiba.com/race/shutuba.html?race_id=202107050711&rf=race_list) }
      
