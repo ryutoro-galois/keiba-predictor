@@ -34,7 +34,7 @@
      -  **10月**：
      - <font color="limegreen"><b>【This Weekend】</b></font>
      - [【第1週(10/2-3)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2021y_raceDate_20211002_20211003.html)
-        - { [](), []() }
+        - { [シリウスステークス(GⅢ)](), [スプリンターズステークス(GⅠ)]() }
      
      -  **9月**：     
      - [【第4週(9/26)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2021y_raceDate_20210926_20210926.html)
