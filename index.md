@@ -33,6 +33,8 @@
   - **2021年：**
      -  **10月**：
      - <font color="limegreen"><b>【This Weekend】</b></font>
+     - [【第2週(10/9-10)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2021y_raceDate_20211009_20211010.html)
+     
      - [【第1週(10/2-3)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2021y_raceDate_20211002_20211003.html)
         - { [シリウスステークス(GⅢ)](https://race.netkeiba.com/race/shutuba.html?race_id=202107050811&rf=race_list), [スプリンターズステークス(GⅠ)](https://race.netkeiba.com/race/shutuba.html?race_id=202106040911&rf=race_list) } 
      
