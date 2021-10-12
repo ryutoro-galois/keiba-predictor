@@ -34,7 +34,7 @@
      -  **10月**：
      - <font color="limegreen"><b>【This Weekend】</b></font>
      - [【第3週(10/16-17)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2021y_raceDate_20211016_20211017.html)
-        - { [府中牝馬ステークス(GⅡ)](), [東京ハイジャンプステークス(JGⅡ)](), [秋華賞(GⅠ)]() } (TBA)
+        - { [府中牝馬ステークス(GⅡ)](https://race.netkeiba.com/race/shutuba.html?race_id=202105040311&rf=race_list), [東京ハイジャンプステークス(JGⅡ)](https://race.netkeiba.com/race/shutuba.html?race_id=202105040409&rf=race_list), [秋華賞(GⅠ)](https://race.netkeiba.com/race/shutuba.html?race_id=202109040411&rf=race_list) } (TBA)
         
      - [【第2週(10/9-10)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2021y_raceDate_20211009_20211010.html)
         - { [サウジアラビアロイヤルカップ(GⅢ)](https://race.netkeiba.com/race/shutuba.html?race_id=202105040111&rf=race_list), [毎日王冠(GⅡ)](https://race.netkeiba.com/race/shutuba.html?race_id=202105040211&rf=race_list), [京都大賞典(GⅡ)](https://race.netkeiba.com/race/shutuba.html?race_id=202109040211&rf=race_list) } 
