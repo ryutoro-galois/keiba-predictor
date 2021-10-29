@@ -34,7 +34,7 @@
      -  **10月**：
      - <font color="limegreen"><b>【This Weekend】</b></font>
      - [【第5週(10/30-31)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2021y_raceDate_20211030_20211031.html)
-        - { [毎日放送(MBS)賞スワンS(GⅡ)](https://race.netkeiba.com/race/shutuba.html?race_id=202109040711&rf=race_list), [アルテミスステークス(GⅢ)](https://race.netkeiba.com/race/shutuba.html?race_id=202105040711&rf=race_list), [天皇賞(秋)(GⅠ)](https://race.netkeiba.com/race/shutuba.html?race_id=202105040811&rf=race_list) } (TBA)
+        - { [毎日放送(MBS)賞スワンS(GⅡ)](https://race.netkeiba.com/race/shutuba.html?race_id=202109040711&rf=race_list), [アルテミスステークス(GⅢ)](https://race.netkeiba.com/race/shutuba.html?race_id=202105040711&rf=race_list), [天皇賞(秋)(GⅠ)](https://race.netkeiba.com/race/shutuba.html?race_id=202105040811&rf=race_list) } 
      
      - [【第4週(10/23-24)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2021y_raceDate_20211023_20211024.html)
         - { [富士ステークス(GⅡ)](https://race.netkeiba.com/race/shutuba.html?race_id=202105040511&rf=race_list), [菊花賞(GⅠ)](https://race.netkeiba.com/race/shutuba.html?race_id=202109040611&rf=race_list) } 
