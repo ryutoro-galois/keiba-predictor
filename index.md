@@ -34,7 +34,7 @@
      -  **11月**：
      - <font color="limegreen"><b>【This Weekend】</b></font>
      - [【第1週(11/6-7)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2021y_raceDate_20211106_20211107.html)
-        - { [京王杯2歳ステークス(GⅡ)](), [ファンタジーステークス(GⅢ)](),<br>[アルゼンチン共和国杯(GⅡ)](), [みやこステークス(GⅢ)]() }
+        - { [京王杯2歳ステークス(GⅡ)](), [ファンタジーステークス(GⅢ)](),<br>[アルゼンチン共和国杯(GⅡ)](), [みやこステークス(GⅢ)]() } (TBA)
 
      -  **10月**：
      - [【第5週(10/30-31)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2021y_raceDate_20211030_20211031.html)
