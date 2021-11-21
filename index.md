@@ -33,6 +33,9 @@
   - **2021年：**
      -  **11月**：
      - <font color="limegreen"><b>【This Weekend】</b></font>
+     - [【第4週(11/27-28)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2021y_raceDate_20211127_20211128.html)
+        - { [](), []() } (TBA)
+     
      - [【第3週(11/20-21)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2021y_raceDate_20211120_20211121.html)
         - { [東京スポーツ杯2歳ステークス(GⅡ)](https://race.netkeiba.com/race/shutuba.html?race_id=202105050511&rf=race_list), [マイルチャンピオンシップ(GⅠ)](https://race.netkeiba.com/race/shutuba.html?race_id=202109050611&rf=race_list) } 
          
