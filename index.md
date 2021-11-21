@@ -31,6 +31,22 @@
   
 - **毎週の予測レポート (<font color="red"><b>毎週金曜の11時頃から配信されます (hourly更新)</b></font>)**
   - **2021年：**
+     -  **12月**：
+     - [【第5週(12/28)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2021y_raceDate_20211228_20211228.html)
+        - { [ホープフルステークス(GⅠ)]() } (TBA)
+     
+     - [【第4週(12/25-26)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2021y_raceDate_20211225_20211226.html)
+        - { [中山大障害(JGⅠ)](), [阪神カップ](), [有馬記念(GⅠ)]() } (TBA)
+     
+     - [【第3週(12/18-19)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2021y_raceDate_20211218_20211219.html)
+        - { [ターコイズステークス](), [朝日杯フューチュリティステークス(GⅠ)]() } (TBA)
+     
+     - [【第2週(12/11-12)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2021y_raceDate_20211211_20211212.html)
+        - { [中日新聞杯](), [阪神ジュベナイルフィリーズ(GⅠ)](), [カペラステークス]() } (TBA)
+     
+     - [【第1週(12/4-5)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2021y_raceDate_20211204_20211205.html)
+        - { [ステイヤーズステークス](), [チャレンジカップ](), [チャンピオンズカップ(GⅠ)]() } (TBA)
+     
      -  **11月**：
      - <font color="limegreen"><b>【This Weekend】</b></font>
      - [【第4週(11/27-28)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2021y_raceDate_20211127_20211128.html)
