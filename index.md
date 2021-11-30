@@ -46,7 +46,7 @@
      
      - <font color="limegreen"><b>【This Weekend】</b></font>
      - [【第1週(12/4-5)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2021y_raceDate_20211204_20211205.html)
-        - { [ステイヤーズステークス](), [チャレンジカップ](), [チャンピオンズカップ(GⅠ)]() } (TBA)
+        - { [ステイヤーズステークス(GⅡ)](https://race.netkeiba.com/race/shutuba.html?race_id=202106050111&rf=race_list), [チャレンジカップ(GⅢ)](https://race.netkeiba.com/race/shutuba.html?race_id=202109060111&rf=race_list), [チャンピオンズカップ(GⅠ)](https://race.netkeiba.com/race/shutuba.html?race_id=202107060211&rf=race_list) } (TBA)
      
      -  **11月**：
      - [【第4週(11/27-28)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2021y_raceDate_20211127_20211128.html)
