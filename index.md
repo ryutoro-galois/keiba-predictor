@@ -43,7 +43,7 @@
      
      - <font color="limegreen"><b>【This Weekend】</b></font>
      - [【第2週(12/11-12)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2021y_raceDate_20211211_20211212.html)
-        - { [中日新聞杯](https://race.netkeiba.com/race/shutuba.html?race_id=202107060311&rf=race_list), [阪神ジュベナイルフィリーズ(GⅠ)](https://race.netkeiba.com/race/shutuba.html?race_id=202109060411&rf=race_list), [カペラステークス](https://race.netkeiba.com/race/shutuba.html?race_id=202106050411&rf=race_list) }
+        - { [中日新聞杯(GⅢ)](https://race.netkeiba.com/race/shutuba.html?race_id=202107060311&rf=race_list), [阪神ジュベナイルフィリーズ(GⅠ)](https://race.netkeiba.com/race/shutuba.html?race_id=202109060411&rf=race_list), [カペラステークス(GⅢ)](https://race.netkeiba.com/race/shutuba.html?race_id=202106050411&rf=race_list) }
      
      - [【第1週(12/4-5)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2021y_raceDate_20211204_20211205.html)
         - { [ステイヤーズステークス(GⅡ)](https://race.netkeiba.com/race/shutuba.html?race_id=202106050111&rf=race_list), [チャレンジカップ(GⅢ)](https://race.netkeiba.com/race/shutuba.html?race_id=202109060111&rf=race_list), [チャンピオンズカップ(GⅠ)](https://race.netkeiba.com/race/shutuba.html?race_id=202107060211&rf=race_list) } 
