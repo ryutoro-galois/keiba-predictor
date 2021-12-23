@@ -37,7 +37,7 @@
      
      - <font color="limegreen"><b>【This Weekend】</b></font>
      - [【第4週(12/25-26)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2021y_raceDate_20211225_20211226.html)
-        - { [中山大障害(JGⅠ)](https://race.netkeiba.com/race/shutuba.html?race_id=202106050710&rf=race_list), [阪神カップ](https://race.netkeiba.com/race/shutuba.html?race_id=202109060711&rf=race_list), [有馬記念(GⅠ)](https://race.netkeiba.com/race/shutuba.html?race_id=202106050811&rf=race_list) } (TBA)
+        - { [中山大障害(JGⅠ)](https://race.netkeiba.com/race/shutuba.html?race_id=202106050710&rf=race_list), [阪神カップ](https://race.netkeiba.com/race/shutuba.html?race_id=202109060711&rf=race_list), [有馬記念(GⅠ)](https://race.netkeiba.com/race/shutuba.html?race_id=202106050811&rf=race_list) }
      
      - [【第3週(12/18-19)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2021y_raceDate_20211218_20211219.html)
         - { [ターコイズステークス(GⅢ)](https://race.netkeiba.com/race/shutuba.html?race_id=202106050511&rf=race_list), [朝日杯フューチュリティステークス(GⅠ)](https://race.netkeiba.com/race/shutuba.html?race_id=202109060611&rf=race_list) }
