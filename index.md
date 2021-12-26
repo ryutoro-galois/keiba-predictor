@@ -30,10 +30,12 @@
   <br>
   
 - **毎週の予測レポート (<font color="red"><b>毎週金曜の11時頃から配信されます (hourly更新)</b></font>)**
+  - [【直近の重賞レース】](https://ryutoro-galois.github.io/keiba-predictor/PredResult_latest_race.html)
+
   - **2021年：**
      -  **12月**：
      - [【第5週(12/28)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2021y_raceDate_20211228_20211228.html)
-        - { [ホープフルステークス(GⅠ)](https://race.netkeiba.com/race/shutuba.html?race_id=202106050911&rf=race_list) } (TBA)
+        - { [ホープフルステークス(GⅠ)](https://race.netkeiba.com/race/shutuba.html?race_id=202106050911&rf=race_list) }
      
      - <font color="limegreen"><b>【This Weekend】</b></font>
      - [【第4週(12/25-26)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2021y_raceDate_20211225_20211226.html)
