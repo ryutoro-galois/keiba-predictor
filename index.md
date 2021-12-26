@@ -29,8 +29,9 @@
   - [【競馬予測レポートのトリセツ (pdf)】](https://ryutoro-galois.github.io/keiba-predictor/manual/keiba-predictor-tool(KPT)_r2.pdf) 
   <br>
   
-- **毎週の予測レポート (<font color="red"><b>毎週金曜の11時頃から配信されます (hourly更新)</b></font>)**
-  - [【直近の重賞レース】](https://ryutoro-galois.github.io/keiba-predictor/PredResult_latest_race.html)
+- **毎週の予測レポート (<font color="red"><b>毎週金曜の11時頃から配信されます (hourly更新)</b></font>)**<br>
+
+  - [【直近の重賞レース】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_latest_race.html)
 
   - **2021年：**
      -  **12月**：
