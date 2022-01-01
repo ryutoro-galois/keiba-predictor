@@ -37,7 +37,7 @@
      -  **1月**
      - <font color="limegreen"><b>【This Weekend】</b></font>
      - [【第1週(1/5)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2021y_raceDate_20220105_20220105.html)
-        - { [中山金杯(GⅢ)](https://race.netkeiba.com/race/shutuba.html?race_id=202206010111&rf=race_list), [京都金杯(GⅢ)](https://race.netkeiba.com/race/shutuba.html?race_id=202207010111&rf=race_list) } (TBA)  
+        - { [中山金杯(GⅢ)](https://race.netkeiba.com/race/shutuba.html?race_id=202206010111&rf=race_list), [京都金杯(GⅢ)](https://race.netkeiba.com/race/shutuba.html?race_id=202207010111&rf=race_list) }  
   
   - **2021年：**
      -  **12月**：
