@@ -37,7 +37,7 @@
      -  **1月**
      - <font color="limegreen"><b>【This Weekend】</b></font>
      - [【第3週(1/15-16)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2022y_raceDate_20220115_20220116.html)
-        - { [愛知杯(GⅢ)](), [京成杯(GⅢ)](), [日経新春杯(GⅡ)]() }
+        - { [愛知杯(GⅢ)](https://race.netkeiba.com/race/shutuba.html?race_id=202207010511&rf=race_list), [京成杯(GⅢ)](https://race.netkeiba.com/race/shutuba.html?race_id=202206010611&rf=race_list), [日経新春杯(GⅡ)](https://race.netkeiba.com/race/shutuba.html?race_id=202207010611&rf=race_list) }
         
      - [【第2週(1/9-10)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2022y_raceDate_20220109_20220110.html)
         - { [シンザン記念(GⅢ)](https://race.netkeiba.com/race/shutuba.html?race_id=202207010311&rf=race_list), [フェアリーステークス(GⅢ)](https://race.netkeiba.com/race/shutuba.html?race_id=202206010411&rf=race_list) } 
