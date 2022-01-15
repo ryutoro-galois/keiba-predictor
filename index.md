@@ -11,6 +11,9 @@
  
 --- 
 
+### **Profile**
+- [【LinkedIn】](https://www.linkedin.com/in/ryutoro/)
+
 ### **References**
 - [【JRA】](http://www.jra.go.jp/)
 - [【netkeiba.com (race info)】](https://race.netkeiba.com/top/?rf=navi)
