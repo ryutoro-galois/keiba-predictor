@@ -1,4 +1,5 @@
 theme: jekyll-theme-architect
+google_analytics: G-69VFZG8Z4H
 markdown: kramdown
 kramdown:
   parse_block_html: true
@@ -6,4 +7,4 @@ plugins:
  - jekyll-seo-tag
  - jekyll-sitemap
  - jekyll-feed
-google_analytics: G-69VFZG8Z4H
+
