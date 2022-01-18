@@ -40,7 +40,7 @@
      -  **1月**
      - <font color="limegreen"><b>【This Weekend】</b></font>
      - [【第4週(1/23)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2022y_raceDate_20220123_20220123.html)
-        - { [アメリカジョッキークラブカップ(GⅡ)](), [東海ステークス(GⅡ)]() } (TBA)
+        - { [アメリカジョッキークラブカップ(AJCC)(GⅡ)](https://race.netkeiba.com/race/shutuba.html?race_id=202206010811&rf=race_list), [東海ステークス(GⅡ)](https://race.netkeiba.com/race/shutuba.html?race_id=202207010811&rf=race_list) } 
      
      - [【第3週(1/15-16)】](https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_2022y_raceDate_20220115_20220116.html)
         - { [愛知杯(GⅢ)](https://race.netkeiba.com/race/shutuba.html?race_id=202207010511&rf=race_list), [京成杯(GⅢ)](https://race.netkeiba.com/race/shutuba.html?race_id=202206010611&rf=race_list), [日経新春杯(GⅡ)](https://race.netkeiba.com/race/shutuba.html?race_id=202207010611&rf=race_list) }
