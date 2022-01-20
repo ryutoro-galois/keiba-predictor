@@ -12,7 +12,7 @@
 --- 
 
 ### **Profile**
-- [【LinkedIn (ryutoro)】](https://www.linkedin.com/in/ryutoro/)
+- [【LinkedIn (ryutoro-galois)】](https://www.linkedin.com/in/ryutoro-galois/)
 
 ### **References**
 - [【JRA】](http://www.jra.go.jp/)
