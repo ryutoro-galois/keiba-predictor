@@ -61,7 +61,20 @@ setInterval('showClock()', 1000);
 								  <li><a href="https://github.com/ryutoro-galois/keiba-predictor/" class="button big" target="_blank" rel="noopener noreferrer">GitHub</a></li>
 								</ul>
 								</br>
-								LastUpdated: 2022-01-26(Wed.)
+								<!--LastUpdated: 2022-01-26(Wed.)-->
+								<script type="text/javascript">
+                <!--
+                var day = new Date(document.lastModified);
+                var y = day.getFullYear();
+                var m = day.getMonth() + 1;
+                var d = day.getDate();
+                var week = new Array("Sun.", "Mon.", "Tue.", "Wed.", "Thu.", "Fri.", "Sat.");
+                var w = week[day.getDay()];
+                if (m < 10) m = "0" + m;
+                if (d < 10) d = "0" + d;
+                // -->
+                document.write("LastUpdate: " + y + "-" + m + "-" + d + " (" + w + ")");
+                </script>
 								<!--<p id="RealtimeClockArea">time</p>-->
 							</header>
 
