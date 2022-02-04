@@ -33,6 +33,61 @@ vertical-align: middle;
 }
 </style>
 
+
+<style type="text/css">
+  .tab1 {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    background-color: #fff !important;
+    margin: 20 !important;
+  }
+  .tab1__item {
+    flex: 1;
+    flex-basis: 120px;
+  }
+  .tab1__link {
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    background-color: #b1e2dc;
+    cursor: pointer;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 15px;
+  }
+  .tab1__link.on {
+    background-color: #65c6ba;
+  }
+  .tab1-body__item {
+    margin: 30px 15px;
+    display: none;
+    text-align: center;
+  }
+  .tab1-body__item.on {
+    display: block;
+  }
+</style>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var $tab__link = $('.tab1__link')
+    var $tab_body_item = $('.tab1-body__item')
+    $tab__link.on('click', function (e) {
+      var target = $(e.currentTarget)
+      //タブの表示非表示
+      $tab__link.removeClass('on')
+      target.addClass('on')
+      //タブの中身の表示非表示
+      var num = target.data('tab-body')
+      $tab_body_item.removeClass('on')
+      $('.tab1-body__item--' + num).addClass('on')
+    })
+  })
+</script>
+
+
+
+
+
 <html>
 	<head>
 		<title>Visual Horse Racing</title>
@@ -94,7 +149,6 @@ vertical-align: middle;
 									<div class="content">
 										<header>
 											<h1>Visual Horse Racing</h1>
-											<!--<h1>競馬予測</h1>-->
 										</header>
 										
 										<p>
@@ -139,16 +193,44 @@ vertical-align: middle;
 										</ul>-->
 									</div>
 									
-									<span class="image object">
-									  <!--<iframe src="./report/PredResult_latest_race_iframe_01.html" frameborder="0" width="600px" height="400px" scrolling="no" id="iframe1"></iframe>-->
-									  <!--<div style="width:100%;overflow:scroll;-webkit-overflow-scrolling:touch;border:solid 0px;">-->
-									  <div style="width:100%;border:solid 0px;">
-  <iframe height="700" name="sample" 
-  src="./report/PredResult_latest_race_01.html" 
+<span class="image object">
+        <ul class="tab1">
+          <li class="tab1__item on"><span class="tab1__link" data-tab-body="1">1. 予測チャート</span></li>
+          <li class="tab1__item"><span class="tab1__link" data-tab-body="2">2. オッズモニタリング</span></li>
+          <li class="tab1__item"><span class="tab1__link" data-tab-body="3">3. 出馬表</span></li>
+        </ul>
+        
+        <div class="tab1-body">
+          <div class="tab1-body__item tab1-body__item--1 on">
+            
+					<div style="width:100%;border:solid 0px;">
+            <iframe height="700" name="sample" src="./report/PredResult_latest_race_01.html" 
   style="transform:scale(0.7);-moz-transform:scale(0.7);-webkit-transform:scale(0.7);-o-transform:scale(0.7);-ms-transform:scale(0.7);transform-origin:0 0;-moz-transform-origin:0 0;-webkit-transform-origin:0 0;-o-transform-origin:0 0;-ms-transform-origin:0 0;border:solid 0px;margin-bottom:0px;margin-right:0%;width:150%;">
-  </iframe> 
-</div>
-									</span>
+            </iframe> 
+          </div>
+            
+          </div>
+          <div class="tab1-body__item tab1-body__item--2">
+            
+            <div style="width:100%;border:solid 0px;">
+            <iframe height="700" name="sample" src="./report/PredResult_latest_race_02.html" 
+  style="transform:scale(0.7);-moz-transform:scale(0.7);-webkit-transform:scale(0.7);-o-transform:scale(0.7);-ms-transform:scale(0.7);transform-origin:0 0;-moz-transform-origin:0 0;-webkit-transform-origin:0 0;-o-transform-origin:0 0;-ms-transform-origin:0 0;border:solid 0px;margin-bottom:0px;margin-right:0%;width:150%;">
+            </iframe> 
+          </div>
+          
+          </div>
+          <div class="tab1-body__item tab1-body__item--3">
+            
+            <div style="width:100%;border:solid 0px;">
+            <iframe height="700" name="sample" src="./report/PredResult_latest_race_03.html" 
+  style="transform:scale(0.7);-moz-transform:scale(0.7);-webkit-transform:scale(0.7);-o-transform:scale(0.7);-ms-transform:scale(0.7);transform-origin:0 0;-moz-transform-origin:0 0;-webkit-transform-origin:0 0;-o-transform-origin:0 0;-ms-transform-origin:0 0;border:solid 0px;margin-bottom:0px;margin-right:0%;width:150%;">
+            </iframe> 
+          </div>
+          
+          </div>
+        </div>	
+        </span>
+        
 								</section>
 							<!-- Section -->
 							<section>
