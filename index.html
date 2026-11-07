@@ -94,7 +94,23 @@
     @media (max-width: 640px) { .nav-links .hide-sm { display: none; } }
 
     /* ---------- Hero ---------- */
-    .hero { padding: 56px 0 32px; }
+    .hero { padding: 28px 0 8px; }
+    .top-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 28px; align-items: start; padding-top: 28px; }
+    .top-grid > section { padding: 0; }
+    .top-grid .hero { padding: 0; }
+    .top-grid .hero h1 { font-size: clamp(34px, 4.2vw, 52px); margin: 14px 0 12px; }
+    .top-grid .hero p.lead { font-size: 15px; margin-bottom: 20px; }
+    .top-grid .races { grid-template-columns: 1fr 1fr; gap: 8px; }
+    .top-grid .race { padding: 10px 12px; }
+    .top-grid .race .name { font-size: 14px; }
+    .this-week { margin-top: 24px; }
+    .this-week .section-head { margin-bottom: 10px; }
+    .this-week .section-head h2 { font-size: 17px; }
+    .top-grid .frame { --s: .6; }
+    @media (max-width: 960px) {
+      .top-grid { grid-template-columns: 1fr; gap: 24px; }
+      .top-grid .frame { --s: .7; }
+    }
     .eyebrow {
       display: inline-flex; align-items: center; gap: 8px;
       font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase;
@@ -253,7 +269,8 @@
   </nav>
 
   <main class="container">
-
+   <div class="top-grid">
+    <div>
     <!-- Hero -->
     <header class="hero">
       <span class="eyebrow">AI Keiba Prediction · since 2022/01</span>
@@ -279,7 +296,7 @@
     </header>
 
     <!-- This week's races -->
-    <section id="this-week">
+    <section id="this-week" class="this-week">
       <div class="section-head">
         <h2>11月第2週の重賞レース</h2>
         <span class="sub">11/7 (土) – 11/8 (日)</span>
@@ -303,6 +320,7 @@
         </a>
       </div>
     </section>
+    </div>
 
     <!-- Viewer -->
     <section id="viewer">
@@ -351,6 +369,7 @@
       -->
       <!-- [end]:レース終了後 -->
     </section>
+   </div>
 
     <!-- About -->
     <section id="about">
@@ -457,10 +476,10 @@
             <h3>相撲予測</h3>
             <p>相撲の取組予測は、一見「勝ち負け」の二択という単純なものにみえますが、実は非常に奥が深いです。取組当日の勝者力士を予想し、結びの一番が終わる18時に答え合わせ（バックテスト）を行います。初日から千秋楽の15日間連続して楽しめるのも相撲予測を行う醍醐味といえます。このプロセスを通じて、一人でも多くの方が相撲という競技に興味を持ち、その深い魅力を知るきっかけになれば嬉しいです。</p>
             <ul class="links">
-              <li><a href="https://ryutoro-galois.github.io/sumo-predictor/SumoPredictDiaries.pdf" target="_blank" rel="noopener noreferrer">Sumo Predict Diaries</a></li>
-              <li><a href="https://ryutoro-galois.github.io/sumo-predictor/PredResult_sumo_targetYM_202611.html" target="_blank" rel="noopener noreferrer">令和八年十一月場所 (2026/11)</a></li>
-              <li><a href="https://ryutoro-galois.github.io/sumo-predictor/PredResult_sumo_targetYM_202609.html" target="_blank" rel="noopener noreferrer">令和八年九月場所 (2026/09)</a></li>
-              <li><a href="https://ryutoro-galois.github.io/sumo-predictor/PredResult_sumo_targetYM_202607.html" target="_blank" rel="noopener noreferrer">令和八年七月場所 (2026/07)</a></li>
+              <li><a href="https://ryutoro-galois.github.io/sumo-predictor/SumoPredictDiaries.pdf" target="_blank" rel="noopener noreferrer">Sumo Predict Diaries></li>
+              <li><a href="https://ryutoro-galois.github.io/sumo-predictor/PredResult_sumo_targetYM_202609.htm11 target="_blank" rel="noopener noreferrer">令和八年九月場所 (十一026/09)</a11/li>
+              <li><a href="https://ryutoro-galois.github.io/sumo-predictor/PredResult_sumo_targetYM_202607.html9.html" target="_blank" rel="noopener noreferrer">令和八年九月場所 (2026/09)</a></li>
+              <li><a href="https://ryutoro-galois.github.io/sumo-predictor/PredResult_sumo_targetYM_20260" target="_blank" rel="noopener noreferrer">令和八年七月場所 (2026/07)</a></li>
               <li><a href="https://ryutoro-galois.github.io/sumo-predictor/PredResult_sumo_targetYM_202605.html" target="_blank" rel="noopener noreferrer">令和八年五月場所 (2026/05)</a></li>
             </ul>
             <details class="more">
