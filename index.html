@@ -7,7 +7,7 @@
   <meta name="description" content="独自の競馬予想AIによる予想レポートをビジュアルとともに無償公開しています。">
   <meta name="theme-color" content="#0b1210" media="(prefers-color-scheme: dark)">
   <meta name="theme-color" content="#f7f8fa" media="(prefers-color-scheme: light)">
-  <link rel="shortcut icon" href="./images/favicon_2.ico">
+  <link rel="shortcut icon" href="https://ryutoro-galois.github.io/keiba-predictor/images/favicon_2.ico">
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-69VFZG8Z4H"></script>
@@ -271,7 +271,7 @@
     .tabs .indicator {
       position: absolute; top: 4px; bottom: 4px; left: 0; width: 0; border-radius: 9px;
       background: var(--surface-solid); box-shadow: 0 1px 3px rgba(0,0,0,.08), 0 0 0 1px var(--border);
-      transition: transform .35s var(--ease), width .35s var(--ease);
+      /* transition enabled after first placement */
     }
     .tabs button {
       position: relative; z-index: 1; flex: 1; min-width: max-content; appearance: none; border: 0; cursor: pointer;
@@ -281,7 +281,9 @@
     .tabs button:hover { color: var(--text); }
     .tabs button[aria-selected="true"] { color: var(--text); }
     .panel { display: none; padding: 12px; }
-    .panel.on { display: block; animation: fade .4s var(--ease); }
+    .panel.on { display: block; }
+    .panel.on.anim { animation: fade .4s var(--ease); }
+    .tabs.ready .indicator { transition: transform .35s var(--ease), width .35s var(--ease); }
     @keyframes fade { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
     .frame {
       --s: .6; --h: 700px;
@@ -368,8 +370,8 @@
     #last-update { font-family: "JetBrains Mono", monospace; font-size: 12px; }
 
     /* ---------- Reveal on scroll ---------- */
-    .reveal { opacity: 0; transform: translateY(14px); transition: opacity .7s var(--ease), transform .7s var(--ease); }
-    .reveal.in { opacity: 1; transform: none; }
+    .js-reveal .reveal { opacity: 0; transform: translateY(14px); transition: opacity .7s var(--ease), transform .7s var(--ease); }
+    .js-reveal .reveal.in { opacity: 1; transform: none; }
 
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { animation: none !important; transition: none !important; }
@@ -419,7 +421,7 @@
       </p>
       <div class="hero-actions">
         <a class="btn btn-primary" href="https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_latest_race.html" target="_blank" rel="noopener noreferrer">
-          <img src="images/report.png" alt="">直近の重賞レース予想レポート<svg class="i arrow"><use href="#i-arrow-right"/></svg>
+          <img src="https://ryutoro-galois.github.io/keiba-predictor/images/report.png" alt="">直近の重賞レース予想レポート<svg class="i arrow"><use href="#i-arrow-right"/></svg>
         </a>
 
         <!-- [start]:レース中 -->
@@ -484,13 +486,13 @@
           </div>
         </div>
         <div class="panel on" data-panel="1">
-          <div class="frame" style="--h:700px"><iframe title="予測チャート" src="./report/PredResult_latest_race_01.html"></iframe></div>
+          <div class="frame" style="--h:700px"><iframe title="予測チャート" src="https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_latest_race_01.html"></iframe></div>
         </div>
         <div class="panel" data-panel="2">
-          <div class="frame" style="--h:650px"><iframe loading="lazy" title="オッズモニタリング" src="./report/PredResult_latest_race_02.html"></iframe></div>
+          <div class="frame" style="--h:650px"><iframe loading="lazy" title="オッズモニタリング" src="https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_latest_race_02.html"></iframe></div>
         </div>
         <div class="panel" data-panel="3">
-          <div class="frame" style="--h:700px"><iframe loading="lazy" title="出馬表" src="./report/PredResult_latest_race_03.html"></iframe></div>
+          <div class="frame" style="--h:700px"><iframe loading="lazy" title="出馬表" src="https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_latest_race_03.html"></iframe></div>
         </div>
       </div>
       <!-- [end]:レース中 -->
@@ -508,13 +510,13 @@
           </div>
         </div>
         <div class="panel on" data-panel="1">
-          <div class="frame" style="--h:900px"><iframe loading="lazy" title="人気vs着順" src="./report/PredResult_latest_race_backtest_01.html"></iframe></div>
+          <div class="frame" style="--h:900px"><iframe loading="lazy" title="人気vs着順" src="https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_latest_race_backtest_01.html"></iframe></div>
         </div>
         <div class="panel" data-panel="2">
-          <div class="frame" style="--h:1200px;--s:.5"><iframe loading="lazy" title="コーナー通過順位" src="./report/PredResult_latest_race_backtest_02.html"></iframe></div>
+          <div class="frame" style="--h:1200px;--s:.5"><iframe loading="lazy" title="コーナー通過順位" src="https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_latest_race_backtest_02.html"></iframe></div>
         </div>
         <div class="panel" data-panel="3">
-          <div class="frame" style="--h:700px"><iframe loading="lazy" title="予測チャート" src="./report/PredResult_latest_race_01.html"></iframe></div>
+          <div class="frame" style="--h:700px"><iframe loading="lazy" title="予測チャート" src="https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_latest_race_01.html"></iframe></div>
         </div>
       </div>
       -->
@@ -560,7 +562,7 @@
       <div class="topics">
 
         <article class="card topic reveal">
-          <a class="thumb" href="https://ryutoro-galois.github.io/keiba-predictor/manual/KeibaPredictDiaries_v1_201911.pdf" target="_blank" rel="noopener noreferrer"><img src="images/keiba_predition_diaries.png" alt="Keiba Predict Diaries" loading="lazy"><span class="tag">Background</span></a>
+          <a class="thumb" href="https://ryutoro-galois.github.io/keiba-predictor/manual/KeibaPredictDiaries_v1_201911.pdf" target="_blank" rel="noopener noreferrer"><img src="https://ryutoro-galois.github.io/keiba-predictor/images/keiba_predition_diaries.png" alt="Keiba Predict Diaries" loading="lazy"><span class="tag">Background</span></a>
           <div class="body">
             <h3>競馬予測の前提</h3>
             <p>競馬について全く知識がない中で競馬予測を始めた当初の記録です。競馬は毎週開催されることもあり、データ分析との親和性が高く、継続的に取り組めるのでお勧めです。スクレイピングと可視化を用いて事前情報を効率的にインプットして競馬を楽しく観戦できます。</p>
@@ -571,7 +573,7 @@
         </article>
 
         <article class="card topic reveal">
-          <a class="thumb" href="https://ryutoro-galois.github.io/keiba-predictor/sankeyDiagram/sankeyDiagram_keiba_Arimakinen_2019y.html" target="_blank" rel="noopener noreferrer"><img src="images/race_result.png" alt="過去のレース結果" loading="lazy"><span class="tag">Archive</span></a>
+          <a class="thumb" href="https://ryutoro-galois.github.io/keiba-predictor/sankeyDiagram/sankeyDiagram_keiba_Arimakinen_2019y.html" target="_blank" rel="noopener noreferrer"><img src="https://ryutoro-galois.github.io/keiba-predictor/images/race_result.png" alt="過去のレース結果" loading="lazy"><span class="tag">Archive</span></a>
           <div class="body">
             <h3>過去のレース結果 (2019年10月〜)</h3>
             <ul class="links">
@@ -588,7 +590,7 @@
         </article>
 
         <article class="card topic reveal">
-          <a class="thumb" href="https://ryutoro-galois.github.io/keiba-predictor/sankeyDiagram/horse_pedigree.html" target="_blank" rel="noopener noreferrer"><img src="images/horse_pedigree.png" alt="血統の見える化" loading="lazy"><span class="tag">Pedigree</span></a>
+          <a class="thumb" href="https://ryutoro-galois.github.io/keiba-predictor/sankeyDiagram/horse_pedigree.html" target="_blank" rel="noopener noreferrer"><img src="https://ryutoro-galois.github.io/keiba-predictor/images/horse_pedigree.png" alt="血統の見える化" loading="lazy"><span class="tag">Pedigree</span></a>
           <div class="body">
             <h3>血統の見える化</h3>
             <p>競馬を観戦する上で血統は重要な要素の一つです。Sankey Diagramを用いて血統 (最大5世代) を可視化することで交配のクロス状況が確認しやすくなります。</p>
@@ -605,7 +607,7 @@
         </article>
 
         <article class="card topic reveal">
-          <a class="thumb" href="https://ryutoro-galois.github.io/keiba-predictor/report/AdHocAnalysis_keiba_04_2000y_2019y_G1_20191113.html" target="_blank" rel="noopener noreferrer"><img src="images/tree_diagram.png" alt="競馬アドホック分析" loading="lazy"><span class="tag">Analysis</span></a>
+          <a class="thumb" href="https://ryutoro-galois.github.io/keiba-predictor/report/AdHocAnalysis_keiba_04_2000y_2019y_G1_20191113.html" target="_blank" rel="noopener noreferrer"><img src="https://ryutoro-galois.github.io/keiba-predictor/images/tree_diagram.png" alt="競馬アドホック分析" loading="lazy"><span class="tag">Analysis</span></a>
           <div class="body">
             <h3>競馬アドホック分析</h3>
             <p>長期間データを用いた傾向分析結果を紹介しています。全体を俯瞰する基礎分析が重要であることを改めて感じます。</p>
@@ -617,7 +619,7 @@
         </article>
 
         <article class="card topic reveal">
-          <a class="thumb" href="https://ryutoro-galois.github.io/sumo-predictor/SumoPredictDiaries_v1_201911.pdf" target="_blank" rel="noopener noreferrer"><img src="images/sumo_prediction_diaries.png" alt="相撲予測" loading="lazy"><span class="tag">Sumo Prediction</span></a>
+          <a class="thumb" href="https://ryutoro-galois.github.io/sumo-predictor/SumoPredictDiaries_v1_201911.pdf" target="_blank" rel="noopener noreferrer"><img src="https://ryutoro-galois.github.io/keiba-predictor/images/sumo_prediction_diaries.png" alt="相撲予測" loading="lazy"><span class="tag">Sumo Prediction</span></a>
           <div class="body">
             <h3>相撲予測</h3>
             <p>相撲の取組予測は、一見「勝ち負け」の二択という単純なものにみえますが、実は非常に奥が深いです。取組当日の勝者力士を予想し、結びの一番が終わる18時に答え合わせ（バックテスト）を行います。初日から千秋楽の15日間連続して楽しめるのも相撲予測を行う醍醐味といえます。このプロセスを通じて、一人でも多くの方が相撲という競技に興味を持ち、その深い魅力を知るきっかけになれば嬉しいです。</p>
@@ -643,7 +645,7 @@
         </article>
 
         <article class="card topic reveal">
-          <a class="thumb" href="https://ryutoro-galois.github.io/toy-samples/interestMap.html" target="_blank" rel="noopener noreferrer"><img src="images/interest_map.png" alt="データ可視化" loading="lazy"><span class="tag">Visualization</span></a>
+          <a class="thumb" href="https://ryutoro-galois.github.io/toy-samples/interestMap.html" target="_blank" rel="noopener noreferrer"><img src="https://ryutoro-galois.github.io/keiba-predictor/images/interest_map.png" alt="データ可視化" loading="lazy"><span class="tag">Visualization</span></a>
           <div class="body">
             <h3>データ可視化</h3>
             <p>直感的な気付きやStory Tellingに繋がるような可視化の手法や適用事例を探して紹介しています。個人的には、Sankey Diagramがお勧めで様々なケースで利用しています。</p>
@@ -696,10 +698,12 @@
           tabs.forEach(function (t) { t.setAttribute('aria-selected', t === tab ? 'true' : 'false'); });
           panels.forEach(function (p) { p.classList.toggle('on', p.dataset.panel === tab.dataset.tab); });
           move(tab);
+          panels.forEach(function (p) { if (p.classList.contains('on')) p.classList.add('anim'); });
         });
       });
       var sync = function () { move(list.querySelector('[aria-selected="true"]')); };
       sync();
+      requestAnimationFrame(function () { list.classList.add('ready'); });
       window.addEventListener('resize', sync);
       if (document.fonts) document.fonts.ready.then(sync);
     });
@@ -709,17 +713,29 @@
       f.addEventListener('load', function () { f.parentNode.classList.add('loaded'); });
     });
 
-    // Reveal on scroll
+    // Reveal on scroll (progressive: content is visible by default;
+    // only cards below the fold are briefly hidden, and a safety timer
+    // always shows everything so nothing can stay blank)
     (function () {
-      var els = document.querySelectorAll('.reveal');
-      if (!('IntersectionObserver' in window)) { els.forEach(function (e) { e.classList.add('in'); }); return; }
+      if (!('IntersectionObserver' in window)) return;
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      var els = [].slice.call(document.querySelectorAll('.reveal'));
+      var showAll = function () { els.forEach(function (e) { e.classList.add('in'); }); };
       var io = new IntersectionObserver(function (entries) {
         entries.forEach(function (en) {
           if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
         });
-      }, { rootMargin: '0px 0px -8% 0px' });
-      els.forEach(function (e, i) { e.style.transitionDelay = (i % 3) * 70 + 'ms'; io.observe(e); });
-    })(
+      }, { threshold: 0 });
+      els.forEach(function (e, i) {
+        if (e.getBoundingClientRect().top < window.innerHeight) { e.classList.add('in'); return; }
+        e.style.transitionDelay = (i % 3) * 70 + 'ms';
+        io.observe(e);
+      });
+      document.documentElement.classList.add('js-reveal');
+      setTimeout(showAll, 2500);
+      window.addEventListener('beforeprint', showAll);
+    })();
+
     // Last update
     (function () {
       var d = new Date(document.lastModified);
