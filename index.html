@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Visual Horse Racing</title>
   <meta name="description" content="独自の競馬予想AIによる予想レポートをビジュアルとともに無償公開しています。">
+  <meta name="theme-color" content="#0b1210" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f7f8fa" media="(prefers-color-scheme: light)">
   <link rel="shortcut icon" href="./images/favicon_2.ico">
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -18,39 +20,58 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --bg: #f6f7f4;
-      --surface: #ffffff;
-      --surface-2: #eef3ee;
-      --text: #17201b;
-      --muted: #5d6b63;
-      --border: #dde4de;
-      --accent: #1f8a5b;
-      --accent-2: #2f7fd0;
-      --accent-soft: #e2f3ea;
-      --live: #18a058;
-      --ended: #d64545;
-      --g1: #2f6fd6;
-      --g2: #d64545;
-      --g3: #1f9d55;
-      --shadow: 0 1px 2px rgba(16,24,20,.04), 0 8px 24px rgba(16,24,20,.06);
-      --radius: 16px;
+      --bg: #f7f8fa;
+      --surface: rgba(255,255,255,.78);
+      --surface-solid: #ffffff;
+      --surface-2: #f0f2f5;
+      --text: #0d1512;
+      --muted: #5b6670;
+      --faint: #8a949d;
+      --border: rgba(15,23,42,.08);
+      --border-strong: rgba(15,23,42,.14);
+      --accent: #10b981;
+      --accent-2: #6366f1;
+      --accent-3: #06b6d4;
+      --accent-soft: rgba(16,185,129,.10);
+      --live: #10b981;
+      --ended: #ef4444;
+      --g1: #3b82f6;
+      --g2: #ef4444;
+      --g3: #10b981;
+      --jg: #b4884d;
+      --grid: rgba(15,23,42,.06);
+      --glow-a: rgba(16,185,129,.22);
+      --glow-b: rgba(99,102,241,.18);
+      --shadow-sm: 0 1px 2px rgba(15,23,42,.04);
+      --shadow: 0 1px 2px rgba(15,23,42,.04), 0 12px 32px -12px rgba(15,23,42,.14);
+      --shadow-lg: 0 2px 4px rgba(15,23,42,.04), 0 30px 60px -20px rgba(15,23,42,.25);
+      --radius: 20px;
+      --ease: cubic-bezier(.2,.8,.2,1);
     }
     @media (prefers-color-scheme: dark) {
       :root {
-        --bg: #0f1412;
-        --surface: #161d1a;
-        --surface-2: #1c2622;
-        --text: #e8efea;
-        --muted: #9aa9a1;
-        --border: #26322d;
-        --accent: #3ccf8e;
-        --accent-2: #6aaefc;
-        --accent-soft: #173327;
-        --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.25);
+        --bg: #0b1210;
+        --surface: rgba(20,28,26,.72);
+        --surface-solid: #131b19;
+        --surface-2: #18221f;
+        --text: #eaf2ee;
+        --muted: #9aa8a2;
+        --faint: #6c7a74;
+        --border: rgba(255,255,255,.07);
+        --border-strong: rgba(255,255,255,.14);
+        --accent: #34d399;
+        --accent-2: #818cf8;
+        --accent-3: #22d3ee;
+        --accent-soft: rgba(52,211,153,.12);
+        --grid: rgba(255,255,255,.045);
+        --glow-a: rgba(52,211,153,.16);
+        --glow-b: rgba(129,140,248,.16);
+        --shadow: 0 1px 2px rgba(0,0,0,.4), 0 16px 40px -16px rgba(0,0,0,.6);
+        --shadow-lg: 0 2px 4px rgba(0,0,0,.4), 0 30px 60px -20px rgba(0,0,0,.7);
       }
     }
 
@@ -60,87 +81,109 @@
       margin: 0;
       background: var(--bg);
       color: var(--text);
-      font-family: "Inter", "Noto Sans JP", system-ui, -apple-system, "Hiragino Sans", sans-serif;
+      font-family: "Plus Jakarta Sans", "Noto Sans JP", system-ui, -apple-system, "Hiragino Sans", sans-serif;
       font-size: 15px;
       line-height: 1.75;
       -webkit-font-smoothing: antialiased;
+      font-feature-settings: "palt";
+      overflow-x: hidden;
+    }
+    /* ambient background: glow + grid */
+    body::before {
+      content: ""; position: absolute; inset: 0 0 auto 0; height: 900px; z-index: -1; pointer-events: none;
+      background:
+        radial-gradient(600px 380px at 12% 8%, var(--glow-a), transparent 70%),
+        radial-gradient(700px 420px at 85% 0%, var(--glow-b), transparent 70%),
+        linear-gradient(var(--grid) 1px, transparent 1px) 0 0 / 40px 40px,
+        linear-gradient(90deg, var(--grid) 1px, transparent 1px) 0 0 / 40px 40px;
+      -webkit-mask-image: linear-gradient(to bottom, #000 30%, transparent);
+              mask-image: linear-gradient(to bottom, #000 30%, transparent);
     }
     a { color: var(--accent-2); text-decoration: none; }
-    a:hover { text-decoration: underline; }
+    a:hover { text-decoration: underline; text-underline-offset: 3px; }
     img { max-width: 100%; display: block; }
+    svg.i { width: 1em; height: 1em; flex: none; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    :focus-visible { outline: 2px solid var(--accent-2); outline-offset: 2px; border-radius: 6px; }
 
-    .container { max-width: 1160px; margin: 0 auto; padding: 0 20px; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
     /* ---------- Nav ---------- */
-    .nav {
-      position: sticky; top: 0; z-index: 50;
-      backdrop-filter: saturate(180%) blur(12px);
-      -webkit-backdrop-filter: saturate(180%) blur(12px);
-      background: color-mix(in srgb, var(--bg) 80%, transparent);
-      border-bottom: 1px solid var(--border);
+    .nav { position: sticky; top: 12px; z-index: 50; margin-top: 12px; }
+    .nav .container > div {
+      display: flex; align-items: center; justify-content: space-between; gap: 16px;
+      height: 56px; padding: 0 8px 0 14px;
+      background: var(--surface); border: 1px solid var(--border); border-radius: 16px;
+      backdrop-filter: saturate(180%) blur(16px); -webkit-backdrop-filter: saturate(180%) blur(16px);
+      box-shadow: var(--shadow-sm);
     }
-    .nav .container { display: flex; align-items: center; justify-content: space-between; height: 60px; gap: 16px; }
-    .brand { display: flex; align-items: center; gap: 10px; font-weight: 800; color: var(--text); letter-spacing: -.01em; }
+    .brand { display: flex; align-items: center; gap: 10px; font-weight: 800; color: var(--text); letter-spacing: -.02em; font-size: 15px; }
     .brand:hover { text-decoration: none; }
     .brand-mark {
-      width: 30px; height: 30px; border-radius: 9px;
-      background: linear-gradient(135deg, var(--accent), var(--accent-2));
-      display: grid; place-items: center; color: #fff; font-size: 15px;
+      width: 30px; height: 30px; border-radius: 9px; display: grid; place-items: center; color: #fff;
+      background: conic-gradient(from 210deg, var(--accent), var(--accent-3), var(--accent-2), var(--accent));
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.25), 0 4px 12px -4px var(--accent);
     }
-    .nav-links { display: flex; align-items: center; gap: 6px; }
-    .nav-links a { color: var(--muted); font-size: 14px; font-weight: 500; padding: 6px 12px; border-radius: 8px; }
+    .brand-mark svg { width: 17px; height: 17px; }
+    .nav-links { display: flex; align-items: center; gap: 2px; }
+    .nav-links a { color: var(--muted); font-size: 13.5px; font-weight: 600; padding: 7px 12px; border-radius: 10px; transition: color .2s, background .2s; }
     .nav-links a:hover { color: var(--text); background: var(--surface-2); text-decoration: none; }
-    .nav-links a.btn-outline { border: 1px solid var(--border); color: var(--text); }
+    .nav-links a.btn-outline {
+      display: inline-flex; align-items: center; gap: 6px; margin-left: 6px;
+      color: var(--bg); background: var(--text);
+    }
+    .nav-links a.btn-outline:hover { opacity: .88; background: var(--text); color: var(--bg); }
     @media (max-width: 640px) { .nav-links .hide-sm { display: none; } }
 
-    /* ---------- Hero ---------- */
-    .hero { padding: 28px 0 8px; }
-    .top-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 28px; align-items: start; padding-top: 28px; }
+    /* ---------- Top grid (hero + dashboard) ---------- */
+    .top-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 32px; align-items: start; padding-top: 36px; }
     .top-grid > section { padding: 0; }
-    .top-grid .hero { padding: 0; }
-    .top-grid .hero h1 { font-size: clamp(34px, 4.2vw, 52px); margin: 14px 0 12px; }
-    .top-grid .hero p.lead { font-size: 15px; margin-bottom: 20px; }
-    .top-grid .races { grid-template-columns: 1fr 1fr; gap: 8px; }
-    .top-grid .race { padding: 10px 12px; }
-    .top-grid .race .name { font-size: 14px; }
-    .this-week { margin-top: 24px; }
-    .this-week .section-head { margin-bottom: 10px; }
-    .this-week .section-head h2 { font-size: 17px; }
-    .top-grid .frame { --s: .6; }
-    @media (max-width: 960px) {
-      .top-grid { grid-template-columns: 1fr; gap: 24px; }
-      .top-grid .frame { --s: .7; }
-    }
+    @media (max-width: 960px) { .top-grid { grid-template-columns: 1fr; gap: 28px; } }
+
     .eyebrow {
       display: inline-flex; align-items: center; gap: 8px;
-      font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase;
-      color: var(--accent); background: var(--accent-soft);
-      padding: 4px 12px; border-radius: 999px;
+      font-size: 11.5px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+      color: var(--text); background: var(--surface); border: 1px solid var(--border);
+      padding: 5px 12px 5px 6px; border-radius: 999px; backdrop-filter: blur(8px);
+    }
+    .eyebrow .chip {
+      font-size: 10.5px; color: #fff; padding: 2px 8px; border-radius: 999px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
     }
     .hero h1 {
-      font-size: clamp(36px, 6vw, 64px); line-height: 1.05; letter-spacing: -.03em;
-      margin: 18px 0 16px; font-weight: 800;
+      font-size: clamp(38px, 4.6vw, 60px); line-height: 1.02; letter-spacing: -.045em;
+      margin: 18px 0 14px; font-weight: 800;
     }
     .hero h1 .grad {
-      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      background: linear-gradient(100deg, var(--accent) 0%, var(--accent-3) 45%, var(--accent-2) 100%);
       -webkit-background-clip: text; background-clip: text; color: transparent;
     }
-    .hero p.lead { font-size: 17px; color: var(--muted); max-width: 640px; margin: 0 0 28px; }
+    .hero p.lead { font-size: 15.5px; color: var(--muted); max-width: 560px; margin: 0 0 24px; }
+    .hero p.lead a { font-weight: 600; }
     .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+
     .btn {
-      display: inline-flex; align-items: center; gap: 10px;
-      padding: 13px 22px; border-radius: 12px; font-weight: 700; font-size: 15px;
-      transition: transform .15s ease, box-shadow .15s ease, background .15s;
+      position: relative; display: inline-flex; align-items: center; gap: 10px;
+      padding: 12px 18px 12px 14px; border-radius: 14px; font-weight: 700; font-size: 14.5px;
+      transition: transform .25s var(--ease), box-shadow .25s var(--ease);
     }
-    .btn:hover { text-decoration: none; transform: translateY(-1px); }
-    .btn-primary { background: var(--text); color: var(--bg); box-shadow: var(--shadow); }
-    .btn-ghost { background: var(--surface); color: var(--text); border: 1px solid var(--border); }
-    .btn img { width: 22px; height: auto; }
+    .btn:hover { text-decoration: none; transform: translateY(-2px); }
+    .btn-primary {
+      color: #fff;
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      box-shadow: 0 0 0 1px rgba(255,255,255,.06) inset, 0 10px 30px -10px var(--accent-2), 0 6px 18px -8px var(--accent);
+    }
+    @media (prefers-color-scheme: dark) {
+      .btn-primary { background: linear-gradient(135deg, var(--accent), #0ea5a0); color: #04110c; }
+    }
+    .btn-primary:hover { box-shadow: 0 0 0 1px rgba(255,255,255,.08) inset, 0 16px 40px -12px var(--accent-2), 0 10px 26px -10px var(--accent); }
+    .btn img { width: 22px; height: auto; border-radius: 4px; background: #fff; padding: 2px; }
+    .btn .arrow { transition: transform .25s var(--ease); }
+    .btn:hover .arrow { transform: translateX(3px); }
 
     .status {
       display: inline-flex; align-items: center; gap: 8px;
-      font-size: 13px; font-weight: 600; padding: 6px 12px; border-radius: 999px;
-      border: 1px solid var(--border); background: var(--surface);
+      font-size: 12.5px; font-weight: 700; padding: 7px 12px; border-radius: 999px;
+      border: 1px solid var(--border); background: var(--surface); backdrop-filter: blur(8px);
     }
     .status .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--live); position: relative; }
     .status.live { color: var(--live); }
@@ -150,120 +193,216 @@
     }
     .status.ended { color: var(--ended); }
     .status.ended .dot { background: var(--ended); }
-    @keyframes pulse { 0% { transform: scale(.6); opacity: .5; } 100% { transform: scale(1.8); opacity: 0; } }
-    @media (prefers-reduced-motion: reduce) { .status.live .dot::after { animation: none; } }
+    @keyframes pulse { 0% { transform: scale(.6); opacity: .5; } 100% { transform: scale(1.9); opacity: 0; } }
 
     /* ---------- Sections ---------- */
-    section { padding: 28px 0; }
-    .section-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 16px; flex-wrap: wrap; }
-    .section-head h2 { font-size: 22px; letter-spacing: -.01em; margin: 0; font-weight: 800; }
-    .section-head .sub { color: var(--muted); font-size: 13px; }
+    section { padding: 32px 0; }
+    .section-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 16px; flex-wrap: wrap; }
+    .section-head h2 { font-size: 22px; letter-spacing: -.02em; margin: 0; font-weight: 800; display: flex; align-items: center; gap: 10px; }
+    .section-head h2 .num {
+      font-family: "JetBrains Mono", monospace; font-size: 11px; font-weight: 700; color: var(--accent);
+      padding: 2px 7px; border-radius: 6px; background: var(--accent-soft); letter-spacing: 0;
+    }
+    .section-head .sub { color: var(--muted); font-size: 13px; font-weight: 600; display: inline-flex; align-items: center; gap: 4px; }
+    a.sub:hover { color: var(--text); text-decoration: none; }
 
     .card {
+      position: relative;
       background: var(--surface); border: 1px solid var(--border);
       border-radius: var(--radius); box-shadow: var(--shadow);
+      backdrop-filter: saturate(160%) blur(12px); -webkit-backdrop-filter: saturate(160%) blur(12px);
     }
 
     /* This week's races */
-    .races { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; }
+    .this-week { margin-top: 30px; }
+    .this-week .section-head { margin-bottom: 10px; }
+    .this-week .section-head h2 { font-size: 16px; }
+    .races { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
     .race {
-      display: flex; align-items: center; gap: 12px; padding: 14px 16px;
-      color: var(--text); transition: border-color .15s, transform .15s;
+      display: flex; align-items: center; gap: 12px; padding: 12px 14px; border-radius: 16px;
+      color: var(--text); overflow: hidden;
+      transition: transform .25s var(--ease), border-color .25s, box-shadow .25s;
     }
-    .race:hover { text-decoration: none; border-color: var(--accent); transform: translateY(-2px); }
+    .race::before {
+      content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: var(--c, var(--accent));
+    }
+    .race:hover { text-decoration: none; transform: translateY(-3px); border-color: var(--border-strong); box-shadow: var(--shadow-lg); }
+    .race .txt { min-width: 0; flex: 1; }
+    .race .name { display: block; font-weight: 700; font-size: 14px; line-height: 1.35; }
+    .race .meta { display: inline-flex; align-items: center; gap: 4px; font-size: 11.5px; color: var(--faint); font-weight: 600; }
+    .race .go { color: var(--faint); transition: transform .25s var(--ease), color .25s; }
+    .race:hover .go { color: var(--text); transform: translate(2px,-2px); }
     .grade {
-      flex: none; font-family: "Inter", sans-serif; font-size: 12px; font-weight: 800;
-      color: #fff; padding: 4px 8px; border-radius: 6px; min-width: 44px; text-align: center;
+      flex: none; font-family: "JetBrains Mono", monospace; font-size: 11px; font-weight: 700;
+      color: var(--c); background: color-mix(in srgb, var(--c) 14%, transparent);
+      border: 1px solid color-mix(in srgb, var(--c) 30%, transparent);
+      padding: 3px 0; border-radius: 8px; width: 46px; text-align: center;
     }
-    .grade.g1 { background: var(--g1); }
-    .grade.g2 { background: var(--g2); }
-    .grade.g3 { background: var(--g3); }
-    .grade.jg { background: #8a6d3b; }
-    .race .name { font-weight: 700; line-height: 1.4; }
-    .race .meta { font-size: 12px; color: var(--muted); }
+    .race.g1, .grade.g1 { --c: var(--g1); }
+    .race.g2, .grade.g2 { --c: var(--g2); }
+    .race.g3, .grade.g3 { --c: var(--g3); }
+    .race.jg, .grade.jg { --c: var(--jg); }
+    @media (max-width: 420px) { .races { grid-template-columns: 1fr; } }
 
-    /* Info grid */
-    .info { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; }
-    .info .card { padding: 20px 22px; }
-    .info h3 { margin: 0 0 8px; font-size: 15px; display: flex; align-items: center; gap: 8px; }
-    .info .ico {
-      width: 28px; height: 28px; border-radius: 8px; display: grid; place-items: center;
-      background: var(--accent-soft); color: var(--accent); font-size: 14px;
+    /* ---------- Dashboard ---------- */
+    .viewer {
+      overflow: hidden; border-radius: 22px; box-shadow: var(--shadow-lg);
+      /* backdrop-filter breaks iframe/indicator painting in some browsers */
+      background: var(--surface-solid); backdrop-filter: none; -webkit-backdrop-filter: none;
     }
-    .info ul { margin: 0; padding-left: 1.1em; color: var(--muted); font-size: 14px; }
-    .info li { margin: 2px 0; }
-
-    /* Tabs */
-    .viewer { overflow: hidden; }
+    /* gradient ring */
+    .viewer::after {
+      content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1px; pointer-events: none;
+      background: linear-gradient(140deg, color-mix(in srgb, var(--accent) 60%, transparent), transparent 35%, transparent 65%, color-mix(in srgb, var(--accent-2) 60%, transparent));
+      -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+      -webkit-mask-composite: xor; mask-composite: exclude;
+    }
+    .viewer-bar { display: flex; align-items: center; gap: 12px; padding: 10px 12px 0 16px; }
+    .viewer-bar .lights { display: flex; gap: 6px; }
+    .viewer-bar .lights i { width: 10px; height: 10px; border-radius: 50%; background: var(--border-strong); }
+    .viewer-bar .lights i:nth-child(1) { background: #ff5f57; }
+    .viewer-bar .lights i:nth-child(2) { background: #febc2e; }
+    .viewer-bar .lights i:nth-child(3) { background: #28c840; }
     .tabs {
-      display: flex; gap: 4px; padding: 6px; margin: 0; list-style: none;
-      background: var(--surface-2); border-bottom: 1px solid var(--border); overflow-x: auto;
+      position: relative; flex: 1; display: flex; gap: 2px; padding: 4px; margin: 0;
+      background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; overflow-x: auto; scrollbar-width: none;
+    }
+    .tabs::-webkit-scrollbar { display: none; }
+    .tabs .indicator {
+      position: absolute; top: 4px; bottom: 4px; left: 0; width: 0; border-radius: 9px;
+      background: var(--surface-solid); box-shadow: 0 1px 3px rgba(0,0,0,.08), 0 0 0 1px var(--border);
+      transition: transform .35s var(--ease), width .35s var(--ease);
     }
     .tabs button {
-      flex: 1; min-width: max-content; appearance: none; border: 0; cursor: pointer;
-      font: inherit; font-weight: 600; font-size: 14px; color: var(--muted);
-      padding: 10px 16px; border-radius: 10px; background: transparent; transition: background .15s, color .15s;
+      position: relative; z-index: 1; flex: 1; min-width: max-content; appearance: none; border: 0; cursor: pointer;
+      font: inherit; font-weight: 700; font-size: 13px; color: var(--muted);
+      padding: 7px 14px; border-radius: 9px; background: transparent; transition: color .2s;
     }
     .tabs button:hover { color: var(--text); }
-    .tabs button[aria-selected="true"] { background: var(--surface); color: var(--text); box-shadow: 0 1px 3px rgba(0,0,0,.08); }
-    .panel { display: none; padding: 16px; }
-    .panel.on { display: block; }
+    .tabs button[aria-selected="true"] { color: var(--text); }
+    .panel { display: none; padding: 12px; }
+    .panel.on { display: block; animation: fade .4s var(--ease); }
+    @keyframes fade { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
     .frame {
-      --s: .7; --h: 700px;
+      --s: .6; --h: 700px;
       position: relative; width: 100%; height: calc(var(--h) * var(--s));
-      overflow: hidden; border-radius: 10px; background: #fff;
+      overflow: hidden; border-radius: 14px; border: 1px solid var(--border);
+      background: linear-gradient(100deg, #f3f5f7 30%, #e9edf1 50%, #f3f5f7 70%) 0 0 / 300% 100%;
+      animation: shimmer 1.4s linear infinite;
     }
+    .frame.loaded { animation: none; background: #fff; }
+    @keyframes shimmer { from { background-position: 100% 0; } to { background-position: 0 0; } }
     .frame iframe {
       border: 0; width: calc(100% / var(--s)); height: var(--h);
       transform: scale(var(--s)); transform-origin: 0 0;
     }
-    @media (max-width: 640px) { .frame { --s: .45; } }
+    @media (max-width: 960px) { .frame { --s: .7; } }
+    @media (max-width: 640px) { .frame { --s: .45; } .viewer-bar .lights { display: none; } .viewer-bar { padding-left: 12px; } }
 
-    /* Topics */
-    .topics { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px; }
-    .topic { display: flex; flex-direction: column; overflow: hidden; }
-    .topic .thumb { display: block; aspect-ratio: 16 / 9; overflow: hidden; background: var(--surface-2); border-bottom: 1px solid var(--border); }
-    .topic .thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s ease; }
-    .topic:hover .thumb img { transform: scale(1.04); }
-    .topic .body { padding: 20px 22px 22px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
-    .topic h3 { margin: 0; font-size: 18px; letter-spacing: -.01em; }
-    .topic .tag { font-size: 11px; font-weight: 700; color: var(--accent); letter-spacing: .06em; text-transform: uppercase; }
+    /* ---------- Info ---------- */
+    .info { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; }
+    .info .card { padding: 22px 24px; overflow: hidden; }
+    .info .card::before {
+      content: ""; position: absolute; width: 160px; height: 160px; right: -60px; top: -60px; border-radius: 50%;
+      background: radial-gradient(var(--glow-a), transparent 70%); pointer-events: none;
+    }
+    .info .card:nth-child(2)::before { background: radial-gradient(color-mix(in srgb, var(--accent-3) 22%, transparent), transparent 70%); }
+    .info .card:nth-child(3)::before { background: radial-gradient(var(--glow-b), transparent 70%); }
+    .info h3 { margin: 0 0 10px; font-size: 15px; display: flex; align-items: center; gap: 10px; }
+    .info .ico {
+      width: 34px; height: 34px; border-radius: 10px; display: grid; place-items: center;
+      color: var(--accent); background: var(--accent-soft); border: 1px solid color-mix(in srgb, var(--accent) 22%, transparent);
+      font-size: 17px;
+    }
+    .info .card:nth-child(2) .ico { color: var(--accent-3); background: color-mix(in srgb, var(--accent-3) 12%, transparent); border-color: color-mix(in srgb, var(--accent-3) 25%, transparent); }
+    .info .card:nth-child(3) .ico { color: var(--accent-2); background: color-mix(in srgb, var(--accent-2) 12%, transparent); border-color: color-mix(in srgb, var(--accent-2) 25%, transparent); }
+    .info ul { margin: 0; padding: 0; list-style: none; color: var(--muted); font-size: 14px; }
+    .info li { position: relative; padding-left: 16px; margin: 3px 0; }
+    .info li::before { content: ""; position: absolute; left: 2px; top: .75em; width: 5px; height: 5px; border-radius: 50%; background: var(--faint); }
+    .info li a { font-weight: 600; }
+
+    /* ---------- Topics ---------- */
+    .topics { display: grid; grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); gap: 20px; }
+    .topic { display: flex; flex-direction: column; overflow: hidden; transition: transform .3s var(--ease), box-shadow .3s var(--ease), border-color .3s; }
+    .topic:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: var(--border-strong); }
+    .topic .thumb { position: relative; display: block; aspect-ratio: 16 / 9; overflow: hidden; background: var(--surface-2); }
+    .topic .thumb::after {
+      content: ""; position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,.45), transparent 55%);
+    }
+    .topic .thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s var(--ease); }
+    .topic:hover .thumb img { transform: scale(1.05); }
+    .topic .tag {
+      position: absolute; left: 14px; bottom: 12px; z-index: 1;
+      font-size: 10.5px; font-weight: 800; color: #fff; letter-spacing: .1em; text-transform: uppercase;
+      padding: 4px 10px; border-radius: 999px;
+      background: rgba(255,255,255,.16); border: 1px solid rgba(255,255,255,.28);
+      backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+    }
+    .topic .body { padding: 18px 22px 22px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+    .topic h3 { margin: 0; font-size: 18px; letter-spacing: -.02em; }
     .topic p { margin: 0; color: var(--muted); font-size: 14px; }
     .links { display: flex; flex-wrap: wrap; gap: 6px; margin: 4px 0 0; padding: 0; list-style: none; }
     .links a {
-      display: inline-block; font-size: 13px; font-weight: 500;
-      padding: 5px 11px; border-radius: 999px;
+      display: inline-block; font-size: 12.5px; font-weight: 600;
+      padding: 5px 11px; border-radius: 10px;
       background: var(--surface-2); color: var(--text); border: 1px solid var(--border);
-      transition: border-color .15s, color .15s;
+      transition: border-color .2s, color .2s, background .2s;
     }
-    .links a:hover { text-decoration: none; border-color: var(--accent); color: var(--accent); }
-    .links .gap { font-size: 13px; color: var(--muted); padding: 5px 4px; }
+    .links a:hover { text-decoration: none; border-color: color-mix(in srgb, var(--accent) 50%, transparent); color: var(--accent); background: var(--accent-soft); }
+    .links .gap { font-size: 13px; color: var(--faint); padding: 5px 4px; }
 
     details.more summary {
-      cursor: pointer; font-size: 13px; color: var(--muted); list-style: none; margin-top: 6px;
+      cursor: pointer; font-size: 12.5px; font-weight: 700; color: var(--muted); list-style: none; margin-top: 4px;
+      display: inline-flex; align-items: center; gap: 6px;
     }
+    details.more summary:hover { color: var(--text); }
     details.more summary::-webkit-details-marker { display: none; }
-    details.more summary::before { content: "＋ "; }
-    details.more[open] summary::before { content: "－ "; }
+    details.more summary svg { transition: transform .25s var(--ease); }
+    details.more[open] summary svg { transform: rotate(180deg); }
     details.more .links { margin-top: 8px; }
 
-    /* Footer */
-    footer { border-top: 1px solid var(--border); margin-top: 40px; padding: 28px 0 40px; color: var(--muted); font-size: 13px; }
-    footer .container { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+    /* ---------- Footer ---------- */
+    footer { margin-top: 40px; padding: 28px 0 40px; color: var(--faint); font-size: 12.5px; font-weight: 600; }
+    footer .container { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; border-top: 1px solid var(--border); padding-top: 24px; }
+    #last-update { font-family: "JetBrains Mono", monospace; font-size: 12px; }
+
+    /* ---------- Reveal on scroll ---------- */
+    .reveal { opacity: 0; transform: translateY(14px); transition: opacity .7s var(--ease), transform .7s var(--ease); }
+    .reveal.in { opacity: 1; transform: none; }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
   </style>
 </head>
 
 <body>
 
+  <!-- SVG icon sprite -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-arrow-up-right" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></symbol>
+    <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+    <symbol id="i-trophy" viewBox="0 0 24 24"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0V4ZM17 5h3v2a4 4 0 0 1-3 3.9M7 5H4v2a4 4 0 0 0 3 3.9"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 5-6"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="M3 17l5-5 4 4 8-9"/><path d="M14 7h6v6"/></symbol>
+  </svg>
+
   <!-- Nav -->
   <nav class="nav">
     <div class="container">
-      <a class="brand" href="./"><span class="brand-mark">🐎</span>Visual Horse Racing</a>
-      <div class="nav-links">
-        <a class="hide-sm" href="#this-week">今週の重賞</a>
-        <a class="hide-sm" href="#viewer">予測チャート</a>
-        <a class="hide-sm" href="#topics">Topics</a>
-        <a class="btn-outline" href="https://www.linkedin.com/in/ryutoro-galois/" target="_blank" rel="noopener noreferrer">Profile</a>
+      <div>
+        <a class="brand" href="./"><span class="brand-mark"><svg class="i"><use href="#i-spark"/></svg></span>Visual Horse Racing</a>
+        <div class="nav-links">
+          <a class="hide-sm" href="#this-week">今週の重賞</a>
+          <a class="hide-sm" href="#viewer">予測チャート</a>
+          <a class="hide-sm" href="#topics">Topics</a>
+          <a class="btn-outline" href="https://www.linkedin.com/in/ryutoro-galois/" target="_blank" rel="noopener noreferrer"><svg class="i"><use href="#i-user"/></svg>Profile</a>
+        </div>
       </div>
     </div>
   </nav>
@@ -273,14 +412,14 @@
     <div>
     <!-- Hero -->
     <header class="hero">
-      <span class="eyebrow">AI Keiba Prediction · since 2022/01</span>
-      <h1>Visual <span class="grad">Horse Racing</span></h1>
+      <span class="eyebrow"><span class="chip">AI</span>Keiba Prediction · since 2022/01</span>
+      <h1>Visual<br><span class="grad">Horse Racing</span></h1>
       <p class="lead">
         独自の競馬予想AIによる<a href="https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_latest_race.html" target="_blank" rel="noopener noreferrer">予想レポート</a>をビジュアルも交えて無償公開しています。競馬予想を手軽に楽しむための情報を提供しています。
       </p>
       <div class="hero-actions">
         <a class="btn btn-primary" href="https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_latest_race.html" target="_blank" rel="noopener noreferrer">
-          <img src="images/report.png" alt="">直近の重賞レース予想レポート →
+          <img src="images/report.png" alt="">直近の重賞レース予想レポート<svg class="i arrow"><use href="#i-arrow-right"/></svg>
         </a>
 
         <!-- [start]:レース中 -->
@@ -302,21 +441,25 @@
         <span class="sub">11/7 (土) – 11/8 (日)</span>
       </div>
       <div class="races">
-        <a class="card race" href="https://race.netkeiba.com/race/shutuba.html?race_id=202605050111&amp;rf=race_list" target="_blank" rel="noopener noreferrer">
+        <a class="card race g2" href="https://race.netkeiba.com/race/shutuba.html?race_id=202605050111&amp;rf=race_list" target="_blank" rel="noopener noreferrer">
           <span class="grade g2">GⅡ</span>
-          <span><span class="name">京王杯2歳ステークス</span><br><span class="meta">出馬表 ↗</span></span>
+          <span class="txt"><span class="name">京王杯2歳ステークス</span><span class="meta">出馬表</span></span>
+          <svg class="i go"><use href="#i-arrow-up-right"/></svg>
         </a>
-        <a class="card race" href="https://race.netkeiba.com/race/shutuba.html?race_id=202608050108&amp;rf=race_list" target="_blank" rel="noopener noreferrer">
+        <a class="card race jg" href="https://race.netkeiba.com/race/shutuba.html?race_id=202608050108&amp;rf=race_list" target="_blank" rel="noopener noreferrer">
           <span class="grade jg">JGⅢ</span>
-          <span><span class="name">京都ジャンプステークス</span><br><span class="meta">出馬表 ↗</span></span>
+          <span class="txt"><span class="name">京都ジャンプステークス</span><span class="meta">出馬表</span></span>
+          <svg class="i go"><use href="#i-arrow-up-right"/></svg>
         </a>
-        <a class="card race" href="https://race.netkeiba.com/race/shutuba.html?race_id=202605050211&amp;rf=race_list" target="_blank" rel="noopener noreferrer">
+        <a class="card race g2" href="https://race.netkeiba.com/race/shutuba.html?race_id=202605050211&amp;rf=race_list" target="_blank" rel="noopener noreferrer">
           <span class="grade g2">GⅡ</span>
-          <span><span class="name">アルゼンチン共和国杯</span><br><span class="meta">出馬表 ↗</span></span>
+          <span class="txt"><span class="name">アルゼンチン共和国杯</span><span class="meta">出馬表</span></span>
+          <svg class="i go"><use href="#i-arrow-up-right"/></svg>
         </a>
-        <a class="card race" href="https://race.netkeiba.com/race/shutuba.html?race_id=202608050211&amp;rf=race_list" target="_blank" rel="noopener noreferrer">
+        <a class="card race g3" href="https://race.netkeiba.com/race/shutuba.html?race_id=202608050211&amp;rf=race_list" target="_blank" rel="noopener noreferrer">
           <span class="grade g3">GⅢ</span>
-          <span><span class="name">みやこステークス</span><br><span class="meta">出馬表 ↗</span></span>
+          <span class="txt"><span class="name">みやこステークス</span><span class="meta">出馬表</span></span>
+          <svg class="i go"><use href="#i-arrow-up-right"/></svg>
         </a>
       </div>
     </section>
@@ -326,18 +469,22 @@
     <section id="viewer">
       <div class="section-head">
         <h2>予測ダッシュボード</h2>
-        <a class="sub" href="https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_latest_race.html" target="_blank" rel="noopener noreferrer">レポート全体を開く ↗</a>
+        <a class="sub" href="https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_latest_race.html" target="_blank" rel="noopener noreferrer">レポート全体を開く<svg class="i"><use href="#i-arrow-up-right"/></svg></a>
       </div>
 
       <!-- [start]:レース中 -->
       <div class="card viewer" data-tabs>
-        <div class="tabs" role="tablist">
-          <button role="tab" aria-selected="true" data-tab="1">予測チャート</button>
-          <button role="tab" aria-selected="false" data-tab="2">オッズモニタリング</button>
-          <button role="tab" aria-selected="false" data-tab="3">出馬表</button>
+        <div class="viewer-bar">
+          <span class="lights"><i></i><i></i><i></i></span>
+          <div class="tabs" role="tablist">
+            <span class="indicator" aria-hidden="true"></span>
+            <button role="tab" aria-selected="true" data-tab="1">予測チャート</button>
+            <button role="tab" aria-selected="false" data-tab="2">オッズモニタリング</button>
+            <button role="tab" aria-selected="false" data-tab="3">出馬表</button>
+          </div>
         </div>
         <div class="panel on" data-panel="1">
-          <div class="frame" style="--h:700px"><iframe loading="lazy" title="予測チャート" src="./report/PredResult_latest_race_01.html"></iframe></div>
+          <div class="frame" style="--h:700px"><iframe title="予測チャート" src="./report/PredResult_latest_race_01.html"></iframe></div>
         </div>
         <div class="panel" data-panel="2">
           <div class="frame" style="--h:650px"><iframe loading="lazy" title="オッズモニタリング" src="./report/PredResult_latest_race_02.html"></iframe></div>
@@ -351,10 +498,14 @@
       <!-- [start]:レース終了後 -->
       <!--
       <div class="card viewer" data-tabs>
-        <div class="tabs" role="tablist">
-          <button role="tab" aria-selected="true" data-tab="1">人気vs着順(前週)</button>
-          <button role="tab" aria-selected="false" data-tab="2">コーナー通過順位(前週)</button>
-          <button role="tab" aria-selected="false" data-tab="3">予測チャート(前週)</button>
+        <div class="viewer-bar">
+          <span class="lights"><i></i><i></i><i></i></span>
+          <div class="tabs" role="tablist">
+            <span class="indicator" aria-hidden="true"></span>
+            <button role="tab" aria-selected="true" data-tab="1">人気vs着順(前週)</button>
+            <button role="tab" aria-selected="false" data-tab="2">コーナー通過順位(前週)</button>
+            <button role="tab" aria-selected="false" data-tab="3">予測チャート(前週)</button>
+          </div>
         </div>
         <div class="panel on" data-panel="1">
           <div class="frame" style="--h:900px"><iframe loading="lazy" title="人気vs着順" src="./report/PredResult_latest_race_backtest_01.html"></iframe></div>
@@ -374,23 +525,23 @@
     <!-- About -->
     <section id="about">
       <div class="info">
-        <div class="card">
-          <h3><span class="ico">🏆</span>対象レース</h3>
+        <div class="card reveal">
+          <h3><span class="ico"><svg class="i"><use href="#i-trophy"/></svg></span>対象レース</h3>
           <ul>
             <li>JRA重賞レース (GⅠ, GⅡ, GⅢ)</li>
             <li>年間約140レース</li>
           </ul>
         </div>
-        <div class="card">
-          <h3><span class="ico">⏱</span>更新タイミング</h3>
+        <div class="card reveal">
+          <h3><span class="ico"><svg class="i"><use href="#i-clock"/></svg></span>更新タイミング</h3>
           <ul>
             <li>1時間ごと</li>
             <li>金曜日11時から日曜日の16時頃まで</li>
             <li>最新のオッズ情報に基づき予想結果を更新</li>
           </ul>
         </div>
-        <div class="card">
-          <h3><span class="ico">📊</span>レース終了後</h3>
+        <div class="card reveal">
+          <h3><span class="ico"><svg class="i"><use href="#i-chart"/></svg></span>レース終了後</h3>
           <ul>
             <li>下記のグラフがレポートに追加されます</li>
             <li><a href="https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_latest_race.html#%E3%80%90%E3%83%AC%E3%83%BC%E3%82%B9%E7%B5%90%E6%9E%9C(1)%E3%80%91%E4%BA%BA%E6%B0%97%E3%81%A8%E7%9D%80%E9%A0%86%E3%81%AE%E9%96%A2%E4%BF%82" target="_blank" rel="noopener noreferrer">人気 vs 着順</a></li>
@@ -404,14 +555,13 @@
     <section id="topics">
       <div class="section-head">
         <h2>Topics</h2>
-        <a class="sub" href="https://ryutoro-galois.github.io/keiba-predictor/horse_race/horse_race_top.html" target="_blank" rel="noopener noreferrer">過去のレース結果一覧 ↗</a>
+        <a class="sub" href="https://ryutoro-galois.github.io/keiba-predictor/horse_race/horse_race_top.html" target="_blank" rel="noopener noreferrer">過去のレース結果一覧<svg class="i"><use href="#i-arrow-up-right"/></svg></a>
       </div>
       <div class="topics">
 
-        <article class="card topic">
-          <a class="thumb" href="https://ryutoro-galois.github.io/keiba-predictor/manual/KeibaPredictDiaries_v1_201911.pdf" target="_blank" rel="noopener noreferrer"><img src="images/keiba_predition_diaries.png" alt="Keiba Predict Diaries"></a>
+        <article class="card topic reveal">
+          <a class="thumb" href="https://ryutoro-galois.github.io/keiba-predictor/manual/KeibaPredictDiaries_v1_201911.pdf" target="_blank" rel="noopener noreferrer"><img src="images/keiba_predition_diaries.png" alt="Keiba Predict Diaries" loading="lazy"><span class="tag">Background</span></a>
           <div class="body">
-            <span class="tag">Background</span>
             <h3>競馬予測の前提</h3>
             <p>競馬について全く知識がない中で競馬予測を始めた当初の記録です。競馬は毎週開催されることもあり、データ分析との親和性が高く、継続的に取り組めるのでお勧めです。スクレイピングと可視化を用いて事前情報を効率的にインプットして競馬を楽しく観戦できます。</p>
             <ul class="links">
@@ -420,10 +570,9 @@
           </div>
         </article>
 
-        <article class="card topic">
-          <a class="thumb" href="https://ryutoro-galois.github.io/keiba-predictor/sankeyDiagram/sankeyDiagram_keiba_Arimakinen_2019y.html" target="_blank" rel="noopener noreferrer"><img src="images/race_result.png" alt="過去のレース結果"></a>
+        <article class="card topic reveal">
+          <a class="thumb" href="https://ryutoro-galois.github.io/keiba-predictor/sankeyDiagram/sankeyDiagram_keiba_Arimakinen_2019y.html" target="_blank" rel="noopener noreferrer"><img src="images/race_result.png" alt="過去のレース結果" loading="lazy"><span class="tag">Archive</span></a>
           <div class="body">
-            <span class="tag">Archive</span>
             <h3>過去のレース結果 (2019年10月〜)</h3>
             <ul class="links">
               <li><a href="https://ryutoro-galois.github.io/keiba-predictor/horse_race/horse_race_2026y.html" target="_blank" rel="noopener noreferrer">2026年</a></li>
@@ -438,10 +587,9 @@
           </div>
         </article>
 
-        <article class="card topic">
-          <a class="thumb" href="https://ryutoro-galois.github.io/keiba-predictor/sankeyDiagram/horse_pedigree.html" target="_blank" rel="noopener noreferrer"><img src="images/horse_pedigree.png" alt="血統の見える化"></a>
+        <article class="card topic reveal">
+          <a class="thumb" href="https://ryutoro-galois.github.io/keiba-predictor/sankeyDiagram/horse_pedigree.html" target="_blank" rel="noopener noreferrer"><img src="images/horse_pedigree.png" alt="血統の見える化" loading="lazy"><span class="tag">Pedigree</span></a>
           <div class="body">
-            <span class="tag">Pedigree</span>
             <h3>血統の見える化</h3>
             <p>競馬を観戦する上で血統は重要な要素の一つです。Sankey Diagramを用いて血統 (最大5世代) を可視化することで交配のクロス状況が確認しやすくなります。</p>
             <ul class="links">
@@ -456,10 +604,9 @@
           </div>
         </article>
 
-        <article class="card topic">
-          <a class="thumb" href="https://ryutoro-galois.github.io/keiba-predictor/report/AdHocAnalysis_keiba_04_2000y_2019y_G1_20191113.html" target="_blank" rel="noopener noreferrer"><img src="images/tree_diagram.png" alt="競馬アドホック分析"></a>
+        <article class="card topic reveal">
+          <a class="thumb" href="https://ryutoro-galois.github.io/keiba-predictor/report/AdHocAnalysis_keiba_04_2000y_2019y_G1_20191113.html" target="_blank" rel="noopener noreferrer"><img src="images/tree_diagram.png" alt="競馬アドホック分析" loading="lazy"><span class="tag">Analysis</span></a>
           <div class="body">
-            <span class="tag">Analysis</span>
             <h3>競馬アドホック分析</h3>
             <p>長期間データを用いた傾向分析結果を紹介しています。全体を俯瞰する基礎分析が重要であることを改めて感じます。</p>
             <ul class="links">
@@ -469,10 +616,9 @@
           </div>
         </article>
 
-        <article class="card topic">
-          <a class="thumb" href="https://ryutoro-galois.github.io/sumo-predictor/SumoPredictDiaries_v1_201911.pdf" target="_blank" rel="noopener noreferrer"><img src="images/sumo_prediction_diaries.png" alt="相撲予測"></a>
+        <article class="card topic reveal">
+          <a class="thumb" href="https://ryutoro-galois.github.io/sumo-predictor/SumoPredictDiaries_v1_201911.pdf" target="_blank" rel="noopener noreferrer"><img src="images/sumo_prediction_diaries.png" alt="相撲予測" loading="lazy"><span class="tag">Sumo Prediction</span></a>
           <div class="body">
-            <span class="tag">Sumo Prediction</span>
             <h3>相撲予測</h3>
             <p>相撲の取組予測は、一見「勝ち負け」の二択という単純なものにみえますが、実は非常に奥が深いです。取組当日の勝者力士を予想し、結びの一番が終わる18時に答え合わせ（バックテスト）を行います。初日から千秋楽の15日間連続して楽しめるのも相撲予測を行う醍醐味といえます。このプロセスを通じて、一人でも多くの方が相撲という競技に興味を持ち、その深い魅力を知るきっかけになれば嬉しいです。</p>
             <ul class="links">
@@ -483,7 +629,7 @@
               <li><a href="https://ryutoro-galois.github.io/sumo-predictor/PredResult_sumo_targetYM_202605.html" target="_blank" rel="noopener noreferrer">令和八年五月場所 (2026/05)</a></li>
             </ul>
             <details class="more">
-              <summary>過去の場所を表示</summary>
+              <summary>過去の場所を表示<svg class="i"><use href="#i-chevron"/></svg></summary>
               <ul class="links">
                 <li><a href="https://ryutoro-galois.github.io/sumo-predictor/PredResult_sumo_targetYM_202603.html" target="_blank" rel="noopener noreferrer">令和八年三月場所 (2026/03)</a></li>
                 <li><a href="https://ryutoro-galois.github.io/sumo-predictor/PredResult_sumo_targetYM_202601.html" target="_blank" rel="noopener noreferrer">令和八年初場所 (2026/01)</a></li>
@@ -496,10 +642,9 @@
           </div>
         </article>
 
-        <article class="card topic">
-          <a class="thumb" href="https://ryutoro-galois.github.io/toy-samples/interestMap.html" target="_blank" rel="noopener noreferrer"><img src="images/interest_map.png" alt="データ可視化"></a>
+        <article class="card topic reveal">
+          <a class="thumb" href="https://ryutoro-galois.github.io/toy-samples/interestMap.html" target="_blank" rel="noopener noreferrer"><img src="images/interest_map.png" alt="データ可視化" loading="lazy"><span class="tag">Visualization</span></a>
           <div class="body">
-            <span class="tag">Visualization</span>
             <h3>データ可視化</h3>
             <p>直感的な気付きやStory Tellingに繋がるような可視化の手法や適用事例を探して紹介しています。個人的には、Sankey Diagramがお勧めで様々なケースで利用しています。</p>
             <ul class="links">
@@ -510,7 +655,7 @@
               <li><a href="https://ryutoro-galois.github.io/toy-samples/leaflet_sample_nakanoku_20191107.html" target="_blank" rel="noopener noreferrer">Medical Institution Map</a></li>
             </ul>
             <details class="more">
-              <summary>さらに表示</summary>
+              <summary>さらに表示<svg class="i"><use href="#i-chevron"/></svg></summary>
               <ul class="links">
                 <li><a href="https://ryutoro-galois.github.io/toy-samples/animationPlot_01.html" target="_blank" rel="noopener noreferrer">Animation Plot [1] Scatter</a></li>
                 <li><a href="https://ryutoro-galois.github.io/toy-samples/animationPlot_02.html" target="_blank" rel="noopener noreferrer">Animation Plot [2] GDP per Year</a></li>
@@ -535,18 +680,46 @@
   </footer>
 
   <script>
-    // Tabs (no jQuery needed)
+    // Tabs with sliding indicator
     document.querySelectorAll('[data-tabs]').forEach(function (root) {
+      var list = root.querySelector('[role="tablist"]');
+      var ind = root.querySelector('.indicator');
       var tabs = root.querySelectorAll('[role="tab"]');
       var panels = root.querySelectorAll('[data-panel]');
+      function move(tab) {
+        if (!ind) return;
+        ind.style.width = tab.offsetWidth + 'px';
+        ind.style.transform = 'translateX(' + tab.offsetLeft + 'px)';
+      }
       tabs.forEach(function (tab) {
         tab.addEventListener('click', function () {
           tabs.forEach(function (t) { t.setAttribute('aria-selected', t === tab ? 'true' : 'false'); });
           panels.forEach(function (p) { p.classList.toggle('on', p.dataset.panel === tab.dataset.tab); });
+          move(tab);
         });
       });
+      var sync = function () { move(list.querySelector('[aria-selected="true"]')); };
+      sync();
+      window.addEventListener('resize', sync);
+      if (document.fonts) document.fonts.ready.then(sync);
     });
 
+    // Stop shimmer once each embedded report has loaded
+    document.querySelectorAll('.frame iframe').forEach(function (f) {
+      f.addEventListener('load', function () { f.parentNode.classList.add('loaded'); });
+    });
+
+    // Reveal on scroll
+    (function () {
+      var els = document.querySelectorAll('.reveal');
+      if (!('IntersectionObserver' in window)) { els.forEach(function (e) { e.classList.add('in'); }); return; }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
+        });
+      }, { rootMargin: '0px 0px -8% 0px' });
+      els.forEach(function (e, i) { e.style.transitionDelay = (i % 3) * 70 + 'ms'; io.observe(e); });
+    })(
     // Last update
     (function () {
       var d = new Date(document.lastModified);
