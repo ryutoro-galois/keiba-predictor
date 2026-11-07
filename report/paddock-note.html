@@ -1,0 +1,374 @@
+<meta charset="utf-8">
+<title>パドック評価ノート</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: 出馬表のような横長の評価表＋散布図を左、選択馬の評価パネルを右に固定。狭い画面では縦積み */
+:root{
+  --bg:#eef1ec; --panel:#fbfcf9; --fg:#1b2420; --muted:#5d6b63; --line:#cfd8d0;
+  --accent:#1f5c43; --accent-fg:#ffffff; --zone:rgba(31,92,67,.09);
+  --h1:#e9b9ad; --h2:#f3dcd2; --h3:#e8ebe6; --h4:#cfe5d6; --h5:#9fd0b0;
+  --good:#1f7a4d; --warn:#a86a12; --bad:#b0412f;
+  --font-display:"Dela Gothic One","Hiragino Sans","Yu Gothic",sans-serif;
+  --font-body:"Zen Kaku Gothic New","Hiragino Sans","Yu Gothic",system-ui,sans-serif;
+  --font-data:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#121815; --panel:#1a221e; --fg:#e4ebe6; --muted:#93a39a; --line:#2e3a34;
+  --accent:#6fc79a; --accent-fg:#0d1a14; --zone:rgba(111,199,154,.10);
+  --h1:#6a2f27; --h2:#4a3029; --h3:#252e29; --h4:#24483a; --h5:#2f6f50;
+  --good:#7fd6a5; --warn:#e2b25a; --bad:#ef8a78; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#121815; --panel:#1a221e; --fg:#e4ebe6; --muted:#93a39a; --line:#2e3a34;
+  --accent:#6fc79a; --accent-fg:#0d1a14; --zone:rgba(111,199,154,.10);
+  --h1:#6a2f27; --h2:#4a3029; --h3:#252e29; --h4:#24483a; --h5:#2f6f50;
+  --good:#7fd6a5; --warn:#e2b25a; --bad:#ef8a78; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--font-body);font-size:14px;line-height:1.55;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:20px 40px}
+.wrap{max-width:1280px;margin:0 auto;display:grid;gap:18px}
+header{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:12px}
+h1{font-family:var(--font-display);font-weight:400;font-size:1.9rem;letter-spacing:.02em;margin:0;line-height:1.1;text-wrap:balance}
+.sub{color:var(--muted);font-size:.85rem;margin-top:4px}
+.race{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+input,select,textarea,button{font:inherit;color:inherit}
+input[type=text],input[type=number],textarea{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:6px 8px}
+input:focus-visible,button:focus-visible,textarea:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+#race{min-width:0;width:min(320px,100%);font-weight:700}
+.btn{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:6px 12px;cursor:pointer}
+.btn:hover{border-color:var(--accent)}
+.btn.primary{background:var(--accent);color:var(--accent-fg);border-color:var(--accent)}
+.label{font-size:.72rem;letter-spacing:.08em;color:var(--muted);font-weight:700}
+.summary{display:flex;flex-wrap:wrap;gap:10px}
+.pick{display:flex;align-items:center;gap:10px;background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:8px 12px;min-width:0}
+.pick .k{font-size:.72rem;color:var(--muted);letter-spacing:.06em;font-weight:700}
+.pick .v{font-weight:700}
+.main{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:18px;align-items:start}
+@media (max-width:980px){.main{grid-template-columns:minmax(0,1fr)}}
+section.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px;min-width:0}
+.card h2{font-size:.95rem;margin:0 0 8px;display:flex;justify-content:space-between;align-items:baseline;gap:8px;flex-wrap:wrap}
+.card h2 small{font-weight:400;color:var(--muted);font-size:.78rem}
+.chart svg{width:100%;height:auto;display:block}
+.chart text{fill:var(--muted);font-family:var(--font-data);font-size:11px}
+.tablewrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums;min-width:860px}
+th,td{padding:5px 6px;border-bottom:1px solid var(--line);text-align:center;white-space:nowrap}
+th{font-size:.72rem;color:var(--muted);font-weight:700;letter-spacing:.04em}
+td.name{text-align:left;font-weight:700;max-width:150px;overflow:hidden;text-overflow:ellipsis}
+tr.row{cursor:pointer}
+tr.row:hover td{background:var(--zone)}
+tr.row.sel td{background:var(--zone);box-shadow:inset 0 2px 0 var(--accent),inset 0 -2px 0 var(--accent)}
+tr.row.scr td{opacity:.4;text-decoration:line-through}
+td.heat{font-family:var(--font-data);font-weight:600;width:44px}
+.h1{background:var(--h1)}.h2{background:var(--h2)}.h3{background:var(--h3)}.h4{background:var(--h4)}.h5{background:var(--h5)}
+.num{font-family:var(--font-data)}
+.odds{width:64px;text-align:right}
+.waku{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:4px;font-family:var(--font-data);font-weight:600;font-size:12px;border:1px solid rgba(0,0,0,.25)}
+.score{font-family:var(--font-data);font-weight:600}
+.ev.hi{color:var(--good);font-weight:700}.ev.lo{color:var(--muted)}
+.wt.bad{color:var(--bad);font-weight:700}.wt.warn{color:var(--warn)}
+.editor{position:sticky;top:max(12px,env(safe-area-inset-top,0px));display:grid;gap:12px}
+.ed-head{display:flex;align-items:center;gap:10px}
+.ed-head input{flex:1;min-width:0;font-weight:700}
+.rate{display:grid;gap:4px}
+.rate .top{display:flex;justify-content:space-between;gap:8px}
+.rate .hint{font-size:.72rem;color:var(--muted)}
+.seg{display:grid;grid-template-columns:repeat(5,1fr);gap:4px}
+.seg button{border:1px solid var(--line);background:var(--bg);border-radius:5px;padding:5px 0;cursor:pointer;font-family:var(--font-data);font-weight:600}
+.seg button.on[data-v="1"]{background:var(--h1)}.seg button.on[data-v="2"]{background:var(--h2)}
+.seg button.on[data-v="3"]{background:var(--h3);border-color:var(--muted)}.seg button.on[data-v="4"]{background:var(--h4)}.seg button.on[data-v="5"]{background:var(--h5)}
+.seg button.on{border-color:var(--fg)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.field{display:grid;gap:3px}
+.field input{width:100%}
+.radar svg{width:100%;max-width:260px;height:auto;display:block;margin:0 auto}
+.radar text{fill:var(--muted);font-size:11px;font-family:var(--font-body)}
+.legend{display:flex;gap:14px;justify-content:center;font-size:.75rem;color:var(--muted)}
+.legend i{display:inline-block;width:14px;height:3px;vertical-align:middle;margin-right:4px;background:var(--accent)}
+.legend i.avg{background:none;border-top:2px dashed var(--muted)}
+.settings{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px 18px}
+.settings .field{grid-template-columns:1fr auto;align-items:center}
+.settings input[type=range]{grid-column:1/-1;width:100%;accent-color:var(--accent)}
+.note{font-size:.8rem;color:var(--muted);max-width:70ch}
+textarea{width:100%;min-height:90px;font-family:var(--font-data);font-size:12px}
+.row-actions{display:flex;gap:8px;flex-wrap:wrap}
+.chk{display:flex;gap:6px;align-items:center;font-size:.85rem}
+.toast{font-size:.8rem;color:var(--good)}
+.sample{display:inline-block;font-size:.7rem;border:1px dashed var(--muted);color:var(--muted);border-radius:4px;padding:1px 6px;margin-left:6px;vertical-align:middle}
+@media (prefers-reduced-motion:no-preference){.pt{transition:transform .25s ease}}
+</style>
+
+<div class="wrap">
+  <header>
+    <div>
+      <h1>パドック評価ノート</h1>
+      <div class="sub">周回を見ながら5項目を採点 → 単勝オッズと合成して「パドック補正勝率」と期待値を出します</div>
+    </div>
+    <div class="race">
+      <input type="text" id="race" aria-label="レース名" placeholder="例：東京11R 芝1600m">
+      <span id="sampleTag" class="sample" hidden>サンプルデータ</span>
+    </div>
+  </header>
+
+  <div class="summary" id="summary"></div>
+
+  <div class="main">
+    <div style="display:grid;gap:18px;min-width:0">
+      <section class="card chart">
+        <h2>パドック評価 × 単勝オッズ <small>右上ほど「人気薄だが状態が良い」＝妙味候補。点をクリックで選択</small></h2>
+        <div id="scatter"></div>
+      </section>
+
+      <section class="card">
+        <h2>評価表 <small>行をクリックで右パネルに表示。オッズはこの表で直接更新できます</small></h2>
+        <div class="tablewrap"><table id="tbl"></table></div>
+        <div class="row-actions" style="margin-top:10px">
+          <button class="btn" id="addHorse">馬を追加</button>
+          <button class="btn" id="resetRatings">評価をすべて3に戻す</button>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>重み付け <small>自分が重視する項目ほど大きく</small></h2>
+        <div class="settings" id="settings"></div>
+        <p class="note">パドック点 = 50 ＋ 各項目（3を基準に±）の加重平均×50。馬体重の増減が±6kgを超えると1kgごとに1.5点減点（最大15点）。補正勝率 = 市場勝率（控除分を除いた単勝オッズの逆数）× exp(反映度 ×（パドック点−50）÷25) を全頭で正規化。期待値 = 補正勝率 × 単勝オッズ。</p>
+      </section>
+
+      <section class="card">
+        <h2>保存・読み込み <small>入力中の内容はこのブラウザに自動保存。レースごとに残すならJSONをコピー</small></h2>
+        <textarea id="io" aria-label="JSON" placeholder="ここにJSONを貼り付けて「読み込む」"></textarea>
+        <div class="row-actions" style="margin-top:8px">
+          <button class="btn" id="exportBtn">JSONを書き出してコピー</button>
+          <button class="btn" id="importBtn">貼り付けたJSONを読み込む</button>
+          <button class="btn" id="csvBtn">CSVを書き出してコピー</button>
+          <button class="btn" id="sampleBtn">サンプルを読み込む</button>
+          <button class="btn" id="newBtn">新しいレース（空の12頭）</button>
+          <span class="toast" id="toast"></span>
+        </div>
+      </section>
+    </div>
+
+    <aside class="card editor" id="editor" aria-label="選択中の馬"></aside>
+  </div>
+</div>
+
+<script>
+const ITEMS=[
+  {k:'kiai',label:'気合乗り',hint:'適度な覇気・活気。気負いすぎは「落ち着き」で減点'},
+  {k:'fumikomi',label:'踏み込み',hint:'後肢がしっかり前に踏み込めているか、歩様の力強さ'},
+  {k:'kenage',label:'毛艶',hint:'毛艶の光沢、皮膚の薄さ、筋肉の浮き'},
+  {k:'hari',label:'馬体の張り',hint:'トモの張り、腹回りの締まり（太め・細化はマイナス）'},
+  {k:'ochitsuki',label:'落ち着き',hint:'入れ込み・発汗・チャカつき・二人引きが少ないほど高評価'}
+];
+const WAKU=[null,['#f4f4f0','#111'],['#1b1b1b','#fff'],['#d8242b','#fff'],['#1f5bbf','#fff'],['#f2d21b','#111'],['#2b8a3e','#fff'],['#f08a1c','#111'],['#f29bbd','#111']];
+const KEY='paddock-note-v1';
+const $=s=>document.querySelector(s);
+
+function blankHorse(no){return {no,name:'',odds:null,weight:null,diff:0,scr:false,memo:'',r:{kiai:3,fumikomi:3,kenage:3,hari:3,ochitsuki:3}}}
+function sample(){
+  const d=[
+    ['サクラノトキワ',3.2,486,2,[4,4,4,4,3],'踏み込み深い。前走より明らかに良化'],
+    ['ミヤビハルカゼ',4.8,462,-4,[3,3,3,3,4],'平行線。可もなく不可もなく'],
+    ['ゴールドヤマナミ',6.5,510,12,[3,2,3,2,3],'+12kgで腹回りに余裕。太め残り'],
+    ['キタノシラユキ',8.9,448,0,[5,4,4,4,4],'気配抜群。毛艶も良い'],
+    ['アカツキレグルス',11.4,474,-2,[4,5,4,5,4],'トモの張り目立つ。人気以上の状態'],
+    ['オボロヅキ',14.0,456,-10,[2,3,2,2,3],'-10kg。細く見える'],
+    ['テンクウノツバサ',18.6,492,4,[4,3,3,3,2],'うるさい。発汗あり、二人引き'],
+    ['シズカナミナモ',22.3,438,-2,[3,3,4,3,5],'落ち着き十分'],
+    ['リュウセイボシ',29.5,502,6,[4,4,5,4,4],'毛艶ピカピカ。穴で一考'],
+    ['ハナミズキロード',41.2,470,0,[3,3,3,3,3],''],
+    ['カゼノシルベ',56.8,482,-6,[2,2,3,3,2],'チャカつき、歩様硬い'],
+    ['ユキワリソウ',88.0,452,2,[3,3,3,2,3],'']
+  ];
+  return {race:'例：東京11R 芝1600m（架空の出走馬）',sample:true,beta:0.5,sel:4,
+    weights:{kiai:1,fumikomi:1.5,kenage:1,hari:1.2,ochitsuki:1.2},
+    horses:d.map((x,i)=>({no:i+1,name:x[0],odds:x[1],weight:x[2],diff:x[3],scr:false,memo:x[5],
+      r:Object.fromEntries(ITEMS.map((it,j)=>[it.k,x[4][j]]))}))};
+}
+let state;
+// 文字コード宣言がなかった版で開くと、サンプル馬名が化けたままブラウザに保存されていることがある。
+// サンプルのままのデータは毎回作り直し、化けた文字を含む保存データも読み込まない
+const GARBLED=/[\u4E00-\u9FFF][\uFF61-\uFF9F]|\uFFFD/; // UTF-8をShift_JISとして読むと「漢字＋半角カナ」が並ぶ
+try{const s=localStorage.getItem(KEY); const st=s?JSON.parse(s):null;
+  state=(!st||st.sample||GARBLED.test(s))?sample():st}catch(e){state=sample()}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(state))}catch(e){}}
+
+function wakuOf(no,n){ // JRA方式：頭数が8を超えると外枠から2頭ずつ
+  if(n<=8) return no;
+  const base=Math.floor(n/8), extra=n%8; let c=0;
+  for(let w=1;w<=8;w++){c+=base+(w>8-extra?1:0); if(no<=c) return w}
+  return 8;
+}
+function wtPenalty(h){const d=Math.abs(+h.diff||0);return Math.min(15,Math.max(0,d-6)*1.5)}
+function score(h){
+  let sw=0,s=0; ITEMS.forEach(it=>{const w=+state.weights[it.k]||0; sw+=w; s+=w*((h.r[it.k]-3)/2)});
+  const v=(sw?50+50*s/sw:50)-wtPenalty(h); return Math.max(0,Math.min(100,v));
+}
+function compute(){
+  const act=state.horses.filter(h=>!h.scr&&h.odds>0);
+  const inv=act.reduce((a,h)=>a+1/h.odds,0);
+  const raw=act.map(h=>(1/h.odds/inv)*Math.exp(state.beta*(score(h)-50)/25));
+  const sum=raw.reduce((a,b)=>a+b,0);
+  const out=new Map();
+  act.forEach((h,i)=>{const adj=raw[i]/sum; out.set(h.no,{mkt:1/h.odds/inv,adj,ev:adj*h.odds})});
+  return out;
+}
+const pct=v=>(v*100).toFixed(1)+'%';
+function wakuChip(no){const n=state.horses.length,w=WAKU[wakuOf(no,n)];return `<span class="waku" style="background:${w[0]};color:${w[1]}" title="${wakuOf(no,n)}枠">${no}</span>`}
+const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+function renderSummary(P){
+  const hs=state.horses.filter(h=>P.has(h.no));
+  const byAdj=[...hs].sort((a,b)=>P.get(b.no).adj-P.get(a.no).adj).slice(0,3);
+  const value=hs.filter(h=>P.get(h.no).ev>=1.15).sort((a,b)=>P.get(b.no).ev-P.get(a.no).ev);
+  const down=hs.filter(h=>P.get(h.no).mkt<=0.0? false: (P.get(h.no).adj/P.get(h.no).mkt)<0.8 && h.odds<10);
+  const nm=h=>`${wakuChip(h.no)}<span class="v">${esc(h.name||'（馬名未入力）')}</span>`;
+  $('#summary').innerHTML=
+    `<div class="pick"><span class="k">補正勝率 上位</span>${byAdj.map(h=>nm(h)+`<span class="num">${pct(P.get(h.no).adj)}</span>`).join('')||'—'}</div>`+
+    `<div class="pick"><span class="k">妙味（期待値1.15以上）</span>${value.map(h=>nm(h)+`<span class="num ev hi">${P.get(h.no).ev.toFixed(2)}</span>`).join('')||'<span class="note">該当なし</span>'}</div>`+
+    `<div class="pick"><span class="k">人気だが割引</span>${down.map(nm).join('')||'<span class="note">該当なし</span>'}</div>`;
+}
+
+function renderScatter(P){
+  const W=720,H=330,L=44,R=16,T=16,B=36;
+  const hs=state.horses.filter(h=>P.has(h.no));
+  const ticks=[1,2,5,10,20,50,100,200];
+  const maxO=Math.max(10,...hs.map(h=>h.odds));
+  const xmax=ticks.find(t=>t>=maxO)||Math.ceil(maxO);
+  const x=o=>L+(Math.log(o)/Math.log(xmax))*(W-L-R);
+  const y=s=>T+(1-s/100)*(H-T-B);
+  let g=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="パドック点と単勝オッズの散布図">`;
+  g+=`<rect x="${x(10)}" y="${y(100)}" width="${x(xmax)-x(10)}" height="${y(60)-y(100)}" fill="var(--zone)"/>`;
+  g+=`<text x="${x(xmax)-6}" y="${y(100)+14}" text-anchor="end" style="fill:var(--accent);font-weight:600">妙味ゾーン</text>`;
+  [0,25,50,75,100].forEach(v=>{g+=`<line x1="${L}" x2="${W-R}" y1="${y(v)}" y2="${y(v)}" stroke="var(--line)" stroke-width="${v===50?1.5:1}" ${v===50?'':'stroke-dasharray="2 4"'}/><text x="${L-6}" y="${y(v)+4}" text-anchor="end">${v}</text>`});
+  ticks.filter(t=>t<=xmax).forEach(t=>{g+=`<line x1="${x(t)}" x2="${x(t)}" y1="${T}" y2="${H-B}" stroke="var(--line)" stroke-dasharray="2 4"/><text x="${x(t)}" y="${H-B+16}" text-anchor="middle">${t}</text>`});
+  g+=`<text x="${(L+W-R)/2}" y="${H-4}" text-anchor="middle">単勝オッズ（対数）→ 人気薄</text>`;
+  g+=`<text x="12" y="${T+4}" transform="rotate(-90 12 ${T+4})" text-anchor="end">パドック点</text>`;
+  const n=state.horses.length;
+  hs.forEach(h=>{const w=WAKU[wakuOf(h.no,n)],cx=x(h.odds),cy=y(score(h)),sel=h.no===state.sel;
+    g+=`<g class="pt" data-no="${h.no}" style="cursor:pointer">${sel?`<circle cx="${cx}" cy="${cy}" r="17" fill="none" stroke="var(--fg)" stroke-width="2"/>`:''}<circle cx="${cx}" cy="${cy}" r="12" fill="${w[0]}" stroke="var(--fg)" stroke-opacity=".5"/><text x="${cx}" y="${cy+4}" text-anchor="middle" style="fill:${w[1]};font-weight:600;font-size:11px">${h.no}</text><title>${esc(h.name)} ${h.odds}倍 / ${score(h).toFixed(0)}点</title></g>`});
+  g+='</svg>';
+  $('#scatter').innerHTML=g;
+  $('#scatter').querySelectorAll('.pt').forEach(el=>el.addEventListener('click',()=>{state.sel=+el.dataset.no;renderAll()}));
+}
+
+function renderTable(P){
+  let t=`<thead><tr><th>馬番</th><th style="text-align:left">馬名</th><th>単勝</th><th>馬体重</th>${ITEMS.map(i=>`<th>${i.label}</th>`).join('')}<th>パドック点</th><th>市場勝率</th><th>補正勝率</th><th>期待値</th></tr></thead><tbody>`;
+  state.horses.forEach(h=>{
+    const p=P.get(h.no),s=score(h),pen=wtPenalty(h);
+    const d=+h.diff||0, dcls=pen>=6?'bad':pen>0?'warn':'';
+    t+=`<tr class="row${h.no===state.sel?' sel':''}${h.scr?' scr':''}" data-no="${h.no}">
+      <td>${wakuChip(h.no)}</td><td class="name">${esc(h.name)||'<span class="note">未入力</span>'}</td>
+      <td><input class="odds num" type="number" step="0.1" min="1" id="odds-${h.no}" value="${h.odds??''}" aria-label="${h.no}番 単勝オッズ"></td>
+      <td class="num wt ${dcls}">${h.weight??'—'}<small>(${d>0?'+':''}${d})</small></td>
+      ${ITEMS.map(i=>`<td class="heat h${h.r[i.k]}">${h.r[i.k]}</td>`).join('')}
+      <td class="score">${s.toFixed(0)}</td>
+      <td class="num">${p?pct(p.mkt):'—'}</td><td class="num"><b>${p?pct(p.adj):'—'}</b></td>
+      <td class="num ev ${p&&p.ev>=1.15?'hi':'lo'}">${p?p.ev.toFixed(2):'—'}</td></tr>`;
+  });
+  $('#tbl').innerHTML=t+'</tbody>';
+  $('#tbl').querySelectorAll('tr.row').forEach(tr=>tr.addEventListener('click',e=>{if(e.target.tagName==='INPUT')return;state.sel=+tr.dataset.no;renderAll()}));
+  $('#tbl').querySelectorAll('input.odds').forEach(inp=>inp.addEventListener('change',()=>{
+    const h=state.horses.find(x=>x.no===+inp.closest('tr').dataset.no); const v=parseFloat(inp.value); h.odds=v>=1?v:null; renderAll();}));
+}
+
+function radar(h){
+  const S=260,c=S/2,R=88,n=ITEMS.length;
+  const pt=(i,v)=>{const a=-Math.PI/2+i*2*Math.PI/n,r=R*v/5;return[c+r*Math.cos(a),c+r*Math.sin(a)]};
+  const act=state.horses.filter(x=>!x.scr);
+  const avg=ITEMS.map(it=>act.reduce((a,x)=>a+x.r[it.k],0)/Math.max(1,act.length));
+  let g=`<svg viewBox="0 0 ${S} ${S}" role="img" aria-label="評価レーダー">`;
+  [1,2,3,4,5].forEach(l=>{g+=`<polygon points="${ITEMS.map((_,i)=>pt(i,l).join(',')).join(' ')}" fill="none" stroke="var(--line)" ${l===3?'stroke-width="1.5"':''}/>`});
+  ITEMS.forEach((it,i)=>{const[a,b]=pt(i,5),[lx,ly]=pt(i,6.3);g+=`<line x1="${c}" y1="${c}" x2="${a}" y2="${b}" stroke="var(--line)"/><text x="${lx}" y="${ly+4}" text-anchor="middle">${it.label}</text>`});
+  g+=`<polygon points="${avg.map((v,i)=>pt(i,v).join(',')).join(' ')}" fill="none" stroke="var(--muted)" stroke-dasharray="4 3" stroke-width="1.5"/>`;
+  g+=`<polygon points="${ITEMS.map((it,i)=>pt(i,h.r[it.k]).join(',')).join(' ')}" fill="var(--accent)" fill-opacity=".22" stroke="var(--accent)" stroke-width="2"/>`;
+  ITEMS.forEach((it,i)=>{const[a,b]=pt(i,h.r[it.k]);g+=`<circle cx="${a}" cy="${b}" r="3.5" fill="var(--accent)"/>`});
+  return g+'</svg>';
+}
+
+function renderEditor(P){
+  let h=state.horses.find(x=>x.no===state.sel); if(!h){h=state.horses[0];state.sel=h?h.no:0}
+  if(!h){$('#editor').innerHTML='<p class="note">「馬を追加」から出走馬を登録してください。</p>';return}
+  const p=P.get(h.no),s=score(h),pen=wtPenalty(h);
+  $('#editor').innerHTML=`
+    <div class="ed-head">${wakuChip(h.no)}<input type="text" id="ed-name" value="${esc(h.name)}" placeholder="馬名" aria-label="馬名"></div>
+    <div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px">
+      <div><div class="label">パドック点</div><div style="font-family:var(--font-display);font-size:2rem;line-height:1">${s.toFixed(0)}</div></div>
+      <div style="text-align:right"><div class="label">補正勝率 / 期待値</div><div class="num" style="font-weight:600">${p?pct(p.adj)+' / '+p.ev.toFixed(2):'オッズ未入力'}</div>
+      ${pen>0?`<div class="wt ${pen>=6?'bad':'warn'}" style="font-size:.75rem">馬体重 −${pen.toFixed(1)}点</div>`:''}</div>
+    </div>
+    <div class="radar">${radar(h)}<div class="legend"><span><i></i>この馬</span><span><i class="avg"></i>出走馬平均</span></div></div>
+    ${ITEMS.map(it=>`<div class="rate"><div class="top"><b>${it.label}</b><span class="hint">1 悪い · 3 普通 · 5 良い</span></div>
+      <div class="seg" data-k="${it.k}">${[1,2,3,4,5].map(v=>`<button type="button" data-v="${v}" class="${h.r[it.k]===v?'on':''}" aria-pressed="${h.r[it.k]===v}">${v}</button>`).join('')}</div>
+      <div class="hint">${it.hint}</div></div>`).join('')}
+    <div class="grid2">
+      <label class="field"><span class="label">単勝オッズ</span><input type="number" step="0.1" min="1" id="ed-odds" value="${h.odds??''}"></label>
+      <label class="field"><span class="label">馬体重 kg</span><input type="number" id="ed-weight" value="${h.weight??''}"></label>
+      <label class="field"><span class="label">前走比 kg</span><input type="number" id="ed-diff" value="${h.diff??0}"></label>
+      <label class="chk" style="align-self:end"><input type="checkbox" id="ed-scr" ${h.scr?'checked':''}> 出走取消</label>
+    </div>
+    <label class="field"><span class="label">メモ</span><textarea id="ed-memo" style="min-height:60px;font-family:var(--font-body);font-size:13px" placeholder="例：二人引き、メンコ着用、トモが寂しい">${esc(h.memo)}</textarea></label>
+    <div class="row-actions">
+      <button class="btn" id="ed-prev">← 前の馬</button><button class="btn primary" id="ed-next">次の馬 →</button>
+      <button class="btn" id="ed-del" style="margin-left:auto">この馬を削除</button>
+    </div>
+    <div class="hint" style="font-size:.72rem;color:var(--muted)">周回中はキーボード操作が便利：Q W E R T で項目選択、1〜5 で採点、← → で馬を移動</div>`;
+  $('#editor').querySelectorAll('.seg button').forEach(b=>b.addEventListener('click',()=>{h.r[b.parentElement.dataset.k]=+b.dataset.v;renderAll()}));
+  const bind=(id,fn,ev='change')=>$('#'+id).addEventListener(ev,e=>{fn(e.target);renderAll(id)});
+  bind('ed-name',t=>h.name=t.value);
+  bind('ed-odds',t=>{const v=parseFloat(t.value);h.odds=v>=1?v:null});
+  bind('ed-weight',t=>h.weight=t.value===''?null:+t.value);
+  bind('ed-diff',t=>h.diff=+t.value||0);
+  bind('ed-scr',t=>h.scr=t.checked);
+  $('#ed-memo').addEventListener('input',e=>{h.memo=e.target.value;save()});
+  $('#ed-prev').onclick=()=>move(-1); $('#ed-next').onclick=()=>move(1);
+  $('#ed-del').onclick=()=>{const b=$('#ed-del');
+    if(b.dataset.armed){state.horses=state.horses.filter(x=>x!==h);state.horses.forEach((x,i)=>x.no=i+1);state.sel=Math.min(h.no,state.horses.length);renderAll()}
+    else{b.dataset.armed=1;b.textContent='もう一度押すと削除'}};
+}
+function move(d){const i=state.horses.findIndex(x=>x.no===state.sel);const n=state.horses[(i+d+state.horses.length)%state.horses.length];if(n){state.sel=n.no;renderAll()}}
+
+let curItem=0;
+document.addEventListener('keydown',e=>{
+  if(/INPUT|TEXTAREA/.test(document.activeElement.tagName)) return;
+  const h=state.horses.find(x=>x.no===state.sel); if(!h) return;
+  const qi='qwert'.indexOf(e.key.toLowerCase());
+  if(qi>=0){curItem=qi;flash();return}
+  if(/^[1-5]$/.test(e.key)){h.r[ITEMS[curItem].k]=+e.key;renderAll();flash();return}
+  if(e.key==='ArrowRight'){move(1);e.preventDefault()} if(e.key==='ArrowLeft'){move(-1);e.preventDefault()}
+});
+function flash(){document.querySelectorAll('.seg').forEach((s,i)=>s.style.outline=i===curItem?'2px solid var(--accent)':'');}
+
+function renderSettings(){
+  $('#settings').innerHTML=ITEMS.map(it=>`<label class="field"><span>${it.label}</span><span class="num" id="wv-${it.k}">×${(+state.weights[it.k]).toFixed(1)}</span>
+    <input type="range" min="0" max="3" step="0.1" id="w-${it.k}" value="${state.weights[it.k]}"></label>`).join('')+
+    `<label class="field"><span><b>パドック反映度</b></span><span class="num" id="betav">${state.beta.toFixed(2)}</span>
+    <input type="range" min="0" max="1.5" step="0.05" id="beta" value="${state.beta}"></label>`;
+  ITEMS.forEach(it=>$('#w-'+it.k).addEventListener('input',e=>{state.weights[it.k]=+e.target.value;$('#wv-'+it.k).textContent='×'+(+e.target.value).toFixed(1);renderAll('settings')}));
+  $('#beta').addEventListener('input',e=>{state.beta=+e.target.value;$('#betav').textContent=state.beta.toFixed(2);renderAll('settings')});
+}
+
+function renderAll(from){
+  const P=compute();
+  renderSummary(P);renderScatter(P);renderTable(P);
+  if(from!=='settings') renderEditor(P); else renderEditor(P);
+  $('#race').value=state.race||''; $('#sampleTag').hidden=!state.sample;
+  flash(); save();
+}
+$('#race').addEventListener('change',e=>{state.race=e.target.value;state.sample=false;save();$('#sampleTag').hidden=true});
+$('#addHorse').onclick=()=>{state.horses.push(blankHorse(state.horses.length+1));state.sel=state.horses.length;renderAll()};
+$('#resetRatings').onclick=()=>{state.horses.forEach(h=>ITEMS.forEach(it=>h.r[it.k]=3));renderAll()};
+function toast(m){$('#toast').textContent=m;setTimeout(()=>$('#toast').textContent='',2500)}
+async function copy(text){$('#io').value=text;try{await navigator.clipboard.writeText(text);toast('コピーしました')}catch(e){$('#io').select();toast('テキストを選択しました。手動でコピーしてください')}}
+$('#exportBtn').onclick=()=>copy(JSON.stringify(state,null,1));
+$('#csvBtn').onclick=()=>{const P=compute();const head=['馬番','枠','馬名','単勝','馬体重','前走比',...ITEMS.map(i=>i.label),'パドック点','市場勝率','補正勝率','期待値','取消','メモ'];
+  const rows=state.horses.map(h=>{const p=P.get(h.no);return[h.no,wakuOf(h.no,state.horses.length),h.name,h.odds??'',h.weight??'',h.diff,...ITEMS.map(i=>h.r[i.k]),score(h).toFixed(1),p?p.mkt.toFixed(4):'',p?p.adj.toFixed(4):'',p?p.ev.toFixed(3):'',h.scr?1:0,'"'+(h.memo||'').replace(/"/g,'""')+'"'].join(',')});
+  copy([`# ${state.race||''}`,head.join(','),...rows].join('\n'))};
+$('#importBtn').onclick=()=>{try{const s=JSON.parse($('#io').value);if(!Array.isArray(s.horses))throw 0;state=Object.assign(sample(),{sample:false},s);renderSettings();renderAll();toast('読み込みました')}catch(e){toast('JSONの形式が正しくありません。書き出したJSONをそのまま貼り付けてください')}};
+$('#sampleBtn').onclick=()=>{state=sample();renderSettings();renderAll();toast('サンプルを読み込みました')};
+$('#newBtn').onclick=()=>{const b=$('#newBtn');if(!b.dataset.armed){b.dataset.armed=1;b.textContent='もう一度押すと現在の入力を消去';return}
+  delete b.dataset.armed;b.textContent='新しいレース（空の12頭）';
+  state={race:'',sample:false,beta:state.beta,sel:1,weights:state.weights,horses:Array.from({length:12},(_,i)=>blankHorse(i+1))};renderAll()};
+renderSettings();renderAll();
+</script>
