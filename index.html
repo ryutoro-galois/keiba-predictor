@@ -1,435 +1,540 @@
-<!DOCTYPE HTML>
-<!--
-	Editorial by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Visual Horse Racing</title>
+  <meta name="description" content="独自の競馬予想AIによる予想レポートをビジュアルとともに無償公開しています。">
+  <link rel="shortcut icon" href="./images/favicon_2.ico">
 
-<script>
-function setfig(num) {
-   var ret;
-   if( num < 10 ) { ret = "0" + num; }
-   else { ret = num; }
-   return ret;
-}
-function showClock() {
-   var nowTime = new Date();
-   var nowYear = setfig( nowTime.getFullYear() );
-   var nowMonth = setfig( nowTime.getMonth()+1 );
-   var nowDay = setfig( nowTime.getDate() );
-   var nowHour = setfig( nowTime.getHours() );
-   var nowMin  = setfig( nowTime.getMinutes() );
-   var nowSec  = setfig( nowTime.getSeconds() );
-   var msg = "" + nowYear + "-" + nowMonth + "-" + nowDay + " " + nowHour + ":" + nowMin + ":" + nowSec + "";
-   document.getElementById("RealtimeClockArea").innerHTML = msg;
-}
-setInterval('showClock()', 1000);
-</script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-69VFZG8Z4H"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-69VFZG8Z4H');
+  </script>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
 
-<style type="text/css">
-img.report {
-vertical-align: middle;
-}
-</style>
+  <style>
+    :root {
+      --bg: #f6f7f4;
+      --surface: #ffffff;
+      --surface-2: #eef3ee;
+      --text: #17201b;
+      --muted: #5d6b63;
+      --border: #dde4de;
+      --accent: #1f8a5b;
+      --accent-2: #2f7fd0;
+      --accent-soft: #e2f3ea;
+      --live: #18a058;
+      --ended: #d64545;
+      --g1: #2f6fd6;
+      --g2: #d64545;
+      --g3: #1f9d55;
+      --shadow: 0 1px 2px rgba(16,24,20,.04), 0 8px 24px rgba(16,24,20,.06);
+      --radius: 16px;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f1412;
+        --surface: #161d1a;
+        --surface-2: #1c2622;
+        --text: #e8efea;
+        --muted: #9aa9a1;
+        --border: #26322d;
+        --accent: #3ccf8e;
+        --accent-2: #6aaefc;
+        --accent-soft: #173327;
+        --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.25);
+      }
+    }
 
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Inter", "Noto Sans JP", system-ui, -apple-system, "Hiragino Sans", sans-serif;
+      font-size: 15px;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--accent-2); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    img { max-width: 100%; display: block; }
 
-<style type="text/css">
-  .tab1 {
-    display: flex;
-    flex-direction: row;
-    text-align: center;
-    background-color: #fff !important;
-    margin: 20 !important;
-  }
-  .tab1__item {
-    flex: 1;
-    flex-basis: 120px;
-  }
-  .tab1__link {
-    display: block;
-    text-decoration: none;
-    color: #fff;
-    background-color: #b1e2dc;
-    cursor: pointer;
-    border-top-right-radius: 0px;
-    border-top-left-radius: 15px;
-  }
-  .tab1__link.on {
-    background-color: #65c6ba;
-  }
-  .tab1-body__item {
-    margin: 30px 15px;
-    display: none;
-    text-align: center;
-  }
-  .tab1-body__item.on {
-    display: block;
-  }
-</style>
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    var $tab__link = $('.tab1__link')
-    var $tab_body_item = $('.tab1-body__item')
-    $tab__link.on('click', function (e) {
-      var target = $(e.currentTarget)
-      //タブの表示非表示
-      $tab__link.removeClass('on')
-      target.addClass('on')
-      //タブの中身の表示非表示
-      var num = target.data('tab-body')
-      $tab_body_item.removeClass('on')
-      $('.tab1-body__item--' + num).addClass('on')
-    })
-  })
-</script>
+    .container { max-width: 1160px; margin: 0 auto; padding: 0 20px; }
 
+    /* ---------- Nav ---------- */
+    .nav {
+      position: sticky; top: 0; z-index: 50;
+      backdrop-filter: saturate(180%) blur(12px);
+      -webkit-backdrop-filter: saturate(180%) blur(12px);
+      background: color-mix(in srgb, var(--bg) 80%, transparent);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav .container { display: flex; align-items: center; justify-content: space-between; height: 60px; gap: 16px; }
+    .brand { display: flex; align-items: center; gap: 10px; font-weight: 800; color: var(--text); letter-spacing: -.01em; }
+    .brand:hover { text-decoration: none; }
+    .brand-mark {
+      width: 30px; height: 30px; border-radius: 9px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      display: grid; place-items: center; color: #fff; font-size: 15px;
+    }
+    .nav-links { display: flex; align-items: center; gap: 6px; }
+    .nav-links a { color: var(--muted); font-size: 14px; font-weight: 500; padding: 6px 12px; border-radius: 8px; }
+    .nav-links a:hover { color: var(--text); background: var(--surface-2); text-decoration: none; }
+    .nav-links a.btn-outline { border: 1px solid var(--border); color: var(--text); }
+    @media (max-width: 640px) { .nav-links .hide-sm { display: none; } }
 
+    /* ---------- Hero ---------- */
+    .hero { padding: 56px 0 32px; }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase;
+      color: var(--accent); background: var(--accent-soft);
+      padding: 4px 12px; border-radius: 999px;
+    }
+    .hero h1 {
+      font-size: clamp(36px, 6vw, 64px); line-height: 1.05; letter-spacing: -.03em;
+      margin: 18px 0 16px; font-weight: 800;
+    }
+    .hero h1 .grad {
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    .hero p.lead { font-size: 17px; color: var(--muted); max-width: 640px; margin: 0 0 28px; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 13px 22px; border-radius: 12px; font-weight: 700; font-size: 15px;
+      transition: transform .15s ease, box-shadow .15s ease, background .15s;
+    }
+    .btn:hover { text-decoration: none; transform: translateY(-1px); }
+    .btn-primary { background: var(--text); color: var(--bg); box-shadow: var(--shadow); }
+    .btn-ghost { background: var(--surface); color: var(--text); border: 1px solid var(--border); }
+    .btn img { width: 22px; height: auto; }
 
-<html>
-	<head>
-		<title>Visual Horse Racing</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
+    .status {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 13px; font-weight: 600; padding: 6px 12px; border-radius: 999px;
+      border: 1px solid var(--border); background: var(--surface);
+    }
+    .status .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--live); position: relative; }
+    .status.live { color: var(--live); }
+    .status.live .dot::after {
+      content: ""; position: absolute; inset: -4px; border-radius: 50%;
+      background: var(--live); opacity: .35; animation: pulse 1.8s ease-out infinite;
+    }
+    .status.ended { color: var(--ended); }
+    .status.ended .dot { background: var(--ended); }
+    @keyframes pulse { 0% { transform: scale(.6); opacity: .5; } 100% { transform: scale(1.8); opacity: 0; } }
+    @media (prefers-reduced-motion: reduce) { .status.live .dot::after { animation: none; } }
 
-		<!-- Global site tag (gtag.js) - Google Analytics -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-69VFZG8Z4H"></script>
-		<script>
-			window.dataLayer = window.dataLayer || [];
-			function gtag(){dataLayer.push(arguments);}
-			gtag('js', new Date());
-		
-			gtag('config', 'G-69VFZG8Z4H');
-		</script>
-			
-	</head>
-	
-	<link rel="shortcut icon" href="./images/favicon_2.ico">
-	
-	<body class="is-preload">
+    /* ---------- Sections ---------- */
+    section { padding: 28px 0; }
+    .section-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 16px; flex-wrap: wrap; }
+    .section-head h2 { font-size: 22px; letter-spacing: -.01em; margin: 0; font-weight: 800; }
+    .section-head .sub { color: var(--muted); font-size: 13px; }
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+    .card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); box-shadow: var(--shadow);
+    }
 
-				<!-- Main -->
-					<div id="main">
-						<div class="inner">
+    /* This week's races */
+    .races { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; }
+    .race {
+      display: flex; align-items: center; gap: 12px; padding: 14px 16px;
+      color: var(--text); transition: border-color .15s, transform .15s;
+    }
+    .race:hover { text-decoration: none; border-color: var(--accent); transform: translateY(-2px); }
+    .grade {
+      flex: none; font-family: "Inter", sans-serif; font-size: 12px; font-weight: 800;
+      color: #fff; padding: 4px 8px; border-radius: 6px; min-width: 44px; text-align: center;
+    }
+    .grade.g1 { background: var(--g1); }
+    .grade.g2 { background: var(--g2); }
+    .grade.g3 { background: var(--g3); }
+    .grade.jg { background: #8a6d3b; }
+    .race .name { font-weight: 700; line-height: 1.4; }
+    .race .meta { font-size: 12px; color: var(--muted); }
 
-							<!-- Header -->
-							<header id="header">
-								<ul class="actions">
-								  <li><a href="https://www.linkedin.com/in/ryutoro-galois/" class="button big" target="_blank" rel="noopener noreferrer">Profile</a></li>
-								  <!--<li><a href="https://github.com/ryutoro-galois/keiba-predictor/" class="button big" target="_blank" rel="noopener noreferrer">GitHub</a></li>-->
-								  　　<!--<li><a href="http://www.jra.go.jp/" class="button big" target="_blank" rel="noopener noreferrer">JRA</a></li>-->
-								  <!--<li><a href="https://race.netkeiba.com/top/?rf=navi" class="button big" target="_blank" rel="noopener noreferrer">netkeiba</a></li>-->
-									<!--<li><a href="https://www.keibalab.jp/db/race/" class="button big" target="_blank" rel="noopener noreferrer">keibalab</a></li>-->
-									<!--<li><a href="https://aikba.net/category/race/" class="button big" target="_blank" rel="noopener noreferrer">AI競馬</a></li>-->
-									<!--<li><a href="https://keiba-ai.jp/" class="button big" target="_blank" rel="noopener noreferrer">競馬予想AI「ATHENA」</a></li>-->
-								</ul>
-								</br>
-								
-								<script type="text/javascript">
-                var day = new Date(document.lastModified);
-                var y = day.getFullYear();
-                var m = day.getMonth() + 1;
-                var d = day.getDate();
-                var week = new Array("Sun.", "Mon.", "Tue.", "Wed.", "Thu.", "Fri.", "Sat.");
-                var w = week[day.getDay()];
-                if (m < 10) m = "0" + m;
-                if (d < 10) d = "0" + d;
-                document.write("LastUpdate: " + y + "-" + m + "-" + d + " (" + w + ")");
-                </script>
-								<!--<p id="RealtimeClockArea">time</p>-->
-							</header>
+    /* Info grid */
+    .info { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; }
+    .info .card { padding: 20px 22px; }
+    .info h3 { margin: 0 0 8px; font-size: 15px; display: flex; align-items: center; gap: 8px; }
+    .info .ico {
+      width: 28px; height: 28px; border-radius: 8px; display: grid; place-items: center;
+      background: var(--accent-soft); color: var(--accent); font-size: 14px;
+    }
+    .info ul { margin: 0; padding-left: 1.1em; color: var(--muted); font-size: 14px; }
+    .info li { margin: 2px 0; }
 
-							<!-- Banner -->
-								<section id="banner">
-									<div class="content">
-										<header>
-											<h1>Visual Horse Racing</h1>
-										</header>
-										
-										<p>
-										<strong>
-										  　〜このサイトについて (2022/01~) 〜</br>
-                      　・独自の競馬予想AIによる<a href="https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_latest_race.html" class="logo" target="_blank" rel="noopener noreferrer">予想レポート</a>をビジュアルも交えて無償公開しています</br>
-                      　・競馬予想を手軽に楽しむ為の情報を提供しています</br>
-										</strong>
-									
-									  <!-- [start]:レース中 -->
-										<h3>
-										<a href="https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_latest_race.html" class="logo" target="_blank" rel="noopener noreferrer">
-										   　　<img src="images/report.png" class="report" alt="" width="40" height="30"/><u><font color="#319FD6">直近の重賞レース予想レポート</font><font color="#31B17F">【毎時自動更新中 <img src="images/update.png" alt="" width="15" height="15"/>】</font></u>
-										</a>
-										</h3>
-										<!-- [end]:レース中 -->
+    /* Tabs */
+    .viewer { overflow: hidden; }
+    .tabs {
+      display: flex; gap: 4px; padding: 6px; margin: 0; list-style: none;
+      background: var(--surface-2); border-bottom: 1px solid var(--border); overflow-x: auto;
+    }
+    .tabs button {
+      flex: 1; min-width: max-content; appearance: none; border: 0; cursor: pointer;
+      font: inherit; font-weight: 600; font-size: 14px; color: var(--muted);
+      padding: 10px 16px; border-radius: 10px; background: transparent; transition: background .15s, color .15s;
+    }
+    .tabs button:hover { color: var(--text); }
+    .tabs button[aria-selected="true"] { background: var(--surface); color: var(--text); box-shadow: 0 1px 3px rgba(0,0,0,.08); }
+    .panel { display: none; padding: 16px; }
+    .panel.on { display: block; }
+    .frame {
+      --s: .7; --h: 700px;
+      position: relative; width: 100%; height: calc(var(--h) * var(--s));
+      overflow: hidden; border-radius: 10px; background: #fff;
+    }
+    .frame iframe {
+      border: 0; width: calc(100% / var(--s)); height: var(--h);
+      transform: scale(var(--s)); transform-origin: 0 0;
+    }
+    @media (max-width: 640px) { .frame { --s: .45; } }
 
-                    <!-- [start]:レース終了後 -->
-                    <!--
-										<h3>
-										<a href="https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_latest_race.html" class="logo" target="_blank" rel="noopener noreferrer">
-										   　　<img src="images/report.png" class="report" alt="" width="40" height="30"/><u><font color="#319FD6">直近の重賞レース予想レポート</font><font color="#E1564B">【レース終了 <img src="images/pause.png" alt="" width="15" height="15"/>】</font></u>
-										</a>
-										</h3>
-										-->
-										<!-- [end]:レース終了後 -->
-										
-										<p>
-										　　<strong>・【 11月第2週(11/7-8)の重賞レース 】 </strong>
-										</br>
-										 　　 　{ <a href="https://race.netkeiba.com/race/shutuba.html?race_id=202605050111&rf=race_list" class="logo" target="_blank" rel="noopener noreferrer"><strong>京王杯2歳ステークス(GⅡ)</strong></a>,  <a href="https://race.netkeiba.com/race/shutuba.html?race_id=202608050108&rf=race_list" class="logo" target="_blank" rel="noopener noreferrer"><strong>京都ジャンプステークス(JGⅢ)</strong></a>,  <a href="https://race.netkeiba.com/race/shutuba.html?race_id=202605050211&rf=race_list" class="logo" target="_blank" rel="noopener noreferrer"><strong>アルゼンチン共和国杯(GⅡ)</strong></a>,  <a href="https://race.netkeiba.com/race/shutuba.html?race_id=202608050211&rf=race_list" class="logo" target="_blank" rel="noopener noreferrer"><strong>みやこステークス(GⅢ)</strong></a>  }    
-										</p>
-										
-										<!--
-										<p>
-										　　<a href="https://ryutoro-galois.github.io/keiba-predictor/report/WIN5_PredResult_latest_race.html" class="logo" target="_blank" rel="noopener noreferrer"><strong>・【 12月第4週(12/24)のWIN5レース(終了) 】</strong></a>
-										</br>
-										 　　 　{ <a href="https://race.netkeiba.com/race/shutuba.html?race_id=202306050809&rf=race_list" class="logo" target="_blank" rel="noopener noreferrer"><strong>[WIN1] グッドラックHC</strong></a>, <a href="https://race.netkeiba.com/race/shutuba.html?race_id=202309050810&rf=race_list" class="logo" target="_blank" rel="noopener noreferrer"><strong>[WIN2] サンタクロースS</strong></a>, <a href="https://race.netkeiba.com/race/shutuba.html?race_id=202306050810&rf=race_list" class="logo" target="_blank" rel="noopener noreferrer"><strong>[WIN3] クリスマスカップ</strong></a>, <a href="https://race.netkeiba.com/race/shutuba.html?race_id=202309050811&rf=race_list" class="logo" target="_blank" rel="noopener noreferrer"><strong>[WIN4] りんくうS</strong></a>, <a href="https://race.netkeiba.com/race/shutuba.html?race_id=202306050811&rf=race_list" class="logo" target="_blank" rel="noopener noreferrer"><strong>[WIN5] 有馬記念</strong></a> }
-										</p>
-										-->
-										
-										<p>
-										　　<a href="https://ryutoro-galois.github.io/keiba-predictor/horse_race/horse_race_top.html" class="logo" target="_blank" rel="noopener noreferrer"><strong>・【過去のレース結果】</strong></a>
-										</p>  
-										      　　・対象レース：</br>
-										      　　　　- JRA重賞レース (GⅠ, GⅡ, GⅢ) </br>
-										      　　　　- 年間約140レース</br>
-										      　　　　</br>
-                          　　・更新タイミング：</br>
-                          　　　　- 1時間ごと</br>
-                          　　　　- 金曜日11時から日曜日の16時頃まで</br>
-                          　　　　- 最新のオッズ情報に基づき予想結果を更新</br>
-                          　　　　</br>
-                          　　・レース終了後：</br>
-                          　　　　- 下記のグラフがレポートに追加されます</br>
-                          　　　　　- <a href="https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_latest_race.html#%E3%80%90%E3%83%AC%E3%83%BC%E3%82%B9%E7%B5%90%E6%9E%9C(1)%E3%80%91%E4%BA%BA%E6%B0%97%E3%81%A8%E7%9D%80%E9%A0%86%E3%81%AE%E9%96%A2%E4%BF%82" target="_blank" rel="noopener noreferrer">[ 人気 vs 着順 ]</a></br>
-                          　　　　　- <a href="https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_latest_race.html#%E3%80%90%E3%83%AC%E3%83%BC%E3%82%B9%E7%B5%90%E6%9E%9C(2)%E3%80%91%E3%82%B3%E3%83%BC%E3%83%8A%E3%83%BC%E9%80%9A%E9%81%8E%E9%A0%86%E4%BD%8D" target="_blank" rel="noopener noreferrer">[ コーナー通過順位 ]</a></br>
-										
-										<!--<strong>【Links】</strong>-->
-										<!--
-										<ul class="actions">
-											<li><a href="http://www.jra.go.jp/" class="button big" target="_blank" rel="noopener noreferrer">JRA</a></li>
-											<li><a href="https://race.netkeiba.com/top/?rf=navi" class="button big" target="_blank" rel="noopener noreferrer">netkeiba</a></li>
-											<li><a href="https://www.keibalab.jp/db/race/" class="button big" target="_blank" rel="noopener noreferrer">keibalab</a></li>
-											<li><a href="https://aikba.net/category/race/" class="button big" target="_blank" rel="noopener noreferrer">AI競馬</a></li>
-											<li><a href="https://keiba-ai.jp/" class="button big" target="_blank" rel="noopener noreferrer">競馬予想AI「ATHENA」</a></li>
-										</ul>
-										-->
-									</div>
-        
+    /* Topics */
+    .topics { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px; }
+    .topic { display: flex; flex-direction: column; overflow: hidden; }
+    .topic .thumb { display: block; aspect-ratio: 16 / 9; overflow: hidden; background: var(--surface-2); border-bottom: 1px solid var(--border); }
+    .topic .thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s ease; }
+    .topic:hover .thumb img { transform: scale(1.04); }
+    .topic .body { padding: 20px 22px 22px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+    .topic h3 { margin: 0; font-size: 18px; letter-spacing: -.01em; }
+    .topic .tag { font-size: 11px; font-weight: 700; color: var(--accent); letter-spacing: .06em; text-transform: uppercase; }
+    .topic p { margin: 0; color: var(--muted); font-size: 14px; }
+    .links { display: flex; flex-wrap: wrap; gap: 6px; margin: 4px 0 0; padding: 0; list-style: none; }
+    .links a {
+      display: inline-block; font-size: 13px; font-weight: 500;
+      padding: 5px 11px; border-radius: 999px;
+      background: var(--surface-2); color: var(--text); border: 1px solid var(--border);
+      transition: border-color .15s, color .15s;
+    }
+    .links a:hover { text-decoration: none; border-color: var(--accent); color: var(--accent); }
+    .links .gap { font-size: 13px; color: var(--muted); padding: 5px 4px; }
+
+    details.more summary {
+      cursor: pointer; font-size: 13px; color: var(--muted); list-style: none; margin-top: 6px;
+    }
+    details.more summary::-webkit-details-marker { display: none; }
+    details.more summary::before { content: "＋ "; }
+    details.more[open] summary::before { content: "－ "; }
+    details.more .links { margin-top: 8px; }
+
+    /* Footer */
+    footer { border-top: 1px solid var(--border); margin-top: 40px; padding: 28px 0 40px; color: var(--muted); font-size: 13px; }
+    footer .container { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+  </style>
+</head>
+
+<body>
+
+  <!-- Nav -->
+  <nav class="nav">
+    <div class="container">
+      <a class="brand" href="./"><span class="brand-mark">🐎</span>Visual Horse Racing</a>
+      <div class="nav-links">
+        <a class="hide-sm" href="#this-week">今週の重賞</a>
+        <a class="hide-sm" href="#viewer">予測チャート</a>
+        <a class="hide-sm" href="#topics">Topics</a>
+        <a class="btn-outline" href="https://www.linkedin.com/in/ryutoro-galois/" target="_blank" rel="noopener noreferrer">Profile</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container">
+
+    <!-- Hero -->
+    <header class="hero">
+      <span class="eyebrow">AI Keiba Prediction · since 2022/01</span>
+      <h1>Visual <span class="grad">Horse Racing</span></h1>
+      <p class="lead">
+        独自の競馬予想AIによる<a href="https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_latest_race.html" target="_blank" rel="noopener noreferrer">予想レポート</a>をビジュアルも交えて無償公開しています。競馬予想を手軽に楽しむための情報を提供しています。
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_latest_race.html" target="_blank" rel="noopener noreferrer">
+          <img src="images/report.png" alt="">直近の重賞レース予想レポート →
+        </a>
+
         <!-- [start]:レース中 -->
-          <span class="image object">
-          <ul class="tab1">
-            <li class="tab1__item on"><span class="tab1__link" data-tab-body="1">予測チャート</span></li>
-            <li class="tab1__item"><span class="tab1__link" data-tab-body="2">オッズモニタリング</span></li>
-            <li class="tab1__item"><span class="tab1__link" data-tab-body="3">出馬表</span></li>
-          </ul>
-          
-          <div class="tab1-body">
-            <div class="tab1-body__item tab1-body__item--1 on">
-              
-  					<div style="width:100%;border:solid 0px;">
-              <iframe height="700" name="sample" src="./report/PredResult_latest_race_01.html" 
-    style="transform:scale(0.7);-moz-transform:scale(0.7);-webkit-transform:scale(0.7);-o-transform:scale(0.7);-ms-transform:scale(0.7);transform-origin:0 0;-moz-transform-origin:0 0;-webkit-transform-origin:0 0;-o-transform-origin:0 0;-ms-transform-origin:0 0;border:solid 0px;margin-bottom:0px;margin-right:0%;width:150%;">
-              </iframe> 
-            </div>
-              
-            </div>
-            <div class="tab1-body__item tab1-body__item--2">
-              
-              <div style="width:100%;border:solid 0px;">
-              <iframe height="650" name="sample" src="./report/PredResult_latest_race_02.html" 
-    style="transform:scale(0.7);-moz-transform:scale(0.7);-webkit-transform:scale(0.7);-o-transform:scale(0.7);-ms-transform:scale(0.7);transform-origin:0 0;-moz-transform-origin:0 0;-webkit-transform-origin:0 0;-o-transform-origin:0 0;-ms-transform-origin:0 0;border:solid 0px;margin-bottom:0px;margin-right:0%;width:180%;">
-              </iframe> 
-            </div>
-            
-            </div>
-            <div class="tab1-body__item tab1-body__item--3">
-              
-              <div style="width:100%;border:solid 0px;">
-              <iframe height="700" name="sample" src="./report/PredResult_latest_race_03.html" 
-    style="transform:scale(0.7);-moz-transform:scale(0.7);-webkit-transform:scale(0.7);-o-transform:scale(0.7);-ms-transform:scale(0.7);transform-origin:0 0;-moz-transform-origin:0 0;-webkit-transform-origin:0 0;-o-transform-origin:0 0;-ms-transform-origin:0 0;border:solid 0px;margin-bottom:0px;margin-right:0%;width:150%;">
-              </iframe> 
-            </div>
-            
-            </div>
-          </div>	
-          </span>
+        <span class="status live"><span class="dot"></span>毎時自動更新中</span>
         <!-- [end]:レース中 -->
-        
+
         <!-- [start]:レース終了後 -->
         <!--
-        <span class="image object">
-        <ul class="tab1">
-          <li class="tab1__item on"><span class="tab1__link" data-tab-body="1">人気vs着順(前週)</span></li>
-          <li class="tab1__item"><span class="tab1__link" data-tab-body="2">コーナー通過順位(前週)</span></li>
-          <li class="tab1__item"><span class="tab1__link" data-tab-body="3">予測チャート(前週)</span>
-        </ul>
-        
-        <div class="tab1-body">
-          <div class="tab1-body__item tab1-body__item--1 on">
-            
-					<div style="width:100%;border:solid 0px;">
-            <iframe height="900" name="sample" src="./report/PredResult_latest_race_backtest_01.html" 
-  style="transform:scale(0.7);-moz-transform:scale(0.7);-webkit-transform:scale(0.7);-o-transform:scale(0.7);-ms-transform:scale(0.7);transform-origin:0 0;-moz-transform-origin:0 0;-webkit-transform-origin:0 0;-o-transform-origin:0 0;-ms-transform-origin:0 0;border:solid 0px;margin-bottom:0px;margin-right:0%;width:150%;">
-            </iframe> 
-          </div>
-            
-          </div>
-          <div class="tab1-body__item tab1-body__item--2">
-            
-            <div style="width:100%;border:solid 0px;">
-            <iframe height="1200" name="sample" src="./report/PredResult_latest_race_backtest_02.html" 
-  style="transform:scale(0.5);-moz-transform:scale(0.5);-webkit-transform:scale(0.5);-o-transform:scale(0.5);-ms-transform:scale(0.5);transform-origin:0 0;-moz-transform-origin:0 0;-webkit-transform-origin:0 0;-o-transform-origin:0 0;-ms-transform-origin:0 0;border:solid 0px;margin-bottom:0px;margin-right:0%;width:200%;">
-            </iframe> 
-          </div>
-          
-          </div>
-          <div class="tab1-body__item tab1-body__item--3">
-            
-            <div style="width:100%;border:solid 0px;">
-            <iframe height="700" name="sample" src="./report/PredResult_latest_race_01.html" 
-  style="transform:scale(0.7);-moz-transform:scale(0.7);-webkit-transform:scale(0.7);-o-transform:scale(0.7);-ms-transform:scale(0.7);transform-origin:0 0;-moz-transform-origin:0 0;-webkit-transform-origin:0 0;-o-transform-origin:0 0;-ms-transform-origin:0 0;border:solid 0px;margin-bottom:0px;margin-right:0%;width:150%;">
-            </iframe> 
-          </div>
-          
-          </div>
-        </div>	
-        </span>
+        <span class="status ended"><span class="dot"></span>レース終了</span>
         -->
         <!-- [end]:レース終了後 -->
-        
-				</section>
-				
-							<!-- Section -->
-							<section>
-								<header class="major">
-									<h2>Topics</h2>
-								</header>
-								<div class="posts">
-									<article>
-										<a href="https://ryutoro-galois.github.io/keiba-predictor/manual/KeibaPredictDiaries_v1_201911.pdf" class="image" target="_blank" rel="noopener noreferrer"><img src="images/keiba_predition_diaries.png" alt="" /></a>
-										<h3><u>競馬予測の前提</u></h3>
-										<p>競馬について全く知識がない中で競馬予測を始めた当初の記録です. 競馬は毎週開催されることもあり, データ分析との親和性が高く, 継続的に取り組めるのでお勧めです. スクレイピングと可視化を用いて事前情報を効率的にインプットして競馬を楽しく観戦できます.</p>	
-										<p>											
-										☑️ <a href="https://ryutoro-galois.github.io/keiba-predictor/manual/KeibaPredictDiaries_v1_201911.pdf" class="logo" target="_blank" rel="noopener noreferrer"><strong>【Keiba Predict Diaries】</strong></a></br>
-										</p>
-										
-									</article>
-									<article>
-										<a href="https://ryutoro-galois.github.io/keiba-predictor/sankeyDiagram/sankeyDiagram_keiba_Arimakinen_2019y.html" class="image" target="_blank" rel="noopener noreferrer"><img src="images/race_result.png" alt="" /></a>
-										<h3><u>過去のレース結果 (2019年10月~)</u></h3>
-										<p>
-										☑️ <a href="https://ryutoro-galois.github.io/keiba-predictor/horse_race/horse_race_2026y.html" class="logo" target="_blank" rel="noopener noreferrer"><strong>【2026年】</strong></a></br>
-										☑️ <a href="https://ryutoro-galois.github.io/keiba-predictor/horse_race/horse_race_2025y.html" class="logo" target="_blank" rel="noopener noreferrer"><strong>【2025年】</strong></a></br>
-										☑️ <a href="https://ryutoro-galois.github.io/keiba-predictor/horse_race/horse_race_2024y.html" class="logo" target="_blank" rel="noopener noreferrer"><strong>【2024年】</strong></a></br>
-										☑️ <a href="https://ryutoro-galois.github.io/keiba-predictor/horse_race/horse_race_2023y.html" class="logo" target="_blank" rel="noopener noreferrer"><strong>【2023年】</strong></a></br>
-										☑️ <a href="https://ryutoro-galois.github.io/keiba-predictor/horse_race/horse_race_2022y.html" class="logo" target="_blank" rel="noopener noreferrer"><strong>【2022年】</strong></a></br>
-										☑️ <a href="https://ryutoro-galois.github.io/keiba-predictor/horse_race/horse_race_2021y.html" class="logo" target="_blank" rel="noopener noreferrer"><strong>【2021年】</strong></a></br>
-										☑️ <a href="https://ryutoro-galois.github.io/keiba-predictor/horse_race/horse_race_2020y.html" class="logo" target="_blank" rel="noopener noreferrer"><strong>【2020年】</strong></a></br>
-										☑️ <a href="https://ryutoro-galois.github.io/keiba-predictor/horse_race/horse_race_2019y.html" class="logo" target="_blank" rel="noopener noreferrer"><strong>【2019年(10月~)】</strong></a></br>
-										</p>
-										<!--
-										<ul class="actions">
-											<li><a href="#" class="button">More</a></li>
-										</ul>
-										-->
-									</article>
-									<article>
-										<a href="https://ryutoro-galois.github.io/keiba-predictor/sankeyDiagram/horse_pedigree.html" class="image" target="_blank" rel="noopener noreferrer"><img src="images/horse_pedigree.png" alt="" /></a>
-										<h3><u>血統の見える化</u></h3>
-										<p>競馬を観戦する上で血統は重要な要素の一つです. Sankey Diagramを用いて血統 (最大5世代) を可視化することで交配のクロス状況が確認しやすくなります.</p>	
-										<p>
-										  ☑️ <a href="https://ryutoro-galois.github.io/keiba-predictor/sankeyDiagram/sankeyDiagram_horse_pedigree_2025y_arimakinen_candidate_to_run_num_22.html" class="logo" target="_blank" rel="noopener noreferrer"><strong>【2025年_有馬記念出走候補馬(22頭)】</strong></a></br>
-										  ☑️ <a href="https://ryutoro-galois.github.io/keiba-predictor/sankeyDiagram/sankeyDiagram_horse_pedigree_2024y_arimakinen.html" class="logo" target="_blank" rel="noopener noreferrer"><strong>【2024年_有馬記念出走馬(16頭)】</strong></a></br>
-										  ☑️ <a href="https://ryutoro-galois.github.io/keiba-predictor/sankeyDiagram/sankeyDiagram_horse_pedigree_2023y_arimakinen.html" class="logo" target="_blank" rel="noopener noreferrer"><strong>【2023年_有馬記念出走馬】</strong></a></br>
-										  ☑️ <a href="https://ryutoro-galois.github.io/keiba-predictor/sankeyDiagram/sankeyDiagram_horse_pedigree_2022y_arimakinen.html" class="logo" target="_blank" rel="noopener noreferrer"><strong>【2022年_有馬記念出走馬】</strong></a></br>
-											☑️ <a href="https://ryutoro-galois.github.io/keiba-predictor/sankeyDiagram/sankeyDiagram_horse_pedigree_arimakinen_2021_num_horses_17_generation_5.html" class="logo" target="_blank" rel="noopener noreferrer"><strong>【2021年有馬記念出走馬(17頭)】</strong></a></br>
-											☑️ <a href="https://ryutoro-galois.github.io/keiba-predictor/sankeyDiagram/sankeyDiagram_horse_pedigree_num_horses_192_generation_5_2018y_2019y_G1_num_192.html" class="logo" target="_blank" rel="noopener noreferrer"><strong>【2018~2019年GⅠレース出走馬(192頭)】</strong></a></br>
-											☑️ <a href="https://ryutoro-galois.github.io/keiba-predictor/sankeyDiagram/sankeyDiagram_horse_pedigree_num_horses_795_generation_5_2018y_2019y_G123_num_795.html" class="logo" target="_blank" rel="noopener noreferrer"><strong>【2018~2019年重賞レース出走馬(795頭)】</strong></a></br>
-										</p>
-										<!--
-										<ul class="actions">
-											<li><a href="#" class="button">More</a></li>
-										</ul>
-										-->
-									</article>
-									<article>
-										<a href="https://ryutoro-galois.github.io/keiba-predictor/report/AdHocAnalysis_keiba_04_2000y_2019y_G1_20191113.html" class="image" target="_blank" rel="noopener noreferrer"><img src="images/tree_diagram.png" alt="" /></a>
-										<h3><u>競馬アドホック分析</u></h3>
-										<p>長期間データを用いた傾向分析結果を紹介しています. 全体を俯瞰する基礎分析が重要であることを改めて感じます.
-										</br></br>
-										☑️ <a href="https://ryutoro-galois.github.io/keiba-predictor/report/AdHocAnalysis_keiba_04_2000y_2019y_G1_20191113.html" class="logo" target="_blank" rel="noopener noreferrer"><strong>【GⅠレース傾向分析（2000-2019y)】</strong></a></br>
-										☑️ <a href="https://ryutoro-galois.github.io/keiba-predictor/sankeyDiagram/sankeyDiagram_keiba_Arimakinen_1990y_2018y.html" class="logo" target="_blank" rel="noopener noreferrer"><strong>【有馬記念基礎分析 (1990~2018y)】</strong></a></br>
-										</p>	
-										<!--
-										<ul class="actions">
-											<li><a href="#" class="button">More</a></li>
-										</ul>
-										-->
-									</article>
-									<article>
-										<a href="https://ryutoro-galois.github.io/sumo-predictor/SumoPredictDiaries_v1_201911.pdf" class="image" target="_blank" rel="noopener noreferrer"><img src="images/sumo_prediction_diaries.png" alt="" /></a>
-										<h3><u>相撲予測 (Sumo Prediction)</u></h3>
-										<p>相撲の取組予測は, 一見「勝ち負け」の二択という単純なものにみえますが, 実は非常に奥が深いです. 取組当日の勝者力士を予想し, 結びの一番が終わる18時に答え合わせ（バックテスト）を行います. 初日から千秋楽の15日間連続して楽しめるのも相撲予測を行う醍醐味といえます. このプロセスを通じて, 一人でも多くの方が相撲という競技に興味を持ち, その深い魅力を知るきっかけになれば嬉しいです.
-</br>
-										<p>
-										  ☑️ <a href="https://ryutoro-galois.github.io/sumo-predictor/SumoPredictDiaries.pdf" class="logo" target="_blank" rel="noopener noreferrer"><strong>【Sumo Predict Diaries】</strong></a></br>
-										  ☑️ <a href="https://ryutoro-galois.github.io/sumo-predictor/PredResult_sumo_targetYM_202609.html" class="logo" target="_blank" rel="noopener noreferrer"><strong>【令和八年九月場所(2026/09)】</strong></a></br>
-										  ☑️ <a href="https://ryutoro-galois.github.io/sumo-predictor/PredResult_sumo_targetYM_202607.html" class="logo" target="_blank" rel="noopener noreferrer"><strong>【令和八年七月場所(2026/07)】</strong></a></br>
-										  ☑️ <a href="https://ryutoro-galois.github.io/sumo-predictor/PredResult_sumo_targetYM_202605.html" class="logo" target="_blank" rel="noopener noreferrer"><strong>【令和八年五月場所(2026/05)】</strong></a></br>
-										  ☑️ <a href="https://ryutoro-galois.github.io/sumo-predictor/PredResult_sumo_targetYM_202603.html" class="logo" target="_blank" rel="noopener noreferrer"><strong>【令和八年三月場所(2026/03)】</strong></a></br>
-										  ☑️ <a href="https://ryutoro-galois.github.io/sumo-predictor/PredResult_sumo_targetYM_202601.html" class="logo" target="_blank" rel="noopener noreferrer"><strong>【令和八年初場所(2026/01)】</strong></a></br>
-										  ☑️  　...</br>
-											☑️ <a href="https://ryutoro-galois.github.io/sumo-predictor/PredResult_sumo_targetYM_202003.html" class="logo" target="_blank" rel="noopener noreferrer"><strong>【令和二年春場所(2020/03)】</strong></a></br>
-											☑️ <a href="https://ryutoro-galois.github.io/sumo-predictor/PredResult_sumo_targetYM_202001.html" class="logo" target="_blank" rel="noopener noreferrer"><strong>【令和二年初場所(2020/01)】</strong></a></br>
-											☑️ <a href="https://ryutoro-galois.github.io/sumo-predictor/PredResult_sumo_targetYM_201911.html" class="logo" target="_blank" rel="noopener noreferrer"><strong>【令和元年九州場所(2019/11)】</strong></a></br>
-										</p>
-										<!--
-										<ul class="actions">
-											<li><a href="#" class="button">More</a></li>
-										</ul>
-										-->
-									</article>
-									<article>
-										<a href="https://ryutoro-galois.github.io/toy-samples/interestMap.html" class="image" target="_blank" rel="noopener noreferrer"><img src="images/interest_map.png" alt="" /></a>
-										<h3><u>データ可視化 (Visualization)</u></h3>
-										<p>直感的な気付きやStory Tellingに繋がるような可視化の手法や適用事例を探して紹介しています. 個人的には, Sankey Diagramがお勧めで様々なケースで利用しています.
-										</br></br>
-										  ☑️ <a href="https://ryutoro-galois.github.io/toy-samples/2022-02_Visualization_Inspiration.pdf" class="logo" target="_blank" rel="noopener noreferrer"><strong>【Visualization Inspiration】</strong></a></br>
-										  ☑️ <a href="https://ryutoro-galois.github.io/toy-samples/2022-03_Reproducible_Reporting_with_RMarkdown.pdf" class="logo" target="_blank" rel="noopener noreferrer"><strong>【Reproducible Reporting with RMarkdown】</strong></a></br>
-											☑️ <a href="https://ryutoro-galois.github.io/toy-samples/interestMap.html" class="logo" target="_blank" rel="noopener noreferrer"><strong>【Interest Map】</strong></a></br>
-											☑️ <a href="https://ryutoro-galois.github.io/keiba-predictor/sankeyDiagram/sankeyDiagram_keiba_Arimakinen_2019y.html" class="logo" target="_blank" rel="noopener noreferrer"><strong>【Sankey Diagram】</strong></a></br>
-											<!--☑️ <a href="https://ryutoro-galois.github.io/toy-samples/gourmetMap.html" class="logo" target="_blank" rel="noopener noreferrer"><strong>【Gourmet Map】</strong></a></br> -->
-											☑️ <a href="https://ryutoro-galois.github.io/toy-samples/leaflet_sample_nakanoku_20191107.html" class="logo" target="_blank" rel="noopener noreferrer"><strong>【Medical Institution Map】</strong></a></br>
-											☑️ <a href="https://ryutoro-galois.github.io/toy-samples/animationPlot_01.html" class="logo" target="_blank" rel="noopener noreferrer"><strong>【Animation Plot [1] (Scattered Plot)】</strong></a></br>
-											☑️ <a href="https://ryutoro-galois.github.io/toy-samples/animationPlot_02.html" class="logo" target="_blank" rel="noopener noreferrer"><strong>【Animation Plot [2] (GDP per Year)】</strong></a></br>
-											☑️ <a href="https://ryutoro-galois.github.io/toy-samples/2022-04_Getting_Started_with_Elasticsearch.pdf" class="logo" target="_blank" rel="noopener noreferrer"><strong>【Getting Started with Elasticsearch】</strong></a></br>
-											☑️ <a href="https://ryutoro-galois.github.io/toy-samples/Report_FIBA_2023.html" class="logo" target="_blank" rel="noopener noreferrer"><strong>【FIBA World Cup 2023 (Basketball)】</strong></a></br>
-											☑️ <a href="https://ryutoro-galois.github.io/toy-samples/FIBA_2023_player_list.html" class="logo" target="_blank" rel="noopener noreferrer"><strong>【FIBA 2023 Player List】</strong></a></br>
-											☑️ <a href="https://ryutoro-galois.github.io/toy-samples/Report_FIFA_2022.html" class="logo" target="_blank" rel="noopener noreferrer"><strong>【FIFA World Cup 2022 (Football)】</strong></a></br>
-										</p>
-										<!--
-										<ul class="actions">
-											<li><a href="#" class="button">More</a></li>
-										</ul>
-										-->
-									</article>
-								</div>
-							</section>
+      </div>
+    </header>
 
-						</div>
-					</div>
+    <!-- This week's races -->
+    <section id="this-week">
+      <div class="section-head">
+        <h2>11月第2週の重賞レース</h2>
+        <span class="sub">11/7 (土) – 11/8 (日)</span>
+      </div>
+      <div class="races">
+        <a class="card race" href="https://race.netkeiba.com/race/shutuba.html?race_id=202605050111&amp;rf=race_list" target="_blank" rel="noopener noreferrer">
+          <span class="grade g2">GⅡ</span>
+          <span><span class="name">京王杯2歳ステークス</span><br><span class="meta">出馬表 ↗</span></span>
+        </a>
+        <a class="card race" href="https://race.netkeiba.com/race/shutuba.html?race_id=202608050108&amp;rf=race_list" target="_blank" rel="noopener noreferrer">
+          <span class="grade jg">JGⅢ</span>
+          <span><span class="name">京都ジャンプステークス</span><br><span class="meta">出馬表 ↗</span></span>
+        </a>
+        <a class="card race" href="https://race.netkeiba.com/race/shutuba.html?race_id=202605050211&amp;rf=race_list" target="_blank" rel="noopener noreferrer">
+          <span class="grade g2">GⅡ</span>
+          <span><span class="name">アルゼンチン共和国杯</span><br><span class="meta">出馬表 ↗</span></span>
+        </a>
+        <a class="card race" href="https://race.netkeiba.com/race/shutuba.html?race_id=202608050211&amp;rf=race_list" target="_blank" rel="noopener noreferrer">
+          <span class="grade g3">GⅢ</span>
+          <span><span class="name">みやこステークス</span><br><span class="meta">出馬表 ↗</span></span>
+        </a>
+      </div>
+    </section>
 
-			</div>
+    <!-- Viewer -->
+    <section id="viewer">
+      <div class="section-head">
+        <h2>予測ダッシュボード</h2>
+        <a class="sub" href="https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_latest_race.html" target="_blank" rel="noopener noreferrer">レポート全体を開く ↗</a>
+      </div>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-			
-	</body>
+      <!-- [start]:レース中 -->
+      <div class="card viewer" data-tabs>
+        <div class="tabs" role="tablist">
+          <button role="tab" aria-selected="true" data-tab="1">予測チャート</button>
+          <button role="tab" aria-selected="false" data-tab="2">オッズモニタリング</button>
+          <button role="tab" aria-selected="false" data-tab="3">出馬表</button>
+        </div>
+        <div class="panel on" data-panel="1">
+          <div class="frame" style="--h:700px"><iframe loading="lazy" title="予測チャート" src="./report/PredResult_latest_race_01.html"></iframe></div>
+        </div>
+        <div class="panel" data-panel="2">
+          <div class="frame" style="--h:650px"><iframe loading="lazy" title="オッズモニタリング" src="./report/PredResult_latest_race_02.html"></iframe></div>
+        </div>
+        <div class="panel" data-panel="3">
+          <div class="frame" style="--h:700px"><iframe loading="lazy" title="出馬表" src="./report/PredResult_latest_race_03.html"></iframe></div>
+        </div>
+      </div>
+      <!-- [end]:レース中 -->
+
+      <!-- [start]:レース終了後 -->
+      <!--
+      <div class="card viewer" data-tabs>
+        <div class="tabs" role="tablist">
+          <button role="tab" aria-selected="true" data-tab="1">人気vs着順(前週)</button>
+          <button role="tab" aria-selected="false" data-tab="2">コーナー通過順位(前週)</button>
+          <button role="tab" aria-selected="false" data-tab="3">予測チャート(前週)</button>
+        </div>
+        <div class="panel on" data-panel="1">
+          <div class="frame" style="--h:900px"><iframe loading="lazy" title="人気vs着順" src="./report/PredResult_latest_race_backtest_01.html"></iframe></div>
+        </div>
+        <div class="panel" data-panel="2">
+          <div class="frame" style="--h:1200px;--s:.5"><iframe loading="lazy" title="コーナー通過順位" src="./report/PredResult_latest_race_backtest_02.html"></iframe></div>
+        </div>
+        <div class="panel" data-panel="3">
+          <div class="frame" style="--h:700px"><iframe loading="lazy" title="予測チャート" src="./report/PredResult_latest_race_01.html"></iframe></div>
+        </div>
+      </div>
+      -->
+      <!-- [end]:レース終了後 -->
+    </section>
+
+    <!-- About -->
+    <section id="about">
+      <div class="info">
+        <div class="card">
+          <h3><span class="ico">🏆</span>対象レース</h3>
+          <ul>
+            <li>JRA重賞レース (GⅠ, GⅡ, GⅢ)</li>
+            <li>年間約140レース</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3><span class="ico">⏱</span>更新タイミング</h3>
+          <ul>
+            <li>1時間ごと</li>
+            <li>金曜日11時から日曜日の16時頃まで</li>
+            <li>最新のオッズ情報に基づき予想結果を更新</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3><span class="ico">📊</span>レース終了後</h3>
+          <ul>
+            <li>下記のグラフがレポートに追加されます</li>
+            <li><a href="https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_latest_race.html#%E3%80%90%E3%83%AC%E3%83%BC%E3%82%B9%E7%B5%90%E6%9E%9C(1)%E3%80%91%E4%BA%BA%E6%B0%97%E3%81%A8%E7%9D%80%E9%A0%86%E3%81%AE%E9%96%A2%E4%BF%82" target="_blank" rel="noopener noreferrer">人気 vs 着順</a></li>
+            <li><a href="https://ryutoro-galois.github.io/keiba-predictor/report/PredResult_latest_race.html#%E3%80%90%E3%83%AC%E3%83%BC%E3%82%B9%E7%B5%90%E6%9E%9C(2)%E3%80%91%E3%82%B3%E3%83%BC%E3%83%8A%E3%83%BC%E9%80%9A%E9%81%8E%E9%A0%86%E4%BD%8D" target="_blank" rel="noopener noreferrer">コーナー通過順位</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Topics -->
+    <section id="topics">
+      <div class="section-head">
+        <h2>Topics</h2>
+        <a class="sub" href="https://ryutoro-galois.github.io/keiba-predictor/horse_race/horse_race_top.html" target="_blank" rel="noopener noreferrer">過去のレース結果一覧 ↗</a>
+      </div>
+      <div class="topics">
+
+        <article class="card topic">
+          <a class="thumb" href="https://ryutoro-galois.github.io/keiba-predictor/manual/KeibaPredictDiaries_v1_201911.pdf" target="_blank" rel="noopener noreferrer"><img src="images/keiba_predition_diaries.png" alt="Keiba Predict Diaries"></a>
+          <div class="body">
+            <span class="tag">Background</span>
+            <h3>競馬予測の前提</h3>
+            <p>競馬について全く知識がない中で競馬予測を始めた当初の記録です。競馬は毎週開催されることもあり、データ分析との親和性が高く、継続的に取り組めるのでお勧めです。スクレイピングと可視化を用いて事前情報を効率的にインプットして競馬を楽しく観戦できます。</p>
+            <ul class="links">
+              <li><a href="https://ryutoro-galois.github.io/keiba-predictor/manual/KeibaPredictDiaries_v1_201911.pdf" target="_blank" rel="noopener noreferrer">Keiba Predict Diaries</a></li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card topic">
+          <a class="thumb" href="https://ryutoro-galois.github.io/keiba-predictor/sankeyDiagram/sankeyDiagram_keiba_Arimakinen_2019y.html" target="_blank" rel="noopener noreferrer"><img src="images/race_result.png" alt="過去のレース結果"></a>
+          <div class="body">
+            <span class="tag">Archive</span>
+            <h3>過去のレース結果 (2019年10月〜)</h3>
+            <ul class="links">
+              <li><a href="https://ryutoro-galois.github.io/keiba-predictor/horse_race/horse_race_2026y.html" target="_blank" rel="noopener noreferrer">2026年</a></li>
+              <li><a href="https://ryutoro-galois.github.io/keiba-predictor/horse_race/horse_race_2025y.html" target="_blank" rel="noopener noreferrer">2025年</a></li>
+              <li><a href="https://ryutoro-galois.github.io/keiba-predictor/horse_race/horse_race_2024y.html" target="_blank" rel="noopener noreferrer">2024年</a></li>
+              <li><a href="https://ryutoro-galois.github.io/keiba-predictor/horse_race/horse_race_2023y.html" target="_blank" rel="noopener noreferrer">2023年</a></li>
+              <li><a href="https://ryutoro-galois.github.io/keiba-predictor/horse_race/horse_race_2022y.html" target="_blank" rel="noopener noreferrer">2022年</a></li>
+              <li><a href="https://ryutoro-galois.github.io/keiba-predictor/horse_race/horse_race_2021y.html" target="_blank" rel="noopener noreferrer">2021年</a></li>
+              <li><a href="https://ryutoro-galois.github.io/keiba-predictor/horse_race/horse_race_2020y.html" target="_blank" rel="noopener noreferrer">2020年</a></li>
+              <li><a href="https://ryutoro-galois.github.io/keiba-predictor/horse_race/horse_race_2019y.html" target="_blank" rel="noopener noreferrer">2019年 (10月〜)</a></li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card topic">
+          <a class="thumb" href="https://ryutoro-galois.github.io/keiba-predictor/sankeyDiagram/horse_pedigree.html" target="_blank" rel="noopener noreferrer"><img src="images/horse_pedigree.png" alt="血統の見える化"></a>
+          <div class="body">
+            <span class="tag">Pedigree</span>
+            <h3>血統の見える化</h3>
+            <p>競馬を観戦する上で血統は重要な要素の一つです。Sankey Diagramを用いて血統 (最大5世代) を可視化することで交配のクロス状況が確認しやすくなります。</p>
+            <ul class="links">
+              <li><a href="https://ryutoro-galois.github.io/keiba-predictor/sankeyDiagram/sankeyDiagram_horse_pedigree_2025y_arimakinen_candidate_to_run_num_22.html" target="_blank" rel="noopener noreferrer">2025 有馬記念 出走候補馬 (22頭)</a></li>
+              <li><a href="https://ryutoro-galois.github.io/keiba-predictor/sankeyDiagram/sankeyDiagram_horse_pedigree_2024y_arimakinen.html" target="_blank" rel="noopener noreferrer">2024 有馬記念 (16頭)</a></li>
+              <li><a href="https://ryutoro-galois.github.io/keiba-predictor/sankeyDiagram/sankeyDiagram_horse_pedigree_2023y_arimakinen.html" target="_blank" rel="noopener noreferrer">2023 有馬記念</a></li>
+              <li><a href="https://ryutoro-galois.github.io/keiba-predictor/sankeyDiagram/sankeyDiagram_horse_pedigree_2022y_arimakinen.html" target="_blank" rel="noopener noreferrer">2022 有馬記念</a></li>
+              <li><a href="https://ryutoro-galois.github.io/keiba-predictor/sankeyDiagram/sankeyDiagram_horse_pedigree_arimakinen_2021_num_horses_17_generation_5.html" target="_blank" rel="noopener noreferrer">2021 有馬記念 (17頭)</a></li>
+              <li><a href="https://ryutoro-galois.github.io/keiba-predictor/sankeyDiagram/sankeyDiagram_horse_pedigree_num_horses_192_generation_5_2018y_2019y_G1_num_192.html" target="_blank" rel="noopener noreferrer">2018–19 GⅠ出走馬 (192頭)</a></li>
+              <li><a href="https://ryutoro-galois.github.io/keiba-predictor/sankeyDiagram/sankeyDiagram_horse_pedigree_num_horses_795_generation_5_2018y_2019y_G123_num_795.html" target="_blank" rel="noopener noreferrer">2018–19 重賞出走馬 (795頭)</a></li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card topic">
+          <a class="thumb" href="https://ryutoro-galois.github.io/keiba-predictor/report/AdHocAnalysis_keiba_04_2000y_2019y_G1_20191113.html" target="_blank" rel="noopener noreferrer"><img src="images/tree_diagram.png" alt="競馬アドホック分析"></a>
+          <div class="body">
+            <span class="tag">Analysis</span>
+            <h3>競馬アドホック分析</h3>
+            <p>長期間データを用いた傾向分析結果を紹介しています。全体を俯瞰する基礎分析が重要であることを改めて感じます。</p>
+            <ul class="links">
+              <li><a href="https://ryutoro-galois.github.io/keiba-predictor/report/AdHocAnalysis_keiba_04_2000y_2019y_G1_20191113.html" target="_blank" rel="noopener noreferrer">GⅠレース傾向分析 (2000–2019)</a></li>
+              <li><a href="https://ryutoro-galois.github.io/keiba-predictor/sankeyDiagram/sankeyDiagram_keiba_Arimakinen_1990y_2018y.html" target="_blank" rel="noopener noreferrer">有馬記念 基礎分析 (1990–2018)</a></li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card topic">
+          <a class="thumb" href="https://ryutoro-galois.github.io/sumo-predictor/SumoPredictDiaries_v1_201911.pdf" target="_blank" rel="noopener noreferrer"><img src="images/sumo_prediction_diaries.png" alt="相撲予測"></a>
+          <div class="body">
+            <span class="tag">Sumo Prediction</span>
+            <h3>相撲予測</h3>
+            <p>相撲の取組予測は、一見「勝ち負け」の二択という単純なものにみえますが、実は非常に奥が深いです。取組当日の勝者力士を予想し、結びの一番が終わる18時に答え合わせ（バックテスト）を行います。初日から千秋楽の15日間連続して楽しめるのも相撲予測を行う醍醐味といえます。このプロセスを通じて、一人でも多くの方が相撲という競技に興味を持ち、その深い魅力を知るきっかけになれば嬉しいです。</p>
+            <ul class="links">
+              <li><a href="https://ryutoro-galois.github.io/sumo-predictor/SumoPredictDiaries.pdf" target="_blank" rel="noopener noreferrer">Sumo Predict Diaries</a></li>
+              <li><a href="https://ryutoro-galois.github.io/sumo-predictor/PredResult_sumo_targetYM_202609.html" target="_blank" rel="noopener noreferrer">令和八年九月場所 (2026/09)</a></li>
+              <li><a href="https://ryutoro-galois.github.io/sumo-predictor/PredResult_sumo_targetYM_202607.html" target="_blank" rel="noopener noreferrer">令和八年七月場所 (2026/07)</a></li>
+              <li><a href="https://ryutoro-galois.github.io/sumo-predictor/PredResult_sumo_targetYM_202605.html" target="_blank" rel="noopener noreferrer">令和八年五月場所 (2026/05)</a></li>
+            </ul>
+            <details class="more">
+              <summary>過去の場所を表示</summary>
+              <ul class="links">
+                <li><a href="https://ryutoro-galois.github.io/sumo-predictor/PredResult_sumo_targetYM_202603.html" target="_blank" rel="noopener noreferrer">令和八年三月場所 (2026/03)</a></li>
+                <li><a href="https://ryutoro-galois.github.io/sumo-predictor/PredResult_sumo_targetYM_202601.html" target="_blank" rel="noopener noreferrer">令和八年初場所 (2026/01)</a></li>
+                <li class="gap">…</li>
+                <li><a href="https://ryutoro-galois.github.io/sumo-predictor/PredResult_sumo_targetYM_202003.html" target="_blank" rel="noopener noreferrer">令和二年春場所 (2020/03)</a></li>
+                <li><a href="https://ryutoro-galois.github.io/sumo-predictor/PredResult_sumo_targetYM_202001.html" target="_blank" rel="noopener noreferrer">令和二年初場所 (2020/01)</a></li>
+                <li><a href="https://ryutoro-galois.github.io/sumo-predictor/PredResult_sumo_targetYM_201911.html" target="_blank" rel="noopener noreferrer">令和元年九州場所 (2019/11)</a></li>
+              </ul>
+            </details>
+          </div>
+        </article>
+
+        <article class="card topic">
+          <a class="thumb" href="https://ryutoro-galois.github.io/toy-samples/interestMap.html" target="_blank" rel="noopener noreferrer"><img src="images/interest_map.png" alt="データ可視化"></a>
+          <div class="body">
+            <span class="tag">Visualization</span>
+            <h3>データ可視化</h3>
+            <p>直感的な気付きやStory Tellingに繋がるような可視化の手法や適用事例を探して紹介しています。個人的には、Sankey Diagramがお勧めで様々なケースで利用しています。</p>
+            <ul class="links">
+              <li><a href="https://ryutoro-galois.github.io/toy-samples/2022-02_Visualization_Inspiration.pdf" target="_blank" rel="noopener noreferrer">Visualization Inspiration</a></li>
+              <li><a href="https://ryutoro-galois.github.io/toy-samples/2022-03_Reproducible_Reporting_with_RMarkdown.pdf" target="_blank" rel="noopener noreferrer">Reproducible Reporting with RMarkdown</a></li>
+              <li><a href="https://ryutoro-galois.github.io/toy-samples/interestMap.html" target="_blank" rel="noopener noreferrer">Interest Map</a></li>
+              <li><a href="https://ryutoro-galois.github.io/keiba-predictor/sankeyDiagram/sankeyDiagram_keiba_Arimakinen_2019y.html" target="_blank" rel="noopener noreferrer">Sankey Diagram</a></li>
+              <li><a href="https://ryutoro-galois.github.io/toy-samples/leaflet_sample_nakanoku_20191107.html" target="_blank" rel="noopener noreferrer">Medical Institution Map</a></li>
+            </ul>
+            <details class="more">
+              <summary>さらに表示</summary>
+              <ul class="links">
+                <li><a href="https://ryutoro-galois.github.io/toy-samples/animationPlot_01.html" target="_blank" rel="noopener noreferrer">Animation Plot [1] Scatter</a></li>
+                <li><a href="https://ryutoro-galois.github.io/toy-samples/animationPlot_02.html" target="_blank" rel="noopener noreferrer">Animation Plot [2] GDP per Year</a></li>
+                <li><a href="https://ryutoro-galois.github.io/toy-samples/2022-04_Getting_Started_with_Elasticsearch.pdf" target="_blank" rel="noopener noreferrer">Getting Started with Elasticsearch</a></li>
+                <li><a href="https://ryutoro-galois.github.io/toy-samples/Report_FIBA_2023.html" target="_blank" rel="noopener noreferrer">FIBA World Cup 2023</a></li>
+                <li><a href="https://ryutoro-galois.github.io/toy-samples/FIBA_2023_player_list.html" target="_blank" rel="noopener noreferrer">FIBA 2023 Player List</a></li>
+                <li><a href="https://ryutoro-galois.github.io/toy-samples/Report_FIFA_2022.html" target="_blank" rel="noopener noreferrer">FIFA World Cup 2022</a></li>
+              </ul>
+            </details>
+          </div>
+        </article>
+
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <span>© Visual Horse Racing</span>
+      <span id="last-update"></span>
+    </div>
+  </footer>
+
+  <script>
+    // Tabs (no jQuery needed)
+    document.querySelectorAll('[data-tabs]').forEach(function (root) {
+      var tabs = root.querySelectorAll('[role="tab"]');
+      var panels = root.querySelectorAll('[data-panel]');
+      tabs.forEach(function (tab) {
+        tab.addEventListener('click', function () {
+          tabs.forEach(function (t) { t.setAttribute('aria-selected', t === tab ? 'true' : 'false'); });
+          panels.forEach(function (p) { p.classList.toggle('on', p.dataset.panel === tab.dataset.tab); });
+        });
+      });
+    });
+
+    // Last update
+    (function () {
+      var d = new Date(document.lastModified);
+      var p = function (n) { return n < 10 ? '0' + n : n; };
+      var w = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'][d.getDay()];
+      document.getElementById('last-update').textContent =
+        'Last update: ' + d.getFullYear() + '-' + p(d.getMonth() + 1) + '-' + p(d.getDate()) + ' (' + w + ')';
+    })();
+  </script>
+</body>
 </html>
