@@ -1,0 +1,17 @@
+<!-- Google Analytics (GA4) for report pages.
+     Include from R Markdown:
+       output:
+         html_document:
+           includes:
+             in_header: ga.html
+     When the page is embedded in an iframe (e.g. on the top page),
+     no page_view is sent, to avoid double counting. -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-69VFZG8Z4H"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  var isTop = true;
+  try { isTop = window.self === window.top; } catch (e) { isTop = false; }
+  gtag('config', 'G-69VFZG8Z4H', { send_page_view: isTop });
+</script>
