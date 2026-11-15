@@ -6,7 +6,9 @@
              in_header: ga.html
      When the page is embedded in an iframe (e.g. on the top page),
      no page_view is sent, to avoid double counting. -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-69VFZG8Z4H"></script>
+<!-- data-external="1": keep gtag.js as an external script
+     (otherwise self_contained: true inlines a frozen copy) -->
+<script async data-external="1" src="https://www.googletagmanager.com/gtag/js?id=G-69VFZG8Z4H"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
