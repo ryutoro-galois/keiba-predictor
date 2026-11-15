@@ -1350,6 +1350,35 @@
       document.getElementById('last-update').textContent =
         'Last update: ' + d.getFullYear() + '-' + p(d.getMonth() + 1) + '-' + p(d.getDate()) + ' (' + w + ')';
     })();
+    
+    // ▼▼▼ ここから追加 ▼▼▼
+    // GA4: track which article (html / pdf) was opened from this page.
+    // Links point to the same host (ryutoro-galois.github.io), so GA's
+    // automatic outbound-click tracking does not fire for them.
+    (function () {
+      if (typeof gtag !== 'function') return;
+      var DOC = /\.(html?|pdf)$/i;
+      document.addEventListener('click', function (e) {
+        var a = e.target.closest && e.target.closest('a[href]');
+        if (!a) return;
+        var u;
+        try { u = new URL(a.href, location.href); } catch (_) { return; }
+        var m = u.pathname.match(DOC);
+        if (!m) return;
+        var type = m[1].toLowerCase() === 'pdf' ? 'pdf' : 'html';
+        var section = a.closest('section[id]');
+        var img = a.querySelector('img[alt]');
+        gtag('event', 'article_click', {
+          article_path: u.pathname,
+          article_type: type,
+          link_text: ((img && img.alt) || a.textContent || '').trim().replace(/\s+/g, ' ').slice(0, 100),
+          link_url: u.href,
+          page_section: section ? section.id : '',
+          transport_type: 'beacon'
+        });
+      }, true);
+    })();
+    // ▲▲▲ ここまで追加 ▲▲▲
   </script>
 </body>
 </html>
