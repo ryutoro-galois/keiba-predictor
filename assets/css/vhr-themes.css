@@ -203,3 +203,25 @@ html[data-design="warm"] .vhr-week .race .g, html[data-design="ocean"] .vhr-week
 .theme-switch button[aria-checked="true"] { background: var(--text); color: var(--bg); }
 @media (max-width: 760px) { .vhr-months { display: none; } }
 @media (max-width: 520px) { .vhr-bar .in { justify-content: center; } .vhr-bar .theme-switch { margin-left: 0; } }
+
+/* ---------- Year index (horse_race_top.html) ---------- */
+section > p.vhr-years {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 14px;
+  padding: 0; margin: 20px 0; background: none; border: 0; box-shadow: none;
+}
+.vhr-years .year-card {
+  position: relative; display: flex; flex-direction: column; gap: 2px;
+  padding: 18px 20px 16px; color: var(--text);
+  background: var(--paper); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow);
+  transition: transform .2s ease, border-color .2s, box-shadow .2s;
+}
+.vhr-years .year-card:hover { text-decoration: none; transform: translateY(-3px); border-color: var(--accent); }
+.vhr-years .year-card .y { font-family: var(--display); font-size: 34px; font-weight: 800; line-height: 1.1; letter-spacing: -.01em; }
+.vhr-years .year-card .nen { font-size: 15px; margin-left: 3px; font-weight: 700; }
+.vhr-years .year-card .sub { font-size: 12.5px; font-weight: 600; color: var(--faint); }
+.vhr-years .year-card .go { margin-top: 10px; font-size: 13px; font-weight: 700; color: var(--accent); }
+.vhr-years .year-card.latest { background: linear-gradient(160deg, var(--accent-soft), var(--paper) 75%); border-color: var(--border-strong); }
+.vhr-years .year-card .badge {
+  position: absolute; top: 14px; right: 14px; font-size: 11px; font-weight: 800; line-height: 1;
+  color: #fff; background: var(--accent-2); padding: 4px 9px; border-radius: 999px;
+}

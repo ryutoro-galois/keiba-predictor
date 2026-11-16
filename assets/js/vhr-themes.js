@@ -71,6 +71,27 @@
     document.body.insertBefore(bar, document.body.firstChild);
   }
 
+  function buildYears(p, links) {
+    var cards = [];
+    for (var i = 0; i < links.length; i++) {
+      var a = links[i];
+      var m = a.textContent.trim().match(/^【\s*(\d{4})年\s*(.*?)\s*】/);
+      var card = el('a', 'year-card' + (i === 0 ? ' latest' : ''));
+      card.href = a.getAttribute('href');
+      if (a.getAttribute('target')) { card.target = a.getAttribute('target'); card.rel = 'noopener noreferrer'; }
+      if (i === 0) card.appendChild(el('span', 'badge', '最新'));
+      var y = el('span', 'y', m ? m[1] : a.textContent.trim());
+      y.appendChild(el('span', 'nen', '年'));
+      card.appendChild(y);
+      card.appendChild(el('span', 'sub', m && m[2] ? m[2].replace(/[()（）]/g, '').replace(/[~〜]$/, '〜12月') : (i === 0 ? '1月〜 更新中' : '1月〜12月')));
+      card.appendChild(el('span', 'go', 'レース結果を見る →'));
+      cards.push(card);
+    }
+    while (p.firstChild) p.removeChild(p.firstChild);
+    p.classList.add('vhr-years');
+    cards.forEach(function (c) { p.appendChild(c); });
+  }
+
   // Turn "☑️ 【第4週(12/26~27)】(有観客) { A(GⅠ), B(GⅡ) }" into a tidy row
   function enhanceWeeks() {
     var ps = document.querySelectorAll('#main section > p');
@@ -78,6 +99,14 @@
       var p = ps[i];
       var links = p.querySelectorAll('a');
       if (!links.length) continue;
+
+      // Year index list ("【2026年】", "【2025年】", …) → year cards
+      var isYears = links.length > 1;
+      for (var k = 0; k < links.length && isYears; k++) {
+        if (!/^【\s*\d{4}年/.test(links[k].textContent.trim())) isYears = false;
+      }
+      if (isYears) { buildYears(p, links); continue; }
+
       var first = links[0];
       var raw = first.textContent.replace(/\s+/g, ' ').trim();
       var mm = raw.match(/【([^】]*)】\s*(.*)$/);
