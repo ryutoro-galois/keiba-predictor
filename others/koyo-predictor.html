@@ -17,8 +17,19 @@ main{max-width:980px;margin:0 auto;padding:28px 16px 64px}
 h1{font-size:26px;margin:0 0 4px}h2{font-size:18px;margin:36px 0 8px}
 .sub{color:var(--t2);margin:0 0 20px}
 .tabs{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 18px}
-.daytabs{overflow-x:auto;flex-wrap:nowrap;padding-bottom:2px}
-.daytabs button{white-space:nowrap}
+.daypanel{border:1px solid var(--line);border-radius:14px;background:var(--bg);margin-top:20px;overflow:hidden}
+.dayhead{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px;padding:12px 14px 0}
+.daylabel{font-weight:700;font-size:16px}.dayhint{color:var(--t3);font-size:13px}
+.daytabs{display:flex;gap:8px;overflow-x:auto;padding:10px 14px 0;border-bottom:1px solid var(--t3)}
+.daytabs button{font:inherit;display:flex;align-items:center;gap:8px;padding:8px 12px 8px 8px;border:1px solid var(--line);border-bottom:none;border-radius:10px 10px 0 0;background:var(--card);color:var(--t2);cursor:pointer;white-space:nowrap;text-align:left;position:relative}
+.daytabs button:hover{background:var(--line)}
+.daytabs button[aria-selected="true"]{background:var(--bg);color:var(--t1);border-color:var(--t3);margin-bottom:-1px;padding-bottom:9px;box-shadow:inset 0 4px 0 #d9a400}
+.daytabs button:not([aria-selected="true"]) img{filter:saturate(.5) opacity(.75)}
+.daytabs img{width:52px;height:39px;object-fit:cover;border-radius:6px;background:var(--line)}
+.daytabs b{display:block;font-size:16px;line-height:1.2}.daytabs small{font-size:12px;color:var(--t2)}
+.daytabs em{font-style:normal;font-size:11px;font-weight:600;padding:1px 7px;border-radius:999px;background:#d9a400;color:#2e2219;align-self:flex-start}
+.daybody{padding:14px}
+.daybody .cmp{margin-top:14px}
 .tabs button{font:inherit;padding:6px 14px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--t2);cursor:pointer}
 .tabs button[aria-selected="true"]{background:var(--t1);color:var(--bg);border-color:var(--t1)}
 .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
@@ -60,8 +71,8 @@ th:first-child,td:first-child{text-align:left}th{color:var(--t2);font-weight:600
 <h1>紅葉・黄葉予想 <span id="yr"></span></h1>
 <p class="sub">気象庁の生物季節観測（かえで紅葉・いちょう黄葉）と月平均気温から、全国の気象台の紅（黄）葉日を予想しています。<span id="asof"></span></p>
 <h2 id="photoh">青山いちょう並木の写真観測</h2>
-<div id="heat"></div>
 <div id="photo"></div>
+<div id="heat"></div>
 
 <h2>全国の紅葉・黄葉予想</h2>
 <div class="tabs sptabs" role="tablist"><button role="tab" data-sp="kaede">かえで（紅葉）</button><button role="tab" data-sp="ichou">いちょう（黄葉）</button></div>
@@ -157,16 +168,17 @@ function renderHeat(){
  if(heatDay==null||heatDay>=HEAT.length) heatDay=HEAT.length-1;
  const h=HEAT[heatDay], prev=HEAT[heatDay-1], pct=v=>v==null?"–":Math.round(v*100)+"%";
  const dlt=k=>prev&&h[k]!=null&&prev[k]!=null?` <small style="font-size:14px;color:var(--t2)">(${h[k]>=prev[k]?"+":""}${Math.round((h[k]-prev[k])*100)})</small>`:"";
- const tabs=HEAT.length>1?`<div class="tabs daytabs" role="tablist" aria-label="撮影日">${HEAT.map((e,i)=>[e,i]).reverse().map(([e,i])=>`<button role="tab" data-day="${i}" aria-selected="${i===heatDay}">${md(e.date)}${i===HEAT.length-1?" 最新":""}</button>`).join("")}</div>`:"";
- el.innerHTML=`${tabs}<div class="kpis">
+ const tabs=HEAT.length>1?`<div class="dayhead"><span class="daylabel">撮影日</span><span class="dayhint">タブを押すと、その日の写真と数字に切り替わります</span></div>
+  <div class="daytabs" role="tablist" aria-label="撮影日">${HEAT.map((e,i)=>[e,i]).reverse().map(([e,i])=>`<button role="tab" data-day="${i}" aria-selected="${i===heatDay}"><img src="${e.photo}" alt="" loading="lazy"><span><b>${md(e.date)}</b><small>黄葉度 ${pct(e.overall)}</small></span>${i===HEAT.length-1?"<em>最新</em>":""}</button>`).join("")}</div>`:"";
+ el.innerHTML=`<div class="daypanel">${tabs}<div class="daybody"><div class="kpis">
   <div class="kpi"><b>${pct(h.overall)}${dlt("overall")}</b><span>黄葉度（${md(h.date)}、葉の部分の平均）${prev?`／（ ）は${md(prev.date)}からの変化`:""}</span></div>
   <div class="kpi"><b>${pct(h.left)} / ${pct(h.right)}</b><span>左側 / 右側の並木</span></div>
   <div class="kpi"><b>${pct(h.yellow_share)}${dlt("yellow_share")}</b><span>半分以上黄色くなった葉の面積</span></div></div>
   <div class="cmp"><img src="${h.photo}" alt="青山いちょう並木 ${md(h.date)} の写真"><div class="top"><img src="${h.heat}" alt="${md(h.date)} の黄葉度ヒートマップ"></div>
    <span class="lab" style="left:10px">写真 ${md(h.date)}</span><span class="lab" style="right:10px">黄葉ヒートマップ</span><div class="bar"></div><div class="knob">⇔</div></div>
   <div class="scale"><span>緑</span><i></i><span>黄金色</span><span style="color:var(--t3)">ドラッグで写真と比較</span></div>
-  <div id="prof"></div>`;
- el.querySelectorAll(".daytabs button").forEach(bt=>bt.onclick=()=>{heatDay=+bt.dataset.day;renderHeat()});
+  <div id="prof"></div></div></div>`;
+ el.querySelectorAll(".daytabs button").forEach(bt=>bt.onclick=()=>{heatDay=+bt.dataset.day;renderHeat();el.querySelector(`.daytabs [data-day="${heatDay}"]`)?.focus({preventScroll:true})});
  el.querySelectorAll(".cmp").forEach(cmp=>{
   const set=x=>{const r=cmp.getBoundingClientRect(),p=Math.min(100,Math.max(0,(x-r.left)/r.width*100));
    cmp.querySelector(".top").style.clipPath=`inset(0 0 0 ${p}%)`; cmp.querySelector(".bar").style.left=p+"%"; cmp.querySelector(".knob").style.left=p+"%"};
@@ -184,21 +196,38 @@ function renderHeat(){
 function renderPhoto(){
  const el=$("#photo");
  if(!HEAT||HEAT.length<2){el.innerHTML=`<p class="note">写真が2日分以上たまると、ここに黄葉度の推移グラフを表示します（<code>photos/</code> に日付付きの名前で写真を追加して <code>run.sh</code>）。</p>`;return}
- const days=HEAT, tky=DATA.ichou.stations.find(s=>s.station==="東京");
- const ends=[d(days[0].date), d(days.at(-1).date)]; if(tky) ends.push(d(tky.pred_date)); if(tky?.actual_date) ends.push(d(tky.actual_date));
- const t0=new Date(Math.min(...ends)-DAY), t1=new Date(Math.max(...ends)+DAY);
- const W=el.clientWidth||600, H=200, L=36, B=24, T=14;
- const X=s=>L+(d(s)-t0)/(t1-t0)*(W-L-12), Y=v=>T+(1-v)*(H-T-B);
- let g=[0,.5,.8,1].map(v=>`<line x1="${L}" x2="${W-12}" y1="${Y(v)}" y2="${Y(v)}" stroke="var(--grid)"${v===.8?' stroke-dasharray="4 3"':""}/><text x="${L-6}" y="${Y(v)+4}" font-size="11" text-anchor="end" fill="var(--t3)">${v*100}%</text>`).join("");
- g+=`<text x="${W-14}" y="${Y(.8)-5}" font-size="11" text-anchor="end" fill="var(--t3)">見頃の目安 80%</text>`;
- for(let t=new Date(+t0+DAY);t<t1;t=new Date(+t+DAY)){const iso=new Date(t-t.getTimezoneOffset()*6e4).toISOString().slice(0,10); if(t.getDate()%5===0||t.getDate()===1) g+=`<text x="${X(iso)}" y="${H-6}" font-size="11" text-anchor="middle" fill="var(--t3)">${md(iso)}</text>`}
- if(tky){for(const [k,c,lab] of [["pred_date","var(--pred)","気象庁 東京 黄葉日予想"],["actual_date","var(--act)","気象庁 東京 黄葉日"]]){const s=tky[k]; if(s)g+=`<line x1="${X(s)}" x2="${X(s)}" y1="${T}" y2="${H-B}" stroke="${c}" stroke-dasharray="3 3"/><text x="${X(s)-4}" y="${T+8}" font-size="11" text-anchor="end" fill="var(--t2)">${lab} ${md(s)}</text>`}}
- g+=`<path d="${days.map((p,i)=>(i?"L":"M")+X(p.date)+","+Y(p.overall)).join("")}" fill="none" stroke="#c99a12" stroke-width="2"/>`;
- g+=days.map(p=>`<circle cx="${X(p.date)}" cy="${Y(p.overall)}" r="5" fill="${rampCol(p.overall)}" stroke="var(--bg)" stroke-width="2"><title>${md(p.date)} 黄葉度 ${Math.round(p.overall*100)}%</title></circle><text x="${X(p.date)}" y="${Y(p.overall)-10}" font-size="11" text-anchor="middle" fill="var(--t2)">${Math.round(p.overall*100)}%</text>`).join("");
+ const days=HEAT, last=days.at(-1), prev=days.at(-2), tky=DATA.ichou.stations.find(s=>s.station==="東京");
+ const iso=t=>new Date(t-t.getTimezoneOffset()*6e4).toISOString().slice(0,10);
+ const ends=[+d(days[0].date)-DAY, +d(last.date)+3*DAY]; if(tky) ends.push(+d(tky.pred_date)+DAY); if(tky?.actual_date) ends.push(+d(tky.actual_date)+DAY);
+ const t0=new Date(Math.min(...ends)), t1=new Date(Math.max(...ends)), nd=Math.round((t1-t0)/DAY);
+ const W=el.clientWidth||600, narrow=W<520, H=narrow?250:280, L=narrow?36:42, R=narrow?58:66, T=30, B=30;
+ const X=s=>L+(d(s)-t0)/(t1-t0)*(W-L-R), Y=v=>T+(1-v)*(H-T-B), fs=narrow?12:13;
+ let g="";
+ // stage bands
+ for(const [lo,hi,lab,fill] of [[0,.5,narrow?"色づき":"色づき途中","var(--card)"],[.5,.8,"黄葉","rgba(250,214,30,.16)"],[.8,1,"見頃","rgba(255,184,0,.26)"]])
+  g+=`<rect x="${L}" y="${Y(hi)}" width="${W-L-R}" height="${Y(lo)-Y(hi)}" fill="${fill}"/><text x="${W-R+8}" y="${(Y(hi)+Y(lo))/2+4}" font-size="${fs-1}" fill="var(--t2)" font-weight="600">${lab}</text>`;
+ for(const v of [0,.5,.8,1]) g+=`<line x1="${L}" x2="${W-R}" y1="${Y(v)}" y2="${Y(v)}" stroke="var(--line)"/><text x="${L-6}" y="${Y(v)+4}" font-size="${fs-1}" text-anchor="end" fill="var(--t3)">${v*100}%</text>`;
+ // day ticks
+ const step=Math.max(1,Math.ceil(46/((W-L-R)/nd)));
+ for(let t=new Date(+t0+DAY);t<t1;t=new Date(+t+DAY)){const k=iso(t), x=X(k), major=k===last.date||(Math.round((d(last.date)-t)/DAY)%step===0&&Math.abs(d(last.date)-t)>=step*DAY*0.99);
+  g+=`<line x1="${x}" x2="${x}" y1="${H-B}" y2="${H-B+4}" stroke="var(--t3)"/>`;
+  if(major) g+=`<text x="${x}" y="${H-B+18}" font-size="${fs-1}" text-anchor="middle" fill="${k===last.date?"var(--t1)":"var(--t3)"}"${k===last.date?' font-weight="700"':""}>${md(k)}</text>`;}
+ // JMA Tokyo marker
+ if(tky){for(const [k,c,lab] of [["pred_date","var(--pred)","気象庁 東京 黄葉日予想"],["actual_date","var(--act)","気象庁 東京 黄葉日"]]){const s=tky[k]; if(!s)continue; const x=X(s), left=x>W*0.6;
+  g+=`<line x1="${x}" x2="${x}" y1="${T-6}" y2="${H-B}" stroke="${c}" stroke-width="1.5" stroke-dasharray="4 3"/><text x="${left?x-6:x+6}" y="${T-12}" font-size="${fs-1}" text-anchor="${left?"end":"start"}" fill="${c}" font-weight="600">${lab} ${md(s)}</text>`}}
+ // area + line + points
+ const pts=days.map(p=>[X(p.date),Y(p.overall)]);
+  g+=`<path d="M${pts.map(p=>p.join(",")).join("L")}" fill="none" stroke="#d9a400" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>`;
+ days.forEach((p,i)=>{const [x,y]=pts[i], isLast=i===days.length-1;
+  g+=`<circle cx="${x}" cy="${y}" r="${isLast?8:6}" fill="${rampCol(p.overall)}" stroke="var(--bg)" stroke-width="2.5"><title>${md(p.date)} 黄葉度 ${Math.round(p.overall*100)}%</title></circle>`;
+  g+=`<text x="${x}" y="${y-14}" font-size="${isLast?fs+3:fs}" text-anchor="middle" fill="var(--t1)" font-weight="${isLast?700:500}">${Math.round(p.overall*100)}%</text>`;});
  const reach=thr=>{const i=days.findIndex(p=>p.overall>=thr); return i<0?"未到達":i===0?`${md(days[0].date)}以前`:md(days[i].date)};
- el.innerHTML=`<p class="note" style="margin:18px 0 4px">黄葉度の推移（葉の部分の平均）</p>
-  <svg viewBox="0 0 ${W} ${H}" style="width:100%" role="img" aria-label="黄葉度の推移">${g}</svg>
-  <p class="note">50%到達：${reach(.5)}　／　80%（見頃の目安）到達：${reach(.8)}</p>`;
+ const delta=Math.round((last.overall-prev.overall)*100);
+ el.innerHTML=`<div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 14px;margin:0 0 6px">
+   <span style="font-weight:600">黄葉度の推移</span><span class="note">葉の部分の平均</span>
+   <span style="margin-left:auto;color:var(--t2);font-size:14px">${md(last.date)}：<b style="color:var(--t1);font-size:18px">${Math.round(last.overall*100)}%</b>（前回比 ${delta>=0?"+":""}${delta}）</span></div>
+  <svg viewBox="0 0 ${W} ${H}" style="width:100%;display:block" role="img" aria-label="黄葉度の推移">${g}</svg>
+  <p class="note" style="margin-top:4px">黄葉（50%）到達：<b>${reach(.5)}</b>　／　見頃（80%）到達：<b>${reach(.8)}</b></p>`;
 }
 document.querySelectorAll(".sptabs button").forEach(b=>b.onclick=()=>{sp=b.dataset.sp;sortKey="pred_date";sortDir=1;render()});
 render(); renderHeat(); renderPhoto(); let rt; addEventListener("resize",()=>{clearTimeout(rt);rt=setTimeout(()=>{render();renderHeat();renderPhoto()},150)});
