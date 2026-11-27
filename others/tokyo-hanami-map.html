@@ -1,0 +1,507 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>東京23区 花見マップ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&family=M+PLUS+1:wght@800&family=Inter:wght@500;600&display=swap">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<style>
+/* Layout: full-bleed tinted map; a frosted-glass index panel floats on top (desktop), sheet below map (phone) */
+:root {
+  --bg: #eef0f8;
+  --glass: rgba(255, 255, 255, .72);
+  --glass-strong: rgba(255, 255, 255, .9);
+  --glass-line: rgba(255, 255, 255, .8);
+  --fg: #1c1d2b;
+  --muted: #5f6178;
+  --line: rgba(28, 29, 43, .08);
+  --hover: rgba(99, 102, 241, .08);
+  --sakura: #ff6f9f;
+  --ume: #b3195a;
+  --accent: #6366f1;
+  --shadow: 0 20px 50px -12px rgba(40, 44, 90, .28), 0 2px 6px rgba(40, 44, 90, .08);
+  --tile-filter: grayscale(1) sepia(.3) hue-rotate(195deg) saturate(1.5) brightness(1.06) contrast(.88);
+  --font-display: "M PLUS 1", "Hiragino Sans", "Yu Gothic", system-ui, sans-serif;
+  --font-body: "Zen Kaku Gothic New", "Hiragino Sans", "Yu Gothic", system-ui, sans-serif;
+  --font-num: "Inter", "Hiragino Sans", system-ui, sans-serif;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0c0e1a;
+    --glass: rgba(18, 20, 36, .7);
+    --glass-strong: rgba(22, 24, 42, .92);
+    --glass-line: rgba(255, 255, 255, .08);
+    --fg: #eceefe;
+    --muted: #9a9cba;
+    --line: rgba(255, 255, 255, .07);
+    --hover: rgba(129, 140, 248, .12);
+    --sakura: #ffb8d0;
+    --ume: #ff3366;
+    --accent: #8b93ff;
+    --shadow: 0 24px 60px -12px rgba(0, 0, 0, .6), 0 0 0 1px rgba(255,255,255,.04);
+    --tile-filter: grayscale(1) invert(1) sepia(.45) hue-rotate(195deg) saturate(1.8) brightness(.62) contrast(1.15);
+    color-scheme: dark;
+  }
+}
+* { box-sizing: border-box; }
+html, body { height: 100%; margin: 0; }
+body { background: var(--bg); color: var(--fg); font-family: var(--font-body); font-size: 14px; line-height: 1.6; }
+
+.app { position: relative; height: 100%; }
+.mapwrap { position: absolute; inset: 0; }
+#map { height: 100%; width: 100%; background: var(--bg); }
+
+aside {
+  position: absolute; z-index: 1000;
+  top: max(16px, env(safe-area-inset-top, 0px)); bottom: 16px; left: max(16px, env(safe-area-inset-left, 0px));
+  width: 380px; display: flex; flex-direction: column; min-height: 0; min-width: 0;
+  background: var(--glass); border: 1px solid var(--glass-line); border-radius: 22px;
+  backdrop-filter: blur(22px) saturate(1.6); -webkit-backdrop-filter: blur(22px) saturate(1.6);
+  box-shadow: var(--shadow); overflow: hidden;
+}
+header { padding: 22px 20px 16px; border-bottom: 1px solid var(--line); display: grid; gap: 12px; }
+.eyebrow { font-family: var(--font-num); font-size: .68rem; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--accent); }
+h1 { font-family: var(--font-display); font-weight: 800; font-size: 1.75rem; line-height: 1.2; margin: 0; letter-spacing: -.01em; text-wrap: balance;
+  background: linear-gradient(100deg, var(--fg) 30%, var(--ume) 75%, var(--sakura)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.lede { margin: 0; color: var(--muted); font-size: .84rem; }
+.season { font-size: .8rem; padding: 9px 12px; border-radius: 12px; background: var(--hover); }
+
+.filters { display: flex; gap: 4px; padding: 4px; border-radius: 999px; background: var(--line); width: fit-content; flex-wrap: wrap; }
+.chip { font: inherit; font-size: .84rem; font-weight: 500; border: 0; background: transparent; color: var(--muted); border-radius: 999px; padding: 5px 14px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: background .2s, color .2s; }
+.chip:hover { color: var(--fg); }
+.chip[aria-pressed="true"] { background: var(--glass-strong); color: var(--fg); box-shadow: 0 1px 4px rgba(0,0,0,.12); }
+.chip:focus-visible, .spot:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.dot { width: 9px; height: 9px; border-radius: 50%; display: inline-block; flex: none; }
+.dot.sakura { background: var(--sakura); box-shadow: 0 0 8px var(--sakura); }
+.dot.ume { background: var(--ume); box-shadow: 0 0 8px var(--ume); }
+
+.calendar { display: grid; gap: 5px; font-size: .7rem; color: var(--muted); font-family: var(--font-num); }
+.cal-row { display: grid; grid-template-columns: 3.6em 1fr; align-items: center; gap: 6px; font-family: var(--font-body); }
+.cal-track { position: relative; height: 6px; background: var(--line); border-radius: 3px; }
+.cal-bar { position: absolute; top: 0; bottom: 0; border-radius: 3px; }
+.cal-now { position: absolute; top: -4px; bottom: -4px; width: 2px; border-radius: 1px; background: var(--accent); }
+.cal-scale { display: grid; grid-template-columns: 3.6em repeat(4, 1fr); gap: 6px; }
+
+.list { overflow-y: auto; flex: 1; min-height: 0; padding: 6px 8px 20px; scrollbar-width: thin; }
+.ward-label { font-size: .68rem; font-weight: 700; letter-spacing: .14em; color: var(--muted); padding: 14px 12px 4px; }
+.spot { display: grid; grid-template-columns: 12px 1fr auto; gap: 10px; align-items: start; width: 100%; text-align: left; border: 0; background: none; color: inherit; font: inherit; padding: 8px 12px; border-radius: 12px; cursor: pointer; transition: background .15s; }
+.spot:hover { background: var(--hover); }
+.spot.active { background: var(--glass-strong); box-shadow: 0 2px 10px rgba(0,0,0,.08); }
+.spot .dot { margin-top: 7px; }
+.spot-name { font-weight: 700; }
+.spot-meta { color: var(--muted); font-size: .76rem; }
+.spot-count { font-family: var(--font-num); font-size: .74rem; color: var(--muted); font-variant-numeric: tabular-nums; white-space: nowrap; padding-top: 3px; }
+.note { font-size: .7rem; color: var(--muted); padding: 12px 12px 0; margin: 0; }
+
+.leaflet-container { font-family: var(--font-body); }
+.leaflet-tile-pane { filter: var(--tile-filter); }
+.leaflet-control-zoom { border: 0 !important; box-shadow: var(--shadow) !important; border-radius: 12px !important; overflow: hidden; }
+.leaflet-control-zoom a { background: var(--glass-strong) !important; color: var(--fg) !important; border-color: var(--line) !important; backdrop-filter: blur(12px); }
+.leaflet-bar a:hover { background: var(--glass) !important; }
+.leaflet-control-attribution { background: var(--glass) !important; color: var(--muted); backdrop-filter: blur(8px); border-radius: 8px 0 0 0; }
+.leaflet-control-attribution a { color: var(--accent); }
+.leaflet-top.leaflet-right, .leaflet-top.leaflet-left { top: 8px; }
+.leaflet-left .leaflet-control-zoom { margin-left: 412px; margin-top: 16px; }
+
+.leaflet-popup-content-wrapper { background: var(--glass-strong); color: var(--fg); border-radius: 18px; box-shadow: var(--shadow); backdrop-filter: blur(18px); border: 1px solid var(--glass-line); }
+.leaflet-popup-tip { background: var(--glass-strong); }
+.leaflet-popup-content { margin: 14px 16px; min-width: 230px; }
+.leaflet-container a.leaflet-popup-close-button { color: var(--muted); }
+.pop-kind { display: inline-block; font-size: .66rem; letter-spacing: .1em; font-weight: 700; padding: 2px 8px; border-radius: 999px; color: #fff; }
+.pop-kind.sakura { background: var(--sakura); }
+.pop-kind.ume { background: var(--ume); }
+.pop-name { font-family: var(--font-display); font-weight: 800; font-size: 1.2rem; margin: 6px 0 8px; line-height: 1.3; }
+.pop dl { display: grid; grid-template-columns: auto 1fr; gap: 2px 12px; margin: 0 0 8px; font-size: .82rem; }
+.pop dt { color: var(--muted); }
+.pop dd { margin: 0; }
+.pop p { margin: 0 0 10px; font-size: .82rem; }
+.pop a { display: inline-block; color: #fff !important; background: var(--accent); font-size: .78rem; font-weight: 600; padding: 5px 12px; border-radius: 999px; text-decoration: none; }
+
+.flower { filter: drop-shadow(0 2px 4px rgba(0,0,0,.3)); transition: transform .18s cubic-bezier(.3,1.6,.6,1); }
+.flower:hover { transform: scale(1.25); }
+
+.lang {
+  position: absolute; z-index: 1001;
+  top: max(16px, env(safe-area-inset-top, 0px)); right: max(16px, env(safe-area-inset-right, 0px));
+  display: flex; gap: 2px; padding: 4px; border-radius: 999px;
+  background: var(--glass); border: 1px solid var(--glass-line); box-shadow: var(--shadow);
+  backdrop-filter: blur(18px) saturate(1.6); -webkit-backdrop-filter: blur(18px) saturate(1.6);
+}
+.lang button { font: inherit; font-size: .8rem; font-weight: 600; border: 0; background: transparent; color: var(--muted); padding: 6px 14px; border-radius: 999px; cursor: pointer; transition: background .2s, color .2s; }
+.lang button:hover { color: var(--fg); }
+.lang button[aria-pressed="true"] { background: var(--accent); color: #fff; }
+.lang button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+@media (max-width: 760px) {
+  .app { height: auto; display: flex; flex-direction: column; }
+  .mapwrap { position: relative; height: 55vh; order: -1; }
+  aside { position: relative; inset: auto; width: auto; margin: -24px 0 0; border-radius: 22px 22px 0 0; border-width: 1px 0 0; background: var(--glass-strong); }
+  header { padding-left: max(20px, env(safe-area-inset-left, 0px)); padding-right: max(20px, env(safe-area-inset-right, 0px)); }
+  .list { overflow: visible; }
+  .leaflet-left .leaflet-control-zoom { margin-left: 12px; }
+}
+@media (prefers-reduced-motion: reduce) { .flower, .chip, .spot { transition: none; } }
+</style>
+</head>
+<body>
+<div class="app">
+  <aside>
+    <header>
+      <div class="eyebrow">Tokyo 23 Wards · Sakura &amp; Ume</div>
+      <h1 data-i18n="title">東京23区 花見マップ</h1>
+      <p class="lede" data-i18n="lede">桜と梅の名所を区ごとにまとめました。地図の花マークか一覧をクリックすると詳細が出ます。</p>
+      <div class="season" id="season"></div>
+      <div class="filters" role="group" aria-label="表示する花">
+        <button class="chip" id="f-all" data-filter="all" aria-pressed="true"><span data-i18n="all">すべて</span></button>
+        <button class="chip" id="f-sakura" data-filter="sakura" aria-pressed="false"><span class="dot sakura"></span><span data-i18n="sakura">桜</span></button>
+        <button class="chip" id="f-ume" data-filter="ume" aria-pressed="false"><span class="dot ume"></span><span data-i18n="ume">梅</span></button>
+      </div>
+      <div class="calendar" aria-label="例年の見頃">
+        <div class="cal-scale"><span></span><span data-m>1月</span><span data-m>2月</span><span data-m>3月</span><span data-m>4月</span></div>
+        <div class="cal-row"><span data-i18n="ume">梅</span><div class="cal-track" id="cal-ume"></div></div>
+        <div class="cal-row"><span data-i18n="sakura">桜</span><div class="cal-track" id="cal-sakura"></div></div>
+      </div>
+    </header>
+    <div class="list" id="list"></div>
+  </aside>
+  <div class="mapwrap"><div id="map"></div></div>
+  <div class="lang" role="group" aria-label="Language / 言語">
+    <button type="button" id="lang-ja" data-lang="ja" lang="ja" aria-pressed="true">日本語</button>
+    <button type="button" id="lang-en" data-lang="en" lang="en" aria-pressed="false">EN</button>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+// kind: sakura | ume ; peak: 例年の見頃の目安 ; count: 本数の目安
+const SPOTS = [
+  // ---- 桜 ----
+  { kind: "sakura", name: "千鳥ヶ淵緑道", ward: "千代田区", lat: 35.6905, lng: 139.7455, count: "約260本", peak: "3月下旬〜4月上旬", note: "皇居のお濠沿い約700mの桜並木。ボートから見上げる桜と夜のライトアップが名物。" },
+  { kind: "sakura", name: "靖国神社", ward: "千代田区", lat: 35.6942, lng: 139.7437, count: "約500本", peak: "3月下旬〜4月上旬", note: "気象庁の東京の標本木がある神社。開花宣言の基準になる場所。" },
+  { kind: "sakura", name: "外濠公園", ward: "千代田区", lat: 35.6965, lng: 139.7370, count: "約240本", peak: "3月下旬〜4月上旬", note: "飯田橋〜四ツ谷の土手沿い約2km。中央線の車窓からも見える。" },
+  { kind: "sakura", name: "上野恩賜公園", ward: "台東区", lat: 35.7146, lng: 139.7732, count: "約800本", peak: "3月下旬〜4月上旬", note: "約50種。さくら通りの桜のトンネルは都内屈指の花見スポット。" },
+  { kind: "sakura", name: "隅田公園", ward: "台東区・墨田区", lat: 35.7128, lng: 139.8032, count: "約1,000本", peak: "3月下旬〜4月上旬", note: "隅田川の両岸に続く桜並木。スカイツリーと屋形船を一緒に眺められる。" },
+  { kind: "sakura", name: "新宿御苑", ward: "新宿区", lat: 35.6852, lng: 139.7101, count: "約900本", peak: "3月中旬〜4月下旬", note: "約65品種で早咲きから八重桜まで長く楽しめる。有料・酒類持ち込み不可。" },
+  { kind: "sakura", name: "新宿中央公園", ward: "新宿区", lat: 35.6895, lng: 139.6905, count: "約200本", peak: "3月下旬〜4月上旬", note: "都庁や高層ビル群を背景に撮れる都会の桜。" },
+  { kind: "sakura", name: "六義園", ward: "文京区", lat: 35.7330, lng: 139.7465, count: "しだれ桜", peak: "3月中旬〜下旬", note: "高さ約15mの大しだれ桜が見もの。ソメイヨシノより少し早い。有料。" },
+  { kind: "sakura", name: "播磨坂さくら並木", ward: "文京区", lat: 35.7168, lng: 139.7420, count: "約120本", peak: "3月下旬〜4月上旬", note: "環状3号線の約500mの並木。地元の桜まつりも開かれる落ち着いた名所。" },
+  { kind: "sakura", name: "目黒川", ward: "目黒区", lat: 35.6440, lng: 139.6990, count: "約800本", peak: "3月下旬〜4月上旬", note: "中目黒を中心に約4kmの桜並木。川面を覆う桜とぼんぼりの夜桜が有名。" },
+  { kind: "sakura", name: "青山霊園", ward: "港区", lat: 35.6655, lng: 139.7215, count: "約700本", peak: "3月下旬〜4月上旬", note: "中央の通りが桜のトンネルに。霊園なので宴会は控えて静かに散策。" },
+  { kind: "sakura", name: "代々木公園", ward: "渋谷区", lat: 35.6720, lng: 139.6950, count: "約500本", peak: "3月下旬〜4月上旬", note: "広い芝生でシートを広げやすい。週末はかなり混む。" },
+  { kind: "sakura", name: "飛鳥山公園", ward: "北区", lat: 35.7520, lng: 139.7385, count: "約600本", peak: "3月下旬〜4月上旬", note: "江戸時代に徳川吉宗が植えた花見の名所。王子駅からすぐ。" },
+  { kind: "sakura", name: "砧公園", ward: "世田谷区", lat: 35.6290, lng: 139.6290, count: "約900本", peak: "3月下旬〜4月上旬", note: "家族向けの大きな公園。ファミリーパークの桜の下でゆったり花見。" },
+  { kind: "sakura", name: "石神井公園", ward: "練馬区", lat: 35.7375, lng: 139.5975, count: "約400本", peak: "3月下旬〜4月上旬", note: "石神井池のボートと水辺の桜。" },
+  { kind: "sakura", name: "洗足池公園", ward: "大田区", lat: 35.5995, lng: 139.6905, count: "約250本", peak: "3月下旬〜4月上旬", note: "池を囲む桜。勝海舟ゆかりの地でボートにも乗れる。" },
+  { kind: "sakura", name: "浜離宮恩賜庭園", ward: "中央区", lat: 35.6600, lng: 139.7630, count: "—", peak: "3月下旬〜4月上旬", note: "汐留のビル群と大名庭園の桜の対比が楽しい。有料。" },
+  { kind: "sakura", name: "大横川", ward: "江東区", lat: 35.6725, lng: 139.7975, count: "約400本", peak: "3月下旬〜4月上旬", note: "門前仲町周辺の川沿い。お江戸深川さくらまつりの和船が人気。" },
+  { kind: "sakura", name: "舎人公園", ward: "足立区", lat: 35.7990, lng: 139.7710, count: "約1,000本", peak: "3月下旬〜4月上旬", note: "23区北端の広大な公園。混雑が少なめで穴場。" },
+  { kind: "sakura", name: "北の丸公園", ward: "千代田区", lat: 35.6920, lng: 139.7515, count: "—", peak: "3月下旬〜4月上旬", note: "千鳥ヶ淵のすぐ隣。芝生と林の中で落ち着いて花見ができる。" },
+  { kind: "sakura", name: "皇居 乾通り", ward: "千代田区", lat: 35.6855, lng: 139.7525, count: "—", peak: "3月下旬〜4月上旬", note: "桜の時期に一般公開される皇居内の通り。公開の有無・日程は宮内庁の発表を確認。" },
+  { kind: "sakura", name: "谷中霊園", ward: "台東区", lat: 35.7235, lng: 139.7705, count: "—", peak: "3月下旬〜4月上旬", note: "中央の「さくら通り」が桜のトンネルに。谷根千散策と合わせて。宴会は不可。" },
+  { kind: "sakura", name: "染井霊園", ward: "豊島区", lat: 35.7350, lng: 139.7410, count: "—", peak: "3月下旬〜4月上旬", note: "ソメイヨシノ発祥の地とされる染井村の霊園。静かに歩ける桜の名所。" },
+  { kind: "sakura", name: "染井吉野桜記念公園", ward: "豊島区", lat: 35.7362, lng: 139.7468, count: "約10本", peak: "3月下旬〜4月上旬", note: "駒込駅そばの小さな公園。ソメイヨシノの由来を伝える記念公園。" },
+  { kind: "sakura", name: "江戸川公園", ward: "文京区", lat: 35.7108, lng: 139.7325, count: "—", peak: "3月下旬〜4月上旬", note: "神田川沿いの細長い公園。面影橋方面へ続く川沿いの桜並木も見事。" },
+  { kind: "sakura", name: "六本木さくら坂", ward: "港区", lat: 35.6593, lng: 139.7287, count: "—", peak: "3月下旬〜4月上旬", note: "六本木ヒルズ脇の坂。夜はライトアップで都会的な夜桜に。" },
+  { kind: "sakura", name: "東京ミッドタウン", ward: "港区", lat: 35.6662, lng: 139.7310, count: "—", peak: "3月下旬〜4月上旬", note: "檜町公園側の桜並木。例年ライトアップあり。" },
+  { kind: "sakura", name: "芝公園", ward: "港区", lat: 35.6565, lng: 139.7478, count: "—", peak: "3月下旬〜4月上旬", note: "東京タワーと桜を一緒に撮れる。増上寺の境内とも隣接。" },
+  { kind: "sakura", name: "御殿山", ward: "品川区", lat: 35.6210, lng: 139.7370, count: "—", peak: "3月下旬〜4月上旬", note: "江戸時代の花見の名所。今は御殿山庭園などに桜が残る。" },
+  { kind: "sakura", name: "中野通り 桜並木", ward: "中野区", lat: 35.7120, lng: 139.6655, count: "—", peak: "3月下旬〜4月上旬", note: "中野駅北側から続く約2kmの並木。例年ライトアップあり。" },
+  { kind: "sakura", name: "哲学堂公園", ward: "中野区", lat: 35.7165, lng: 139.6690, count: "—", peak: "3月下旬〜4月上旬", note: "哲学をテーマにした個性的な公園。妙正寺川沿いの桜も。" },
+  { kind: "sakura", name: "善福寺川緑地", ward: "杉並区", lat: 35.6960, lng: 139.6250, count: "—", peak: "3月下旬〜4月上旬", note: "川沿いに続く緑地の桜並木。地元の人が多い穴場。" },
+  { kind: "sakura", name: "光が丘公園", ward: "練馬区", lat: 35.7625, lng: 139.6300, count: "—", peak: "3月下旬〜4月上旬", note: "広い芝生と桜の園路。家族連れでゆったり花見。" },
+  { kind: "sakura", name: "荒川赤羽桜堤緑地", ward: "北区", lat: 35.7865, lng: 139.7135, count: "—", peak: "3月下旬〜4月上旬", note: "荒川の土手沿いの桜堤。河川敷の開放感が魅力。" },
+  { kind: "sakura", name: "猿江恩賜公園", ward: "江東区", lat: 35.6875, lng: 139.8150, count: "約200本", peak: "3月下旬〜4月上旬", note: "ソメイヨシノとシダレザクラ。スカイツリーと一緒に撮れる穴場。" },
+  { kind: "sakura", name: "木場公園", ward: "江東区", lat: 35.6745, lng: 139.8065, count: "—", peak: "3月下旬〜4月上旬", note: "広い芝生広場と木場公園大橋。東京都現代美術館の隣。" },
+  { kind: "sakura", name: "小松川千本桜", ward: "江戸川区", lat: 35.6940, lng: 139.8530, count: "約1,000本", peak: "3月下旬〜4月上旬", note: "荒川スーパー堤防沿い約2kmの桜並木。" },
+  { kind: "sakura", name: "水元公園", ward: "葛飾区", lat: 35.7860, lng: 139.8655, count: "約900本", peak: "3月下旬〜4月上旬", note: "園内約390本と、さくら堤の約530本。水郷の景色と桜。" },
+
+  // ---- 梅 ----
+  { kind: "ume", name: "湯島天満宮（湯島天神）", ward: "文京区", lat: 35.7077, lng: 139.7683, count: "約300本", peak: "2月中旬〜3月上旬", note: "白梅が中心。例年「梅まつり」が開かれる学問の神様の梅。" },
+  { kind: "ume", name: "亀戸天神社", ward: "江東区", lat: 35.7027, lng: 139.8205, count: "300本以上", peak: "2月上旬〜3月上旬", note: "紅白の梅と太鼓橋、スカイツリーを一枚に収められる。梅まつりあり。" },
+  { kind: "ume", name: "羽根木公園", ward: "世田谷区", lat: 35.6620, lng: 139.6630, count: "約650本", peak: "2月上旬〜3月上旬", note: "23区内有数の梅林。「せたがや梅まつり」が開かれ、品種名の札もある。" },
+  { kind: "ume", name: "池上梅園", ward: "大田区", lat: 35.5770, lng: 139.7040, count: "約370本", peak: "2月中旬〜3月中旬", note: "斜面に紅白の梅が広がる区立庭園。池上本門寺の散策と合わせて。有料（少額）。" },
+  { kind: "ume", name: "向島百花園", ward: "墨田区", lat: 35.7225, lng: 139.8170, count: "約360本", peak: "2月上旬〜3月上旬", note: "江戸時代に「新梅屋敷」と呼ばれた花園。風情ある小さな庭。有料。" },
+  { kind: "ume", name: "小石川後楽園", ward: "文京区", lat: 35.7055, lng: 139.7495, count: "約90本", peak: "2月上旬〜3月上旬", note: "大名庭園の梅林。3月下旬にはしだれ桜も咲く。有料。" },
+  { kind: "ume", name: "小石川植物園", ward: "文京区", lat: 35.7190, lng: 139.7425, count: "約100本", peak: "2月中旬〜3月上旬", note: "東京大学の植物園。研究用の品種も多い梅林。有料。" },
+  { kind: "ume", name: "皇居東御苑 梅林坂", ward: "千代田区", lat: 35.6880, lng: 139.7570, count: "約50本", peak: "2月上旬〜3月上旬", note: "江戸城の坂道に紅白の梅。無料（休園日に注意）。" },
+  { kind: "ume", name: "浜離宮恩賜庭園", ward: "中央区", lat: 35.6595, lng: 139.7615, count: "—", peak: "2月中旬〜3月上旬", note: "庭園内の梅林と、2月下旬からの菜の花畑が同時に見られる。有料。" },
+  { kind: "ume", name: "新宿御苑", ward: "新宿区", lat: 35.6862, lng: 139.7085, count: "約50本", peak: "2月上旬〜3月上旬", note: "母と子の森周辺の梅林。桜より一足早い御苑の春。有料。" },
+  { kind: "ume", name: "赤塚溜池公園・赤塚城址", ward: "板橋区", lat: 35.7835, lng: 139.6420, count: "約150本", peak: "2月下旬〜3月中旬", note: "中世の城跡に広がる梅林。例年3月に「赤塚梅まつり」。東京大仏の乗蓮寺も近い。" },
+  { kind: "ume", name: "芝公園 梅林", ward: "港区", lat: 35.6553, lng: 139.7493, count: "—", peak: "2月中旬〜3月上旬", note: "東京タワーのふもとの梅林。タワーと梅を一緒に眺められる。" }
+];
+
+// English names and notes, same order as SPOTS
+const EN = [
+  ["Chidorigafuchi Greenway", "A ~700 m cherry-lined walk along the Imperial Palace moat. Famous for rowboats under the blossoms and evening illumination."],
+  ["Yasukuni Shrine", "Home of the Japan Meteorological Agency's sample tree, used to declare the official start of Tokyo's cherry season."],
+  ["Sotobori Park", "About 2 km of embankment cherries between Iidabashi and Yotsuya, visible from Chuo Line trains."],
+  ["Ueno Park", "About 50 varieties. The cherry tunnel along Sakura-dori is one of Tokyo's best-known hanami spots."],
+  ["Sumida Park", "Cherries line both banks of the Sumida River, with views of Tokyo Skytree and yakatabune boats."],
+  ["Shinjuku Gyoen National Garden", "About 65 varieties, from early bloomers to double-flowered cherries, so the season runs long. Admission fee; no alcohol."],
+  ["Shinjuku Central Park", "City cherries framed by the Tokyo Metropolitan Government Building and skyscrapers."],
+  ["Rikugien Garden", "The highlight is a weeping cherry about 15 m tall. It blooms a little before Somei-yoshino. Admission fee."],
+  ["Harimazaka Cherry Avenue", "A ~500 m avenue on Loop Road 3 with a local cherry festival. A calmer alternative to the big spots."],
+  ["Meguro River", "About 4 km of cherries centered on Naka-meguro. Known for blossoms arching over the water and lantern-lit nights."],
+  ["Aoyama Cemetery", "The central road becomes a cherry tunnel. It is a cemetery, so stroll quietly and skip the party."],
+  ["Yoyogi Park", "Wide lawns make it easy to spread a picnic sheet. Very crowded on weekends."],
+  ["Asukayama Park", "A hanami spot since shogun Tokugawa Yoshimune planted cherries here in the Edo period. Next to Oji Station."],
+  ["Kinuta Park", "A large, family-friendly park. Relax under the cherries in the Family Park area."],
+  ["Shakujii Park", "Rowboats on Shakujii Pond and cherries along the water."],
+  ["Senzoku-ike Park", "Cherries ring a pond associated with Katsu Kaishu. Rowboats available."],
+  ["Hama-rikyu Gardens", "A feudal lord's garden whose cherries contrast with the Shiodome towers. Admission fee."],
+  ["Oyokogawa River", "Riverside cherries around Monzen-nakacho. Traditional boat rides during the Fukagawa cherry festival are popular."],
+  ["Toneri Park", "A huge park at the northern edge of the 23 wards. Less crowded than central spots."],
+  ["Kitanomaru Park", "Right next to Chidorigafuchi. Quieter hanami among lawns and woods."],
+  ["Inui-dori, Imperial Palace", "A road inside the Imperial Palace that opens to the public in cherry season. Check the Imperial Household Agency for dates."],
+  ["Yanaka Cemetery", "Its central Sakura-dori becomes a cherry tunnel. Pair it with a walk around Yanaka. No parties."],
+  ["Somei Cemetery", "In old Somei village, said to be the birthplace of the Somei-yoshino cherry. A quiet place to walk."],
+  ["Somei-yoshino Memorial Park", "A small park by Komagome Station that tells the story of the Somei-yoshino cherry."],
+  ["Edogawa Park", "A narrow park along the Kanda River. The riverside cherries toward Omokagebashi are lovely too."],
+  ["Roppongi Sakurazaka", "A slope beside Roppongi Hills, illuminated at night."],
+  ["Tokyo Midtown", "A cherry avenue by Hinokicho Park, usually illuminated in season."],
+  ["Shiba Park", "Photograph the cherries with Tokyo Tower behind them. Next to Zojoji Temple."],
+  ["Gotenyama", "A famous Edo-period hanami hill. Cherries remain around Gotenyama Garden."],
+  ["Nakano-dori Cherry Avenue", "About 2 km of cherries running north from Nakano Station, usually illuminated."],
+  ["Tetsugakudo Park", "A quirky park themed on philosophy, with cherries along the Myoshoji River."],
+  ["Zenpukujigawa Greenway", "A long riverside greenway lined with cherries. Mostly locals, so it stays relaxed."],
+  ["Hikarigaoka Park", "Wide lawns and cherry-lined paths. Good for families."],
+  ["Arakawa Akabane Sakura Embankment", "A cherry embankment on the Arakawa River with open riverside views."],
+  ["Sarue Onshi Park", "Somei-yoshino and weeping cherries, with Tokyo Skytree in view. A lesser-known spot."],
+  ["Kiba Park", "Large lawns and the Kiba Park Bridge, next to the Museum of Contemporary Art Tokyo."],
+  ["Komatsugawa Senbonzakura", "About 2 km of cherries along the Arakawa super levee."],
+  ["Mizumoto Park", "About 390 trees in the park plus about 530 on the Sakura Embankment, set among waterways."],
+  ["Yushima Tenmangu (Yushima Tenjin)", "Mostly white plums at this shrine to the god of learning. A plum festival is held every year."],
+  ["Kameido Tenjin Shrine", "Red and white plums, an arched drum bridge and Tokyo Skytree in one view. Plum festival held."],
+  ["Hanegi Park", "One of the largest plum groves in the 23 wards. Hosts the Setagaya Plum Festival; many trees are labeled by variety."],
+  ["Ikegami Baien Garden", "Red and white plums cover a hillside in this ward garden. Combine it with Ikegami Honmonji Temple. Small fee."],
+  ["Mukojima-Hyakkaen Garden", "An Edo-period flower garden once nicknamed the \"New Plum Mansion\". Small and atmospheric. Admission fee."],
+  ["Koishikawa Korakuen Garden", "A plum grove in a feudal lord's garden; weeping cherries follow in late March. Admission fee."],
+  ["Koishikawa Botanical Garden", "The University of Tokyo's botanical garden, with many plum varieties. Admission fee."],
+  ["East Gardens, Imperial Palace (Bairinzaka)", "Red and white plums on a slope of old Edo Castle. Free; check closing days."],
+  ["Hama-rikyu Gardens", "A plum grove, plus rapeseed blossoms from late February. Admission fee."],
+  ["Shinjuku Gyoen National Garden", "A plum grove near the Mother and Child Forest, a step ahead of the cherries. Admission fee."],
+  ["Akatsuka Tameike Park & Castle Ruins", "A plum grove on medieval castle ruins. Akatsuka Plum Festival in March; the Tokyo Daibutsu at Jorenji is nearby."],
+  ["Shiba Park Plum Grove", "A plum grove at the foot of Tokyo Tower, with the tower in view."]
+];
+SPOTS.forEach((s, i) => { s.en = { name: EN[i][0], note: EN[i][1] }; });
+
+const WARD_EN = {
+  "千代田区": "Chiyoda", "台東区": "Taito", "台東区・墨田区": "Taito / Sumida", "新宿区": "Shinjuku", "文京区": "Bunkyo",
+  "目黒区": "Meguro", "港区": "Minato", "渋谷区": "Shibuya", "北区": "Kita", "世田谷区": "Setagaya", "練馬区": "Nerima",
+  "大田区": "Ota", "中央区": "Chuo", "江東区": "Koto", "足立区": "Adachi", "豊島区": "Toshima", "品川区": "Shinagawa",
+  "中野区": "Nakano", "杉並区": "Suginami", "江戸川区": "Edogawa", "葛飾区": "Katsushika", "墨田区": "Sumida", "板橋区": "Itabashi"
+};
+const MONTH_EN = ["", "Jan", "Feb", "Mar", "Apr", "May"];
+const PART_EN = { "上旬": "Early", "中旬": "Mid", "下旬": "Late" };
+function peakEn(p) {
+  const m = p.match(/(\d+)月(上旬|中旬|下旬)〜(?:(\d+)月)?(上旬|中旬|下旬)/);
+  if (!m) return p;
+  return `${PART_EN[m[2]]} ${MONTH_EN[m[1]]} – ${PART_EN[m[4]]} ${MONTH_EN[m[3] || m[1]]}`;
+}
+function countEn(c) {
+  let m;
+  if ((m = c.match(/^約([\d,]+)本$/))) return `~${m[1]} trees`;
+  if ((m = c.match(/^([\d,]+)本以上$/))) return `${m[1]}+ trees`;
+  if (c === "しだれ桜") return "Weeping cherry";
+  return c;
+}
+
+const I18N = {
+  ja: {
+    docTitle: "東京23区 花見マップ",
+    title: "東京23区 花見マップ",
+    lede: "桜と梅の名所を区ごとにまとめました。地図の花マークか一覧をクリックすると詳細が出ます。",
+    all: "すべて", sakura: "桜", ume: "梅",
+    filterLabel: "表示する花", calLabel: "例年の見頃",
+    months: ["1月", "2月", "3月", "4月"],
+    spotOf: k => `${k === "sakura" ? "桜" : "梅"}の名所`,
+    ward: "区", count: "本数", peak: "見頃", typical: "（例年）", gmaps: "Googleマップで開く ↗",
+    seasonUme: `<b>今は梅の季節です。</b>桜は例年3月下旬から。`,
+    seasonSakura: `<b>今は桜の季節です。</b>開花状況は公式情報でご確認ください。`,
+    seasonNext: y => `次の季節：<b>梅 ${y}年2月〜</b>、<b>桜 ${y}年3月下旬〜</b>`,
+    note: n => `${n}か所を表示中。本数・見頃は例年の目安で、年によって前後します。お出かけ前に各施設の公式情報で開花状況・開園時間をご確認ください。`
+  },
+  en: {
+    docTitle: "Tokyo Blossom Map",
+    title: "Tokyo Blossom Map",
+    lede: "Cherry and plum blossom spots across Tokyo's 23 wards, grouped by ward. Click a flower on the map or a name in the list for details.",
+    all: "All", sakura: "Cherry", ume: "Plum",
+    filterLabel: "Flowers to show", calLabel: "Typical peak bloom",
+    months: ["Jan", "Feb", "Mar", "Apr"],
+    spotOf: k => (k === "sakura" ? "Cherry blossoms" : "Plum blossoms"),
+    ward: "Ward", count: "Trees", peak: "Peak", typical: " (typical)", gmaps: "Open in Google Maps ↗",
+    seasonUme: `<b>Plum season is on now.</b> Cherries usually open in late March.`,
+    seasonSakura: `<b>Cherry season is on now.</b> Check official sites for bloom status.`,
+    seasonNext: y => `Next up: <b>plums from Feb ${y}</b>, <b>cherries from late Mar ${y}</b>`,
+    note: n => `Showing ${n} spots. Tree counts and peak dates are typical figures and shift from year to year. Check each venue's official site for bloom status and opening hours before you go.`
+  }
+};
+
+let lang = "ja";
+try { lang = localStorage.getItem("hanami-lang") || (navigator.language.startsWith("ja") ? "ja" : "en"); } catch { lang = navigator.language.startsWith("ja") ? "ja" : "en"; }
+if (!I18N[lang]) lang = "ja";
+const T = () => I18N[lang];
+const nameOf = s => (lang === "en" ? s.en.name : s.name);
+const noteOf = s => (lang === "en" ? s.en.note : s.note);
+const wardOf = s => (lang === "en" ? WARD_EN[s.ward] || s.ward : s.ward);
+const peakOf = s => (lang === "en" ? peakEn(s.peak) : s.peak);
+const countOf = s => (lang === "en" ? countEn(s.count) : s.count);
+
+// Bloom calendar (Jan 1 – Apr 30, day-of-season fractions)
+const RANGES = { ume: [2.15, 3.6], sakura: [3.65, 4.3] }; // month index as float: 1.0 = Jan 1, 5.0 = May 1
+const toPct = m => ((m - 1) / 4) * 100;
+const nowM = (() => { const d = new Date(); return d.getMonth() + 1 + (d.getDate() - 1) / 31; })();
+
+function renderCalendar() {
+  for (const k of ["ume", "sakura"]) {
+    const [a, b] = RANGES[k];
+    const el = document.getElementById("cal-" + k);
+    const bar = document.createElement("div");
+    bar.className = "cal-bar";
+    bar.style.left = toPct(a) + "%";
+    bar.style.width = (toPct(b) - toPct(a)) + "%";
+    bar.style.background = `var(--${k})`;
+    el.appendChild(bar);
+    if (nowM >= 1 && nowM < 5) {
+      const n = document.createElement("div");
+      n.className = "cal-now";
+      n.style.left = toPct(nowM) + "%";
+      el.appendChild(n);
+    }
+  }
+}
+
+function renderSeason() {
+  const y = new Date().getFullYear() + (nowM >= 4.5 ? 1 : 0);
+  let msg;
+  if (nowM >= RANGES.ume[0] && nowM < RANGES.sakura[0]) msg = T().seasonUme;
+  else if (nowM >= RANGES.sakura[0] && nowM < 4.6) msg = T().seasonSakura;
+  else msg = T().seasonNext(y);
+  document.getElementById("season").innerHTML = msg;
+}
+
+// Flower marker: 5 petals; sakura petals are notched, ume petals are round
+function flowerSVG(kind) {
+  const color = kind === "sakura" ? "var(--sakura)" : "var(--ume)";
+  let petals = "";
+  for (let i = 0; i < 5; i++) {
+    const r = i * 72;
+    petals += kind === "sakura"
+      ? `<path transform="rotate(${r} 14 14)" d="M14 14 C9 10 9 4 12 2 L14 4 L16 2 C19 4 19 10 14 14Z" fill="${color}" stroke="#fff" stroke-width="1"/>`
+      : `<circle transform="rotate(${r} 14 14)" cx="14" cy="7" r="5.2" fill="${color}" stroke="#fff" stroke-width="1"/>`;
+  }
+  return `<svg class="flower" width="28" height="28" viewBox="0 0 28 28">${petals}<circle cx="14" cy="14" r="2.6" fill="#f6d36b"/></svg>`;
+}
+
+const map = L.map("map", { zoomControl: true, scrollWheelZoom: true }).setView([35.69, 139.73], 12);
+// OpenStreetMap tiles need a Referer: open this page over http(s), not as file://
+L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+  maxZoom: 19,
+  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
+
+function popupHTML(s) {
+  const t = T();
+  const gmaps = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(s.name.replace(/（.*?）/, "") + " " + s.ward);
+  return `
+    <div class="pop">
+      <div class="pop-kind ${s.kind}">${t.spotOf(s.kind)}</div>
+      <div class="pop-name">${nameOf(s)}</div>
+      <dl><dt>${t.ward}</dt><dd>${wardOf(s)}</dd><dt>${t.count}</dt><dd>${countOf(s)}</dd><dt>${t.peak}</dt><dd>${peakOf(s)}${t.typical}</dd></dl>
+      <p>${noteOf(s)}</p>
+      <a href="${gmaps}" target="_blank" rel="noopener">${t.gmaps}</a>
+    </div>`;
+}
+
+const entries = SPOTS.map((s, i) => {
+  const icon = L.divIcon({ html: flowerSVG(s.kind), className: "", iconSize: [28, 28], iconAnchor: [14, 14], popupAnchor: [0, -12] });
+  const marker = L.marker([s.lat, s.lng], { icon, riseOnHover: true }).bindPopup(() => popupHTML(s));
+  marker.on("click", () => setActive(i, false));
+  return { s, marker, btn: null };
+});
+
+let filter = "all";
+function render() {
+  const list = document.getElementById("list");
+  list.innerHTML = "";
+  const visible = entries.filter(e => filter === "all" || e.s.kind === filter);
+  const byWard = {};
+  for (const e of visible) (byWard[wardOf(e.s)] ||= []).push(e);
+  for (const ward of Object.keys(byWard).sort((a, b) => a.localeCompare(b, lang))) {
+    const h = document.createElement("div");
+    h.className = "ward-label";
+    h.textContent = ward;
+    list.appendChild(h);
+    for (const e of byWard[ward]) {
+      const i = entries.indexOf(e);
+      const b = document.createElement("button");
+      b.className = "spot";
+      b.id = "spot-" + i;
+      b.innerHTML = `<span class="dot ${e.s.kind}"></span><span><span class="spot-name">${nameOf(e.s)}</span><br><span class="spot-meta">${T()[e.s.kind]} ・ ${peakOf(e.s)}</span></span><span class="spot-count">${countOf(e.s)}</span>`;
+      b.addEventListener("click", () => setActive(i, true));
+      e.btn = b;
+      list.appendChild(b);
+    }
+  }
+  const note = document.createElement("p");
+  note.className = "note";
+  note.textContent = T().note(visible.length);
+  list.appendChild(note);
+
+  for (const e of entries) {
+    e.marker.options.title = nameOf(e.s);
+    const show = filter === "all" || e.s.kind === filter;
+    if (show && !map.hasLayer(e.marker)) e.marker.addTo(map);
+    if (!show && map.hasLayer(e.marker)) map.removeLayer(e.marker);
+  }
+}
+
+function setActive(i, fly) {
+  entries.forEach(e => e.btn && e.btn.classList.remove("active"));
+  const e = entries[i];
+  if (e.btn) { e.btn.classList.add("active"); if (!fly) e.btn.scrollIntoView({ block: "nearest" }); }
+  if (fly) {
+    map.flyTo([e.s.lat, e.s.lng], 15, { duration: matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 0.8 });
+    map.once("moveend", () => e.marker.openPopup());
+  }
+}
+
+function applyLang() {
+  const t = T();
+  document.documentElement.lang = lang;
+  document.title = t.docTitle;
+  document.querySelectorAll("[data-i18n]").forEach(el => { el.textContent = t[el.dataset.i18n]; });
+  document.querySelector(".filters").setAttribute("aria-label", t.filterLabel);
+  document.querySelector(".calendar").setAttribute("aria-label", t.calLabel);
+  document.querySelectorAll(".cal-scale span[data-m]").forEach((el, i) => { el.textContent = t.months[i]; });
+  document.querySelectorAll(".lang button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.lang === lang)));
+  renderSeason();
+  const open = entries.find(e => e.marker.isPopupOpen());
+  render();
+  if (open) { open.marker.setPopupContent(popupHTML(open.s)); open.btn && open.btn.classList.add("active"); }
+}
+
+document.querySelectorAll(".lang button").forEach(b => b.addEventListener("click", () => {
+  lang = b.dataset.lang;
+  try { localStorage.setItem("hanami-lang", lang); } catch {}
+  applyLang();
+}));
+
+document.querySelectorAll(".chip").forEach(c => c.addEventListener("click", () => {
+  filter = c.dataset.filter;
+  document.querySelectorAll(".chip").forEach(x => x.setAttribute("aria-pressed", String(x === c)));
+  map.closePopup();
+  render();
+}));
+
+renderCalendar();
+applyLang();
+const wide = matchMedia("(min-width: 761px)").matches;
+map.fitBounds(L.latLngBounds(SPOTS.map(s => [s.lat, s.lng])), { paddingTopLeft: [wide ? 420 : 24, 24], paddingBottomRight: [24, wide ? 24 : 48] });
+</script>
+</body>
+</html>
